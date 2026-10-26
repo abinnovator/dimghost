@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cmr8su4ej0qqr"]
+
+[ext_resource type="Script" uid="uid://b2v6m48yipaaa" path="res://scripts/General/SceneManager.cs" id="1_we8k5"]
+
+[sub_resource type="Theme" id="Theme_we8k5"]
+
+[node name="SceneManager" type="Node" unique_id=85071720 node_paths=PackedStringArray("SceneChangeProgressBar")]
+script = ExtResource("1_we8k5")
+SceneChangeProgressBar = NodePath("ProgressBar")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=772108786]
+visible = false
+offset_left = 311.0
+offset_top = 612.0
+offset_right = 837.0
+offset_bottom = 639.0
+theme = SubResource("Theme_we8k5")
+value = 100.0
+show_percentage = false

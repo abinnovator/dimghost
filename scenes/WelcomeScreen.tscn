@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dxmbjpotcob4q"]
+
+[ext_resource type="Script" uid="uid://c65fnin8yy2rh" path="res://scripts/startscreen/WelcomeScreen.cs" id="1_bmi06"]
+[ext_resource type="Texture2D" uid="uid://b7pqatq5inm7i" path="res://StartScreen.png" id="2_55pw5"]
+[ext_resource type="FontFile" uid="uid://defxhyxoqx1l8" path="res://Creepster-Regular.ttf" id="3_x5h06"]
+[ext_resource type="Texture2D" uid="uid://34k2bmwc71rt" path="res://assets/send.png" id="4_ne21m"]
+
+[node name="StartScreen" type="Node2D" unique_id=888038706 node_paths=PackedStringArray("Startbutton", "usernameInput", "SendUsernameButton")]
+script = ExtResource("1_bmi06")
+Startbutton = NodePath("Button")
+usernameInput = NodePath("LineEdit")
+SendUsernameButton = NodePath("Button2")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1329355504]
+texture_filter = 1
+texture_repeat = 1
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_55pw5")
+
+[node name="Button" type="Button" parent="." unique_id=1152170913]
+offset_left = 527.0
+offset_top = 368.0
+offset_right = 610.0
+offset_bottom = 410.0
+theme_override_fonts/font = ExtResource("3_x5h06")
+text = "Start"
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1769855580]
+visible = false
+offset_left = 496.0
+offset_top = 371.0
+offset_right = 669.0
+offset_bottom = 402.0
+placeholder_text = "Enter your username"
+max_length = 20
+
+[node name="Button2" type="Button" parent="." unique_id=2048873684]
+visible = false
+texture_filter = 1
+offset_left = 673.0
+offset_top = 371.0
+offset_right = 705.0
+offset_bottom = 401.0
+icon = ExtResource("4_ne21m")

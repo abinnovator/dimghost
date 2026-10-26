@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Dimghost"
-run/main_scene="uid://b0ihpu41snpkm"
+run/main_scene="uid://dxmbjpotcob4q"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SceneManager="*uid://cmr8su4ej0qqr"
 
 [display]
 
@@ -23,6 +27,10 @@ window/stretch/aspect="expand"
 [dotnet]
 
 project/assembly_name="Dimghost"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 [physics]
 

@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://buaimq72q1yqm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bfb44"]
+albedo_color = Color(0.85490197, 0.90588236, 0.87058824, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5r1h1"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7dug0"]
+material = SubResource("StandardMaterial3D_5r1h1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sdpmw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbh0o"]
+albedo_color = Color(0.85490197, 0.90588236, 0.87058824, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lv5kw"]
+albedo_color = Color(0.85490197, 0.90588236, 0.87058824, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5pw7d"]
+albedo_color = Color(0.85490197, 0.90588236, 0.87058824, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kmhd"]
+albedo_color = Color(0.85490197, 0.90588236, 0.87058824, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7dug0"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ej8gx"]
+material = SubResource("StandardMaterial3D_7dug0")
+
+[node name="Node3D" type="Node3D" unique_id=1523313853]
+
+[node name="Ground Floor" type="Node3D" parent="." unique_id=1474325788]
+
+[node name="GroundFloorA1" type="Node3D" parent="Ground Floor" unique_id=2078841080]
+
+[node name="GroundFloorWalls" type="Node3D" parent="Ground Floor/GroundFloorA1" unique_id=162054350]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Ground Floor/GroundFloorA1/GroundFloorWalls" unique_id=588984663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017267227, 15.291443, -30.01945)
+size = Vector3(59.91258, 31.582886, 1)
+material = SubResource("StandardMaterial3D_bfb44")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Ground Floor/GroundFloorA1/GroundFloorWalls" unique_id=1891449248]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017267227, 15.291443, 29.434885)
+size = Vector3(59.91258, 31.582886, 1)
+material = SubResource("StandardMaterial3D_bfb44")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Ground Floor/GroundFloorA1/GroundFloorWalls" unique_id=1031591877]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -29.42425, 15.291443, -0.33421326)
+size = Vector3(58.332756, 31.582886, 1)
+material = SubResource("StandardMaterial3D_bfb44")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Ground Floor/GroundFloorA1/GroundFloorWalls" unique_id=1852816708]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.186607, 15.291443, -0.59827423)
+size = Vector3(59.91258, 31.582886, 1)
+material = SubResource("StandardMaterial3D_bfb44")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground Floor/GroundFloorA1" unique_id=1902111834]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
+mesh = SubResource("PlaneMesh_7dug0")
+surface_material_override/0 = SubResource("StandardMaterial3D_sdpmw")
+
+[node name="GroundFloorA2" type="Node3D" parent="Ground Floor" unique_id=783759477]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -60.58748)
+
+[node name="GroundFloorWalls" type="Node3D" parent="Ground Floor/GroundFloorA2" unique_id=1269508791]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Ground Floor/GroundFloorA2/GroundFloorWalls" unique_id=1794110354]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4142933, 15.291443, -30.019447)
+size = Vector3(49.118526, 31.582886, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Ground Floor/GroundFloorA2/GroundFloorWalls" unique_id=50991997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017267227, 15.291443, 29.434885)
+size = Vector3(59.91258, 31.582886, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Ground Floor/GroundFloorA2/GroundFloorWalls" unique_id=1677131830]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -18.681593, 15.433434, -0.64805603)
+size = Vector3(58.960445, 31.582886, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Ground Floor/GroundFloorA2/GroundFloorWalls" unique_id=2001032318]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.186607, 15.291443, -0.59827423)
+size = Vector3(59.91258, 31.582886, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground Floor/GroundFloorA2" unique_id=1724711097]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
+mesh = SubResource("PlaneMesh_7dug0")
+surface_material_override/0 = SubResource("StandardMaterial3D_sdpmw")
+
+[node name="First Floor" type="Node3D" parent="." unique_id=73982873]
+
+[node name="SecondFloorA1" type="Node3D" parent="First Floor" unique_id=983404055]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="First Floor/SecondFloorA1" unique_id=865306690]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 31.027817, 0)
+mesh = SubResource("PlaneMesh_7dug0")
+surface_material_override/0 = SubResource("StandardMaterial3D_sdpmw")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="First Floor/SecondFloorA1" unique_id=1531505121]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 62.54508, 0)
+mesh = SubResource("PlaneMesh_7dug0")
+surface_material_override/0 = SubResource("StandardMaterial3D_sdpmw")
+
+[node name="Walls" type="Node3D" parent="First Floor/SecondFloorA1" unique_id=1959172600]
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="First Floor/SecondFloorA1/Walls" unique_id=1884537714]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -29.42425, 60.447197, -0.33421326)
+size = Vector3(58.332756, 58.66591, 1)
+material = SubResource("StandardMaterial3D_cbh0o")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="First Floor/SecondFloorA1/Walls" unique_id=1958035209]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.0613, 60.506447, -0.33421326)
+size = Vector3(58.332756, 58.78441, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="First Floor/SecondFloorA1/Walls" unique_id=768844448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017267227, 75.62543, -30.01945)
+size = Vector3(59.91258, 89.156204, 1)
+material = SubResource("StandardMaterial3D_lv5kw")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="First Floor/SecondFloorA1/Walls" unique_id=1298026569]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.56604004, 60.481987, 29.506605)
+size = Vector3(61.010124, 58.86931, 1)
+material = SubResource("StandardMaterial3D_5pw7d")
+
+[node name="roof" type="Node3D" parent="First Floor/SecondFloorA1/Walls" unique_id=1627986043]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.925522, 0)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="First Floor/SecondFloorA1/Walls/roof" unique_id=1764972125]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, -29.121424, 103.47044, -28.691593)
+polygon = PackedVector2Array(-1.9091263, -0.81726456, -1.2644424, 57.80529, 28.192993, -0.8088951)
+material = SubResource("StandardMaterial3D_5kmhd")
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="First Floor/SecondFloorA1/Walls/roof" unique_id=1076436229]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 30.698164, 103.47044, -28.691593)
+polygon = PackedVector2Array(-1.9091263, -0.81726456, -1.2644424, 57.80529, 28.192993, -0.8088951)
+material = SubResource("StandardMaterial3D_5kmhd")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="First Floor/SecondFloorA1/Walls/roof" unique_id=770337481]
+transform = Transform3D(19.999998, 0, 0, 0, 0.8929793, -1.8003898, 0, 0.45009744, 3.5719173, 0.4061985, 116.902596, -0.8368847)
+size = Vector3(2.9311867, 1, 16.80072)
+material = SubResource("StandardMaterial3D_5kmhd")
+
+[node name="SecondFloorA2" type="Node3D" parent="First Floor" unique_id=219255199]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="First Floor/SecondFloorA2" unique_id=1472007194]
+transform = Transform3D(24, 0, 0, 0, 1, 0, 0, 0, 30, 6, 31, -61.21039)
+mesh = SubResource("PlaneMesh_ej8gx")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="First Floor/SecondFloorA2" unique_id=619649229]
+transform = Transform3D(24, 0, 0, 0, 1, 0, 0, 0, 30, 6, 62.803272, -61.21039)
+mesh = SubResource("PlaneMesh_ej8gx")
+
+[node name="walls" type="Node3D" parent="First Floor/SecondFloorA2" unique_id=739810385]
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="First Floor/SecondFloorA2/walls" unique_id=1713937717]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -18.53047, 46.905685, -60.77128)
+size = Vector3(60.371944, 31.582886, 1)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="First Floor/SecondFloorA2/walls" unique_id=1741665785]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 30.0613, 46.905685, -60.925575)
+size = Vector3(60.68054, 31.582886, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="First Floor/SecondFloorA2/walls" unique_id=1160245042]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.453907, 46.83878, -90.78396)
+size = Vector3(49.0393, 31.582886, 1)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="First Floor/SecondFloorA2/walls" unique_id=1772781888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017267227, 46.83878, -29.910868)
+size = Vector3(59.91258, 31.582886, 1)
