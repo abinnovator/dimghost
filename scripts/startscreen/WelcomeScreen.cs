@@ -26,7 +26,13 @@ public partial class WelcomeScreen : Node2D
 		// First check if the save exists with the username
 		if (SaveManager.SaveExists())
 		{
+			// Pull the save
+			var userSave = SaveManager.LoadSave();
+			// Create the server for people to join
+			NetworkManager.Instance.Host(userSave, 7777);
+			// Teleport to lobby
 			SceneManager.Instance.ChangeScene(LobbyScene);
+
 		}
 		else
 		{

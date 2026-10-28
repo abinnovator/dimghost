@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bfio0bbxocpka"]
+
+[ext_resource type="Script" uid="uid://d23s8rxj18v6c" path="res://scripts/lobby/ShopItem.cs" id="1_lrx6i"]
+
+[node name="Shop Item" type="Control" unique_id=209672858]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_lrx6i")
+
+[node name="Control" type="Panel" parent="." unique_id=991797475]
+layout_mode = 0
+offset_right = 168.0
+offset_bottom = 242.0
+
+[node name="Label" type="Label" parent="." unique_id=1875241191]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 12.0
+offset_right = 129.0
+offset_bottom = 35.0
+text = "EMF Reader"
+
+[node name="Label2" type="Label" parent="." unique_id=345129290]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 128.0
+offset_bottom = 52.0
+text = "$30"
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2100408721]
+position = Vector2(80, 120)
+
+[node name="Quantity" type="Node2D" parent="." unique_id=848127784]
+
+[node name="ColorRect" type="ColorRect" parent="Quantity" unique_id=1649002800]
+offset_left = 10.0
+offset_top = 172.0
+offset_right = 160.0
+offset_bottom = 202.0
+color = Color(0.21050721, 0.21050721, 0.21050721, 1)
+
+[node name="Label3" type="Label" parent="Quantity/ColorRect" unique_id=817718842]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 5.0
+offset_right = 117.0
+offset_bottom = 28.0
+text = "1/2"
+horizontal_alignment = 1
+
+[node name="Add" type="Button" parent="Quantity" unique_id=1844214667]
+offset_left = 9.0
+offset_top = 171.0
+offset_right = 40.0
+offset_bottom = 202.0
+text = "+"
+
+[node name="Add2" type="Button" parent="Quantity" unique_id=1193660313]
+offset_left = 9.0
+offset_top = 208.0
+offset_right = 160.0
+offset_bottom = 239.0
+text = "Buy now"
+
+[node name="Remove" type="Button" parent="Quantity" unique_id=2121405769]
+offset_left = 129.0
+offset_top = 171.0
+offset_right = 160.0
+offset_bottom = 202.0
+text = "-"

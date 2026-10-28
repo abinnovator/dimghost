@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b0ihpu41snpkm"]
 
+[ext_resource type="Script" uid="uid://chx8plwunxrn7" path="res://scripts/lobby/Lobby.cs" id="1_ncsg4"]
 [ext_resource type="Texture2D" uid="uid://bklbigo7yinhb" path="res://Textures/Road/asphalt_02_diff_2k.jpg" id="1_vxnrh"]
 [ext_resource type="Texture2D" uid="uid://cgjnvx8bd056t" path="res://Textures/Road/asphalt_02_ao_2k.jpg" id="2_o6102"]
 [ext_resource type="Texture2D" uid="uid://qmilb2g3j33m" path="res://Textures/Road/asphalt_02_nor_gl_2k.jpg" id="3_mnodc"]
@@ -47,7 +48,18 @@ fog_density = 1.0
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.1222
 
-[node name="Lobby" type="Node3D" unique_id=1264441273]
+[node name="Lobby" type="Node3D" unique_id=1264441273 node_paths=PackedStringArray("PlayerSlots", "PlayerSlot1", "PlayerSlot2", "PlayerSlot3", "PlayerSlot4", "Shop", "Equipment", "Ready", "Join", "Location")]
+script = ExtResource("1_ncsg4")
+PlayerSlots = [NodePath("PlayerSlot"), NodePath("PlayerSlot2"), NodePath("PlayerSlot3"), NodePath("PlayerSlot4")]
+PlayerSlot1 = NodePath("PlayerSlot")
+PlayerSlot2 = NodePath("PlayerSlot2")
+PlayerSlot3 = NodePath("PlayerSlot3")
+PlayerSlot4 = NodePath("PlayerSlot4")
+Shop = NodePath("Menu Buttons/Store")
+Equipment = NodePath("Menu Buttons/Equipment")
+Ready = NodePath("Menu Buttons/Ready")
+Join = NodePath("Menu Buttons/Join")
+Location = NodePath("Menu Buttons/Location")
 
 [node name="Concrete platform" type="MeshInstance3D" parent="." unique_id=1039900164]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
@@ -80,7 +92,8 @@ mesh = SubResource("PlaneMesh_ej8gx")
 surface_material_override/0 = SubResource("StandardMaterial3D_r5v3i")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1107521139]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1693188, 1.4593718, 3.8607063)
+transform = Transform3D(0.9931426, 0, 0.11690943, 0, 1, 0, -0.11690943, 0, 0.9931426, -0.1693188, 1.4593718, 2.8438628)
+fov = 84.1
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1702546043]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 3.6541948, 0)
@@ -147,3 +160,27 @@ transform = Transform3D(0.0010739766, 0, 0.02998077, 0, 0.03, 0, -0.02998077, 0,
 
 [node name="Sketchfab_Scene2" parent="." unique_id=1263620460 instance=ExtResource("7_s6ss7")]
 transform = Transform3D(-0.06744763, 0, -0.07382962, 0, 0.099999994, 0, 0.07382962, 0, -0.06744763, 5.2261777, -4.7683716e-07, -1.1243317)
+
+[node name="Menu Buttons" type="Node3D" parent="." unique_id=879609782]
+transform = Transform3D(0.9955099, 0, 0.09465755, 0, 1, 0, -0.09465755, 0, 0.9955099, 0.8421781, -0.45722884, 0.043920994)
+
+[node name="Equipment" type="Label3D" parent="Menu Buttons" unique_id=133021378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1663246, 1, 1.2602041)
+text = "Equipment"
+
+[node name="Ready" type="Label3D" parent="Menu Buttons" unique_id=502168765]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.622293, 1.2214758, 1.2602041)
+text = "Ready"
+
+[node name="Join" type="Label3D" parent="Menu Buttons" unique_id=1208101355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.516894, 1.2214758, 1.2602041)
+text = "Join"
+
+[node name="Location" type="Label3D" parent="Menu Buttons" unique_id=1696186365]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0762687, 1, 1.2602041)
+modulate = Color(0.7204463, 0, 0.18085074, 1)
+text = "Location"
+
+[node name="Store" type="Label3D" parent="Menu Buttons" unique_id=1516508076]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18392813, 1, 1.2602041)
+text = "Store"

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bptpv5mo4xn3t"]
+
+[ext_resource type="PackedScene" uid="uid://bfio0bbxocpka" path="res://scenes/shop_item.tscn" id="1_lx5au"]
+
+[node name="Shop" type="Control" unique_id=1269859963]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="bg" type="ColorRect" parent="." unique_id=447944387]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="Shop Background" type="Panel" parent="." unique_id=2083772308]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 109.0
+offset_right = 825.0
+offset_bottom = 478.0
+
+[node name="Total Amount" type="Panel" parent="." unique_id=885375498]
+layout_mode = 0
+offset_left = 865.0
+offset_top = 109.0
+offset_right = 1070.0
+offset_bottom = 478.0
+
+[node name="Shop Item" parent="." unique_id=209672858 instance=ExtResource("1_lx5au")]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 177.0
+offset_right = 107.0
+offset_bottom = 177.0
