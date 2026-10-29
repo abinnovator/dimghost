@@ -49,7 +49,7 @@ public partial class WelcomeScreen : Node2D
 		string username = usernameInput.Text.Trim();
 		if (username == "") return;
 
-		UserSave newSave = new UserSave { Xp = 0, deaths = 0, username = username, money = 0, wins = 0 };
+		UserSave newSave = new UserSave { Xp = 0, deaths = 0, username = username, money = 300, wins = 0 };
 		SaveManager.Save(newSave);
 		SceneManager.Instance.ChangeScene(LobbyScene);
 	}

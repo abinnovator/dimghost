@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using dimghost;
 using Godot;
 public partial class NetworkManager: Node{
     // Set the port
@@ -9,7 +10,8 @@ public partial class NetworkManager: Node{
     public Dictionary<long, UserSave> Players = new();
     // Make it b e its own instance
     public static NetworkManager Instance { get; private set; }
-
+    // Create a list for shop item bought
+    public Dictionary<long, BoughtShopItem> BoughtItems;
     private UserSave _localUser;
 
     public override void _EnterTree(){

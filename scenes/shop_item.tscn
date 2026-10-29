@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://bfio0bbxocpka"]
 
 [ext_resource type="Script" uid="uid://d23s8rxj18v6c" path="res://scripts/lobby/ShopItem.cs" id="1_lrx6i"]
+[ext_resource type="Texture2D" uid="uid://b8a1mg6i8ptb7" path="res://assets/shop/EMF.png" id="2_btjjm"]
 
-[node name="Shop Item" type="Control" unique_id=209672858]
+[node name="Shop Item" type="Control" unique_id=209672858 node_paths=PackedStringArray("NameLabel", "MoneyLabel")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_lrx6i")
+NameLabel = NodePath("Label")
+MoneyLabel = NodePath("Label2")
 
 [node name="Control" type="Panel" parent="." unique_id=991797475]
 layout_mode = 0
@@ -30,7 +33,9 @@ text = "$30"
 horizontal_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2100408721]
-position = Vector2(80, 120)
+position = Vector2(82, 108)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_btjjm")
 
 [node name="Quantity" type="Node2D" parent="." unique_id=848127784]
 

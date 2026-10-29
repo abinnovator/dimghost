@@ -1,10 +1,16 @@
 [gd_scene format=3 uid="uid://bptpv5mo4xn3t"]
 
-[ext_resource type="PackedScene" uid="uid://bfio0bbxocpka" path="res://scenes/shop_item.tscn" id="1_lx5au"]
+[ext_resource type="Script" uid="uid://cqjqduavimtfe" path="res://scripts/shop/shop.cs" id="1_lx5au"]
 
-[node name="Shop" type="Control" unique_id=1269859963]
+[node name="Shop" type="Control" unique_id=1269859963 node_paths=PackedStringArray("Ready", "Join", "Equipment", "Location", "Profile")]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_lx5au")
+Ready = NodePath("Buttons/Ready")
+Join = NodePath("Buttons/Label2")
+Equipment = NodePath("Buttons/Label3")
+Location = NodePath("Buttons/Label4")
+Profile = NodePath("Buttons/Label5")
 
 [node name="bg" type="ColorRect" parent="." unique_id=447944387]
 layout_mode = 0
@@ -14,21 +20,63 @@ color = Color(0, 0, 0, 1)
 
 [node name="Shop Background" type="Panel" parent="." unique_id=2083772308]
 layout_mode = 0
-offset_left = 71.0
-offset_top = 109.0
+offset_left = 18.0
+offset_top = 27.0
 offset_right = 825.0
-offset_bottom = 478.0
+offset_bottom = 522.0
+
+[node name="Container" type="Control" parent="Shop Background" unique_id=47144729]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Shop Background/Container" unique_id=1685130979]
+layout_mode = 0
+offset_right = 807.0
+offset_bottom = 495.0
+vertical_scroll_mode = 0
 
 [node name="Total Amount" type="Panel" parent="." unique_id=885375498]
 layout_mode = 0
-offset_left = 865.0
-offset_top = 109.0
-offset_right = 1070.0
-offset_bottom = 478.0
+offset_left = 847.0
+offset_top = 29.0
+offset_right = 1129.0
+offset_bottom = 519.0
 
-[node name="Shop Item" parent="." unique_id=209672858 instance=ExtResource("1_lx5au")]
-layout_mode = 0
-offset_left = 107.0
-offset_top = 177.0
-offset_right = 107.0
-offset_bottom = 177.0
+[node name="Buttons" type="Node2D" parent="." unique_id=811770465]
+
+[node name="Ready" type="Label" parent="Buttons" unique_id=1433084405]
+offset_left = 481.0
+offset_top = 545.0
+offset_right = 529.0
+offset_bottom = 568.0
+text = "Ready"
+
+[node name="Label3" type="Label" parent="Buttons" unique_id=2038710069]
+offset_left = 411.0
+offset_top = 579.0
+offset_right = 496.0
+offset_bottom = 602.0
+theme_override_colors/font_color = Color(1.2032688e-06, 0.81540626, 0.2804918, 1)
+text = "Equipment"
+
+[node name="Label4" type="Label" parent="Buttons" unique_id=1320679240]
+offset_left = 523.0
+offset_top = 578.0
+offset_right = 590.0
+offset_bottom = 601.0
+text = "Location"
+
+[node name="Label5" type="Label" parent="Buttons" unique_id=1072071727]
+offset_left = 628.0
+offset_top = 577.0
+offset_right = 670.0
+offset_bottom = 600.0
+text = "Profile"
+
+[node name="Label2" type="Label" parent="Buttons" unique_id=1734946664]
+offset_left = 590.0
+offset_top = 543.0
+offset_right = 620.0
+offset_bottom = 566.0
+text = "Join"
