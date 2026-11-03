@@ -1,16 +1,19 @@
 [gd_scene format=3 uid="uid://bptpv5mo4xn3t"]
 
 [ext_resource type="Script" uid="uid://cqjqduavimtfe" path="res://scripts/shop/shop.cs" id="1_lx5au"]
+[ext_resource type="PackedScene" uid="uid://bfio0bbxocpka" path="res://scenes/shop_item.tscn" id="2_1l46r"]
+[ext_resource type="Texture2D" uid="uid://dmn5n7nv0m8rn" path="res://assets/shop/search.svg" id="2_xfvoa"]
 
-[node name="Shop" type="Control" unique_id=1269859963 node_paths=PackedStringArray("Ready", "Join", "Equipment", "Location", "Profile")]
-layout_mode = 3
-anchors_preset = 0
+[node name="Shop" type="ColorRect" unique_id=1666220886 node_paths=PackedStringArray("Ready", "Join", "Equipment", "Location", "Profile", "ShopItemsContainer", "ContinerBox")]
 script = ExtResource("1_lx5au")
 Ready = NodePath("Buttons/Ready")
 Join = NodePath("Buttons/Label2")
 Equipment = NodePath("Buttons/Label3")
 Location = NodePath("Buttons/Label4")
 Profile = NodePath("Buttons/Label5")
+ShopItemsContainer = NodePath("Shop Background/Container/ScrollContainer")
+ContinerBox = NodePath("Shop Background/Container/ScrollContainer/HBoxContainer")
+ShopItemScene = ExtResource("2_1l46r")
 
 [node name="bg" type="ColorRect" parent="." unique_id=447944387]
 layout_mode = 0
@@ -32,9 +35,15 @@ offset_bottom = 40.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Shop Background/Container" unique_id=1685130979]
 layout_mode = 0
+offset_left = 8.0
+offset_top = 45.0
 offset_right = 807.0
-offset_bottom = 495.0
+offset_bottom = 432.0
 vertical_scroll_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Shop Background/Container/ScrollContainer" unique_id=417692412]
+layout_mode = 2
+alignment = 1
 
 [node name="Total Amount" type="Panel" parent="." unique_id=885375498]
 layout_mode = 0
@@ -80,3 +89,14 @@ offset_top = 543.0
 offset_right = 620.0
 offset_bottom = 566.0
 text = "Join"
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1440718115]
+texture_filter = 2
+layout_mode = 0
+offset_left = 26.0
+offset_top = 35.0
+offset_right = 818.0
+offset_bottom = 67.0
+placeholder_text = "The name of the item"
+emoji_menu_enabled = false
+right_icon = ExtResource("2_xfvoa")
