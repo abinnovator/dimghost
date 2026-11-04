@@ -43,10 +43,11 @@ ssr_enabled = true
 ssao_enabled = true
 fog_enabled = true
 fog_mode = 1
-fog_light_color = Color(0.2106368, 0.23213801, 0.26559368, 1)
+fog_light_color = Color(0, 0, 0, 1)
 fog_density = 1.0
+fog_sky_affect = 0.0
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.1222
+volumetric_fog_density = 0.0913
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5r1h1"]
 size = Vector3(1, 0.16546631, 0.072128296)
@@ -109,7 +110,7 @@ mesh = SubResource("PlaneMesh_ej8gx")
 surface_material_override/0 = SubResource("StandardMaterial3D_r5v3i")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1107521139]
-transform = Transform3D(0.9931426, 0, 0.11690943, 0, 1, 0, -0.11690943, 0, 0.9931426, -0.1693188, 1.4593718, 2.8438628)
+transform = Transform3D(0.9931426, 0, 0.11690943, 0, 1, 0, -0.11690943, 0, 0.9931426, -0.1693188, 1.4593718, 3.1386902)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1702546043]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 3.6541948, 0)
@@ -178,7 +179,7 @@ transform = Transform3D(0.0010739766, 0, 0.02998077, 0, 0.03, 0, -0.02998077, 0,
 transform = Transform3D(-0.06744763, 0, -0.07382962, 0, 0.099999994, 0, 0.07382962, 0, -0.06744763, 5.2261777, -4.7683716e-07, -1.1243317)
 
 [node name="Menu Buttons" type="Node3D" parent="." unique_id=879609782]
-transform = Transform3D(0.9955099, 0, 0.09465755, 0, 1, 0, -0.09465755, 0, 0.9955099, 0.8421781, -0.45722884, -0.5987072)
+transform = Transform3D(0.9955099, 0, 0.09465755, 0, 1, 0, -0.09465755, 0, 0.9955099, 0.8421781, -0.45722884, 0.10261345)
 
 [node name="Equipment" type="Label3D" parent="Menu Buttons" unique_id=133021378]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1663246, 1, 1.2602041)

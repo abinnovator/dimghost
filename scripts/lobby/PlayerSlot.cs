@@ -49,6 +49,9 @@ public partial class PlayerSlot : Node3D
 		// Username
 		if (!EmptySlot)
 		{
+			UsernameLabel.Show();
+			LevelLabel.Show();
+			StatusLabel.Show();
 			if (IsHost)
 			{
 				UsernameLabel.Text = $"{PlayerUsername} | Leader";
@@ -73,7 +76,9 @@ public partial class PlayerSlot : Node3D
 				StatusLabel.Modulate = Color.FromHtml("#ff0000");
 			}
 		}else{
-			// Hide all labels
+			UsernameLabel.Text = "Open slot";
+			LevelLabel.Text = "";
+			StatusLabel.Text = "";
 			UsernameLabel.Hide();
 			LevelLabel.Hide();
 			StatusLabel.Hide();

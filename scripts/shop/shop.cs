@@ -26,6 +26,8 @@ public partial class shop : ColorRect
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+	Equipment.MouseFilter = Control.MouseFilterEnum.Stop;
+	Equipment.GuiInput += OnEquipmentGuiInput;
 
 		//  First we have to read all the items
 		Dictionary<string, ShopItemType> shopItems = getShopItems();
@@ -53,8 +55,14 @@ public partial class shop : ColorRect
 		Dictionary<string, ShopItemType> CurrentItemsDictionary = JsonSerializer.Deserialize<Dictionary<string, ShopItemType>>(currentItems);
 		return CurrentItemsDictionary;
 	}
-	public void OnEquipmentPressed()
+
+	private void OnEquipmentGuiInput(InputEvent @event)
+	{
+	if (@event is InputEventMouseButton mouse &&
+		mouse.Pressed &&
+		mouse.ButtonIndex == MouseButton.Left)
 	{
 		QueueFree();
+	}
 	}
 }

@@ -18,7 +18,7 @@ public partial class Lobby : Node3D
 	[Export] public Area3D ShopArea;
 	[Export] public Area3D JoinArea;
 	[Export] public CanvasLayer UiLayer;
-	private bool isShopOpen = false;
+	[Export] public bool isShopOpen = false;
 	private bool isJoinMenuOpen = false;
 
 
@@ -33,24 +33,8 @@ public partial class Lobby : Node3D
 		ShopArea.InputEvent += OnShopInput;
 		JoinArea.InputEvent += OnJoinInput;
 
-		UserSave host = NetworkManager.Instance.Players[1];
-		var index = 0;
-		foreach (UserSave player in NetworkManager.Instance.Players.Values)
-		{
-
-			PlayerSlots[index].PlayerUsername = player.username;
-			PlayerSlots[index].PlayerLevel = player.Xp / 1000 + 1;
-			PlayerSlots[index].UpdateDisplay();
-			index++;
-
-		}
-		for (; index < PlayerSlots.Length; index++)
-		{
-			PlayerSlots[index].EmptySlot = true;
-			PlayerSlots[index].UpdateDisplay();
-		}
-		// The hosts slot set to leader enabled
-		PlayerSlots[0].IsHost = true;
+		NetworkManager.Instance.PlayersChanged += RefreshPlayerSlots;
+		RefreshPlayerSlots();
 
 	}
 
@@ -58,6 +42,8 @@ public partial class Lobby : Node3D
 	{
 		ShopArea.InputEvent -= OnShopInput;
 		JoinArea.InputEvent -= OnJoinInput;
+		if (NetworkManager.Instance != null)
+			NetworkManager.Instance.PlayersChanged -= RefreshPlayerSlots;
 
 	}
 
@@ -78,38 +64,72 @@ public partial class Lobby : Node3D
 
 	private void OpenShop()
 	{
-		if (isShopOpen){
-			if (IsInstanceValid(_openShop))
-				_openShop.QueueFree()
-			;else{
-				return;
-			}
+		if (IsInstanceValid(_openShop))
+		{
+			_openShop.QueueFree();
+			_openShop = null;
+			isShopOpen = false;
+			return;
 		}
-		else{
-			isShopOpen = true;
-			if (IsInstanceValid(_openShop)) return;
-			var shopScene = GD.Load<PackedScene>(ShopScenePath);
-			_openShop = shopScene.Instantiate();
-			UiLayer.AddChild(_openShop);
+
+		var shopScene = GD.Load<PackedScene>(ShopScenePath);
+		if (shopScene == null)
+		{
+			GD.PrintErr($"Could not load shop scene: {ShopScenePath}");
+			return;
 		}
+
+		_openShop = shopScene.Instantiate();
+		UiLayer.AddChild(_openShop);
+		isShopOpen = true;
 	}
 	private void OpenJoinMenu()
 	{
-		if (isJoinMenuOpen)
+		if (IsInstanceValid(_openJoinScene))
 		{
-			if (IsInstanceValid(_openJoinScene))
-				_openJoinScene.QueueFree()
-			;else{
-				return;
-			}
+			_openJoinScene.QueueFree();
+			_openJoinScene = null;
+			isJoinMenuOpen = false;
+			return;
 		}
-		else
+
+		var joinScene = GD.Load<PackedScene>(JoinScenePath);
+		if (joinScene == null)
 		{
-			isJoinMenuOpen = true;
-			if (IsInstanceValid(_openJoinScene)) return;
-			var joinScene = GD.Load<PackedScene>(JoinScenePath);
-			_openJoinScene = joinScene.Instantiate();
-			UiLayer.AddChild(_openJoinScene);
+			GD.PrintErr($"Could not load join menu: {JoinScenePath}");
+			return;
+		}
+
+		_openJoinScene = joinScene.Instantiate();
+		UiLayer.AddChild(_openJoinScene);
+		isJoinMenuOpen = true;
+	}
+
+	private void RefreshPlayerSlots()
+	{
+		if (PlayerSlots == null || NetworkManager.Instance == null) return;
+
+		var players = new List<KeyValuePair<long, UserSave>>(NetworkManager.Instance.Players);
+		players.Sort((a, b) => a.Key.CompareTo(b.Key));
+		for (int i = 0; i < PlayerSlots.Length; i++)
+		{
+			PlayerSlot slot = PlayerSlots[i];
+			if (i < players.Count)
+			{
+				var player = players[i];
+				slot.EmptySlot = false;
+				slot.IsHost = player.Key == 1;
+				slot.PlayerUsername = player.Value.username;
+				slot.PlayerLevel = player.Value.Xp / 1000 + 1;
+			}
+			else
+			{
+				slot.EmptySlot = true;
+				slot.IsHost = false;
+				slot.PlayerUsername = "";
+				slot.PlayerLevel = 0;
+			}
+			slot.UpdateDisplay();
 		}
 	}
 	// Function for handling setting the location
