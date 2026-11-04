@@ -48,10 +48,22 @@ fog_density = 1.0
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.1222
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ej8gx"]
-size = Vector3(0.41558838, 0.17993164, 0.061168946)
+[sub_resource type="BoxShape3D" id="BoxShape3D_5r1h1"]
+size = Vector3(1, 0.16546631, 0.072128296)
 
-[node name="Lobby" type="Node3D" unique_id=1264441273 node_paths=PackedStringArray("PlayerSlots", "PlayerSlot1", "PlayerSlot2", "PlayerSlot3", "PlayerSlot4", "Shop", "Equipment", "Join", "Location", "ShopArea", "UiLayer")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_cbh0o"]
+size = Vector3(0.50183105, 0.1159668, 0.078125)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sdpmw"]
+size = Vector3(0.35205078, 0.17858887, 0.050109863)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7dug0"]
+size = Vector3(0.6845703, 0.14221191, 0.16430664)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ej8gx"]
+size = Vector3(0.44314575, 0.17993164, 0.061168946)
+
+[node name="Lobby" type="Node3D" unique_id=1264441273 node_paths=PackedStringArray("PlayerSlots", "PlayerSlot1", "PlayerSlot2", "PlayerSlot3", "PlayerSlot4", "Shop", "Equipment", "Join", "Location", "ShopArea", "JoinArea", "UiLayer")]
 script = ExtResource("1_ncsg4")
 PlayerSlots = [NodePath("PlayerSlot"), NodePath("PlayerSlot2"), NodePath("PlayerSlot3"), NodePath("PlayerSlot4")]
 PlayerSlot1 = NodePath("PlayerSlot")
@@ -63,6 +75,7 @@ Equipment = NodePath("Menu Buttons/Equipment")
 Join = NodePath("Menu Buttons/Join")
 Location = NodePath("Menu Buttons/Location")
 ShopArea = NodePath("Menu Buttons/Store/Area3D")
+JoinArea = NodePath("Menu Buttons/Join/Area3D")
 UiLayer = NodePath("CanvasLayer")
 
 [node name="Concrete platform" type="MeshInstance3D" parent="." unique_id=1039900164]
@@ -97,7 +110,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_r5v3i")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1107521139]
 transform = Transform3D(0.9931426, 0, 0.11690943, 0, 1, 0, -0.11690943, 0, 0.9931426, -0.1693188, 1.4593718, 2.8438628)
-fov = 84.1
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1702546043]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 3.6541948, 0)
@@ -172,27 +184,51 @@ transform = Transform3D(0.9955099, 0, 0.09465755, 0, 1, 0, -0.09465755, 0, 0.995
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1663246, 1, 1.2602041)
 text = "Equipment"
 
+[node name="Area3D" type="Area3D" parent="Menu Buttons/Equipment" unique_id=1117491903]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Menu Buttons/Equipment/Area3D" unique_id=733931065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.34465e-07, -0.0184021, -0.018517077)
+shape = SubResource("BoxShape3D_5r1h1")
+
 [node name="Ready" type="Label3D" parent="Menu Buttons" unique_id=502168765]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.622293, 1.2214758, 1.2602041)
 text = "Ready"
 
+[node name="Area3D" type="Area3D" parent="Menu Buttons/Ready" unique_id=130408172]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Menu Buttons/Ready/Area3D" unique_id=759495859]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012452602, 0.029595315, 0.045954347)
+shape = SubResource("BoxShape3D_cbh0o")
+
 [node name="Join" type="Label3D" parent="Menu Buttons" unique_id=1208101355]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.516894, 1.2214758, 1.2602041)
 text = "Join"
+
+[node name="Area3D" type="Area3D" parent="Menu Buttons/Join" unique_id=2129514221]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Menu Buttons/Join/Area3D" unique_id=1728443305]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010862052, -0.012878418, -0.023599803)
+shape = SubResource("BoxShape3D_sdpmw")
 
 [node name="Location" type="Label3D" parent="Menu Buttons" unique_id=1696186365]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0762687, 1, 1.2602041)
 modulate = Color(0.7204463, 0, 0.18085074, 1)
 text = "Location"
 
+[node name="Area3D" type="Area3D" parent="Menu Buttons/Location" unique_id=2078802444]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Menu Buttons/Location/Area3D" unique_id=470643751]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013891369, -0.024719238, -0.03910631)
+shape = SubResource("BoxShape3D_7dug0")
+
 [node name="Store" type="Label3D" parent="Menu Buttons" unique_id=1516508076]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18392813, 1, 1.2602041)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18362564, 1, 1.2602329)
 text = "Store"
 
 [node name="Area3D" type="Area3D" parent="Menu Buttons/Store" unique_id=952623293]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Menu Buttons/Store/Area3D" unique_id=1568039221]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.052090526, 0.011108398, 0.013718486)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03831184, 0.011108398, 0.013718605)
 shape = SubResource("BoxShape3D_ej8gx")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1502908464]

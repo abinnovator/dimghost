@@ -3,12 +3,14 @@
 [ext_resource type="Script" uid="uid://d23s8rxj18v6c" path="res://scripts/lobby/ShopItem.cs" id="1_lrx6i"]
 [ext_resource type="Texture2D" uid="uid://b8a1mg6i8ptb7" path="res://assets/shop/EMF.png" id="2_btjjm"]
 
-[node name="Shop Item" type="Control" unique_id=209672858 node_paths=PackedStringArray("NameLabel", "MoneyLabel")]
+[node name="Shop Item" type="Control" unique_id=209672858 node_paths=PackedStringArray("NameLabel", "MoneyLabel", "MaxQuantity", "ItemIcon")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_lrx6i")
 NameLabel = NodePath("Label")
 MoneyLabel = NodePath("Label2")
+MaxQuantity = NodePath("Quantity/ColorRect/Label3")
+ItemIcon = NodePath("Sprite2D")
 
 [node name="Control" type="Panel" parent="." unique_id=991797475]
 layout_mode = 0

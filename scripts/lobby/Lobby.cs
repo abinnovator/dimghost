@@ -16,15 +16,22 @@ public partial class Lobby : Node3D
 	[Export] public Label3D Join;
 	[Export] public Label3D Location;
 	[Export] public Area3D ShopArea;
+	[Export] public Area3D JoinArea;
 	[Export] public CanvasLayer UiLayer;
+	private bool isShopOpen = false;
+	private bool isJoinMenuOpen = false;
+
 
 	private const string ShopScenePath = "res://scenes/shop.tscn";
+	private const string JoinScenePath = "res://scenes/join_menu.tscn";
 	private Node _openShop;
+	private Node _openJoinScene;
 
 	public override void _Ready()
 	{
 		GetViewport().PhysicsObjectPicking = true;
 		ShopArea.InputEvent += OnShopInput;
+		JoinArea.InputEvent += OnJoinInput;
 
 		UserSave host = NetworkManager.Instance.Players[1];
 		var index = 0;
@@ -50,6 +57,8 @@ public partial class Lobby : Node3D
 	public override void _ExitTree()
 	{
 		ShopArea.InputEvent -= OnShopInput;
+		JoinArea.InputEvent -= OnJoinInput;
+
 	}
 
 	private void OnShopInput(Node camera, InputEvent @event, Vector3 position, Vector3 normal, long shapeIdx)
@@ -59,13 +68,49 @@ public partial class Lobby : Node3D
 			OpenShop();
 		}
 	}
+	private void OnJoinInput(Node camera, InputEvent @event, Vector3 position, Vector3 normal, long shapeIdx){
+		if (@event is InputEventMouseButton mouse && mouse.Pressed && mouse.ButtonIndex == MouseButton.Left)
+		{
+			OpenJoinMenu();
+		}
+	}
+
 
 	private void OpenShop()
 	{
-		if (IsInstanceValid(_openShop)) return;
-		var shopScene = GD.Load<PackedScene>(ShopScenePath);
-		_openShop = shopScene.Instantiate();
-		UiLayer.AddChild(_openShop);
+		if (isShopOpen){
+			if (IsInstanceValid(_openShop))
+				_openShop.QueueFree()
+			;else{
+				return;
+			}
+		}
+		else{
+			isShopOpen = true;
+			if (IsInstanceValid(_openShop)) return;
+			var shopScene = GD.Load<PackedScene>(ShopScenePath);
+			_openShop = shopScene.Instantiate();
+			UiLayer.AddChild(_openShop);
+		}
+	}
+	private void OpenJoinMenu()
+	{
+		if (isJoinMenuOpen)
+		{
+			if (IsInstanceValid(_openJoinScene))
+				_openJoinScene.QueueFree()
+			;else{
+				return;
+			}
+		}
+		else
+		{
+			isJoinMenuOpen = true;
+			if (IsInstanceValid(_openJoinScene)) return;
+			var joinScene = GD.Load<PackedScene>(JoinScenePath);
+			_openJoinScene = joinScene.Instantiate();
+			UiLayer.AddChild(_openJoinScene);
+		}
 	}
 	// Function for handling setting the location
 

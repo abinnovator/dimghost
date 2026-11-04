@@ -14,6 +14,7 @@ public partial class shop : ColorRect
 	[Export] public Label Profile;
 	[Export] public ScrollContainer ShopItemsContainer;
 	[Export] public HBoxContainer ContinerBox;
+	[Export] public Area2D EquipmentArea;
 	public class ShopItemType
 	{
 		public int cost { set; get; }
@@ -25,6 +26,7 @@ public partial class shop : ColorRect
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+
 		//  First we have to read all the items
 		Dictionary<string, ShopItemType> shopItems = getShopItems();
 		//  Then we have to render them with the shjop item in the hbox
@@ -41,7 +43,8 @@ public partial class shop : ColorRect
 	{
 
 	}
-	public Dictionary<string,ShopItemType> getShopItems() {
+	public Dictionary<string, ShopItemType> getShopItems()
+	{
 		// Read all the items i put in the json file
 		using var file = Godot.FileAccess.Open("res://datasets/shop.json", Godot.FileAccess.ModeFlags.Read);
 		if (file == null) { GD.PrintErr(Godot.FileAccess.GetOpenError()); return new(); }
@@ -49,5 +52,9 @@ public partial class shop : ColorRect
 		// Turn it into a object/distionary
 		Dictionary<string, ShopItemType> CurrentItemsDictionary = JsonSerializer.Deserialize<Dictionary<string, ShopItemType>>(currentItems);
 		return CurrentItemsDictionary;
+	}
+	public void OnEquipmentPressed()
+	{
+		QueueFree();
 	}
 }
