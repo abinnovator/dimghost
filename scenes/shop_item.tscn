@@ -3,14 +3,16 @@
 [ext_resource type="Script" uid="uid://d23s8rxj18v6c" path="res://scripts/lobby/ShopItem.cs" id="1_lrx6i"]
 [ext_resource type="Texture2D" uid="uid://b8a1mg6i8ptb7" path="res://assets/shop/EMF.png" id="2_btjjm"]
 
-[node name="Shop Item" type="Control" unique_id=209672858 node_paths=PackedStringArray("NameLabel", "MoneyLabel", "MaxQuantity", "ItemIcon")]
+[node name="Shop Item" type="Control" unique_id=209672858 node_paths=PackedStringArray("NameLabel", "MoneyLabel", "MaxQuantity", "ItemIcon", "IncreaseQuantityButton", "DecreaseQuantityButton")]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_lrx6i")
 NameLabel = NodePath("Label")
 MoneyLabel = NodePath("Label2")
-MaxQuantity = NodePath("Quantity/ColorRect/Label3")
+MaxQuantity = NodePath("BuyRemoveButtons/Quantity/ColorRect/Label3")
 ItemIcon = NodePath("Sprite2D")
+IncreaseQuantityButton = NodePath("BuyRemoveButtons/Quantity/Add")
+DecreaseQuantityButton = NodePath("BuyRemoveButtons/Quantity/Remove")
 
 [node name="Control" type="Panel" parent="." unique_id=991797475]
 layout_mode = 0
@@ -39,16 +41,20 @@ position = Vector2(82, 108)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_btjjm")
 
-[node name="Quantity" type="Node2D" parent="." unique_id=848127784]
+[node name="BuyRemoveButtons" type="Node2D" parent="." unique_id=73788896]
 
-[node name="ColorRect" type="ColorRect" parent="Quantity" unique_id=1649002800]
+[node name="Quantity" type="Node2D" parent="BuyRemoveButtons" unique_id=848127784]
+position = Vector2(0, 29)
+
+[node name="ColorRect" type="ColorRect" parent="BuyRemoveButtons/Quantity" unique_id=1649002800]
 offset_left = 10.0
 offset_top = 172.0
 offset_right = 160.0
 offset_bottom = 202.0
 color = Color(0.21050721, 0.21050721, 0.21050721, 1)
+metadata/_edit_use_anchors_ = true
 
-[node name="Label3" type="Label" parent="Quantity/ColorRect" unique_id=817718842]
+[node name="Label3" type="Label" parent="BuyRemoveButtons/Quantity/ColorRect" unique_id=817718842]
 layout_mode = 0
 offset_left = 25.0
 offset_top = 5.0
@@ -56,24 +62,20 @@ offset_right = 117.0
 offset_bottom = 28.0
 text = "1/2"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="Add" type="Button" parent="Quantity" unique_id=1844214667]
+[node name="Add" type="Button" parent="BuyRemoveButtons/Quantity" unique_id=1844214667]
 offset_left = 9.0
 offset_top = 171.0
 offset_right = 40.0
 offset_bottom = 202.0
 text = "+"
+metadata/_edit_use_anchors_ = true
 
-[node name="Add2" type="Button" parent="Quantity" unique_id=1193660313]
-offset_left = 9.0
-offset_top = 208.0
-offset_right = 160.0
-offset_bottom = 239.0
-text = "Buy now"
-
-[node name="Remove" type="Button" parent="Quantity" unique_id=2121405769]
+[node name="Remove" type="Button" parent="BuyRemoveButtons/Quantity" unique_id=2121405769]
 offset_left = 129.0
 offset_top = 171.0
 offset_right = 160.0
 offset_bottom = 202.0
 text = "-"
+metadata/_edit_use_anchors_ = true

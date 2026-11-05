@@ -1,3 +1,4 @@
+using dimghost;
 using Godot;
 using System;
 using System.Collections.Generic;
@@ -15,13 +16,7 @@ public partial class shop : ColorRect
 	[Export] public ScrollContainer ShopItemsContainer;
 	[Export] public HBoxContainer ContinerBox;
 	[Export] public Area2D EquipmentArea;
-	public class ShopItemType
-	{
-		public int cost { set; get; }
-		public int maxQuantity { set; get; }
-		public string imageName { set; get; }
-		public int levelMin { set; get; }
-	}
+
 	[Export] public PackedScene ShopItemScene;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -35,7 +30,9 @@ public partial class shop : ColorRect
 		foreach (var (name, item) in shopItems){
 			var card = ShopItemScene.Instantiate<ShopItem>();
 			ContinerBox.AddChild(card);
-			card.RefreshValues(name, price: item.cost, maxQuantity: item.maxQuantity, amountBought: 0, assetName: item.imageName);
+			// Lets get the amoutn bought
+			int AmountBought = NetworkManager.Instance.GetAmountBought(item);
+			card.RefreshValues(name, price: item.cost, maxQuantity: item.MaxQuantity, amountBought:AmountBought , assetName: item.ItemSprite, shopItem:item);
 		}
 
 	}
