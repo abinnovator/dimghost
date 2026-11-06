@@ -180,6 +180,7 @@ transform = Transform3D(-0.06744763, 0, -0.07382962, 0, 0.099999994, 0, 0.073829
 
 [node name="Menu Buttons" type="Node3D" parent="." unique_id=879609782]
 transform = Transform3D(0.9955099, 0, 0.09465755, 0, 1, 0, -0.09465755, 0, 0.9955099, 0.8421781, -0.45722884, 0.10261345)
+visible = false
 
 [node name="Equipment" type="Label3D" parent="Menu Buttons" unique_id=133021378]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1663246, 1, 1.2602041)

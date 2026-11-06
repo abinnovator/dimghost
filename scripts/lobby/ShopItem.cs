@@ -20,21 +20,21 @@ public partial class ShopItem : Control
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
-    {
+	{
 		IncreaseQuantityButton.Pressed += BuyItem;
 		NetworkManager.Instance.ShopPurchaseChanged += OnShopPurchaseChanged;
 	}
 
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)
-    {
-    }
-    public override void _ExitTree()
-    {
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+	public override void _ExitTree()
+	{
 		IncreaseQuantityButton.Pressed -= BuyItem;
 		if (NetworkManager.Instance != null)
 			NetworkManager.Instance.ShopPurchaseChanged -= OnShopPurchaseChanged;
-    }
+	}
 	// Make a custom to handle buying of items
 	public void BuyItem(){
 		if (ShopItemObj != null)
@@ -55,12 +55,12 @@ public partial class ShopItem : Control
 		MaxQuantity.Text = $"{amountBought}/{maxQuantity}";
 		Texture2D ItemTexture = GD.Load<Texture2D>($"{assetPath}/{assetName}");
 		ItemIcon.Texture = ItemTexture;
-        ShopItemObj = shopItem;
+		ShopItemObj = shopItem;
 		IncreaseQuantityButton.Disabled = amountBought >= maxQuantity;
-        if (amountBought == 0)
-        {
-            DecreaseQuantityButton.Disabled = true;
-        }
+		if (amountBought == 0)
+		{
+			DecreaseQuantityButton.Disabled = true;
+		}
 		else
 		{
 			DecreaseQuantityButton.Disabled = false;

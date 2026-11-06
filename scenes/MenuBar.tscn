@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://wnvd6xx180t1"]
+
+[ext_resource type="Script" uid="uid://bq505ycg4gw7a" path="res://scripts/lobby/MenuBar.cs" id="1_uxwis"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ej8gx"]
+size = Vector2(58, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dug0"]
+size = Vector2(87, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdpmw"]
+size = Vector2(68, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5r1h1"]
+size = Vector2(51, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbh0o"]
+size = Vector2(34, 20)
+
+[node name="Buttons" type="Node2D" unique_id=2121333056 node_paths=PackedStringArray("ReadyLabel", "EquipmentLabel", "LocationLabel", "ProfileLabel", "JoinLabel", "UiLayer")]
+script = ExtResource("1_uxwis")
+ReadyLabel = NodePath("Ready")
+EquipmentLabel = NodePath("Equipmenjt")
+LocationLabel = NodePath("Location")
+ProfileLabel = NodePath("Profile")
+JoinLabel = NodePath("Join")
+UiLayer = NodePath("CanvasLayer")
+
+[node name="Ready" type="Label" parent="." unique_id=539667207]
+offset_left = 481.0
+offset_top = 545.0
+offset_right = 529.0
+offset_bottom = 568.0
+text = "Ready"
+
+[node name="Area2D" type="Area2D" parent="Ready" unique_id=1838312383]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ready/Area2D" unique_id=1536273691]
+position = Vector2(25, 13)
+shape = SubResource("RectangleShape2D_ej8gx")
+
+[node name="Equipmenjt" type="Label" parent="." unique_id=287487520]
+offset_left = 411.0
+offset_top = 579.0
+offset_right = 496.0
+offset_bottom = 602.0
+text = "Equipment"
+
+[node name="Area2D" type="Area2D" parent="Equipmenjt" unique_id=1913706592]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Equipmenjt/Area2D" unique_id=963880702]
+position = Vector2(43.5, 12)
+shape = SubResource("RectangleShape2D_7dug0")
+
+[node name="Location" type="Label" parent="." unique_id=1415497031]
+offset_left = 523.0
+offset_top = 578.0
+offset_right = 590.0
+offset_bottom = 601.0
+text = "Location"
+
+[node name="Area2D" type="Area2D" parent="Location" unique_id=982804194]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Location/Area2D" unique_id=664304337]
+position = Vector2(33, 13)
+shape = SubResource("RectangleShape2D_sdpmw")
+
+[node name="Profile" type="Label" parent="." unique_id=1840897881]
+offset_left = 628.0
+offset_top = 577.0
+offset_right = 670.0
+offset_bottom = 600.0
+text = "Profile"
+
+[node name="Area2D" type="Area2D" parent="Profile" unique_id=1784954393]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Profile/Area2D" unique_id=454219012]
+position = Vector2(25.5, 12)
+shape = SubResource("RectangleShape2D_5r1h1")
+
+[node name="Join" type="Label" parent="." unique_id=1386701883]
+offset_left = 590.0
+offset_top = 543.0
+offset_right = 620.0
+offset_bottom = 566.0
+text = "Join"
+
+[node name="Area2D" type="Area2D" parent="Join" unique_id=1549519030]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Join/Area2D" unique_id=1528053534]
+position = Vector2(14, 13)
+shape = SubResource("RectangleShape2D_cbh0o")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1749954356]

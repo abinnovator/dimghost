@@ -79,3 +79,5 @@ offset_right = 160.0
 offset_bottom = 202.0
 text = "-"
 metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=188395500]

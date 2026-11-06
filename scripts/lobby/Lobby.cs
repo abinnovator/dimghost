@@ -22,8 +22,10 @@ public partial class Lobby : Node3D
 	private bool isJoinMenuOpen = false;
 
 
+	private const string MenuScenePath = "res://scenes/MenuBar.tscn";
 	private const string ShopScenePath = "res://scenes/shop.tscn";
 	private const string JoinScenePath = "res://scenes/join_menu.tscn";
+	private Node _Menu;
 	private Node _openShop;
 	private Node _openJoinScene;
 
@@ -35,6 +37,7 @@ public partial class Lobby : Node3D
 
 		NetworkManager.Instance.PlayersChanged += RefreshPlayerSlots;
 		RefreshPlayerSlots();
+		LoadMenu();
 
 	}
 
@@ -60,7 +63,17 @@ public partial class Lobby : Node3D
 			OpenJoinMenu();
 		}
 	}
+	private void LoadMenu(){
+		var menuScene = GD.Load<PackedScene>(MenuScenePath);
+		if (menuScene == null)
+		{
+			GD.PrintErr($"Could not load shop scene: {MenuScenePath}");
+			return;
+		}
 
+		_Menu = menuScene.Instantiate();
+		UiLayer.AddChild(_Menu);
+	}
 
 	private void OpenShop()
 	{

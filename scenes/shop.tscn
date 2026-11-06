@@ -70,6 +70,20 @@ offset_top = 29.0
 offset_right = 1129.0
 offset_bottom = 519.0
 
+[node name="Container" type="Control" parent="Total Amount" unique_id=333899149]
+anchors_preset = 0
+offset_right = 282.0
+offset_bottom = 490.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Total Amount/Container" unique_id=407914577]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Total Amount/Container/ScrollContainer" unique_id=1646076205]
+layout_mode = 2
+theme_override_constants/separation = 16
+
 [node name="Buttons" type="Node2D" parent="." unique_id=811770465]
 
 [node name="Ready" type="Label" parent="Buttons" unique_id=1433084405]
@@ -150,3 +164,9 @@ emoji_menu_enabled = false
 right_icon = ExtResource("2_xfvoa")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=396827612]
+
+[node name="Label" type="Label" parent="." unique_id=218002289]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Team Euipment"

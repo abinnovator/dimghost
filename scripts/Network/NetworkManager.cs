@@ -207,7 +207,9 @@ public partial class NetworkManager : Node
         return BoughtItems;
     }
     // Get how much of one item was bought
-    public int GetAmountBought(ShopItemType item){
+    public int GetAmountBought(ShopItemType item)
+    {
         return BuyersByItem.TryGetValue(item.Name, out var buyers) ? buyers.Count : 0;
     }
+
 }
