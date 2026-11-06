@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dgxynaqxah8ny"]
+
+[node name="MessageContainer" type="Node2D" unique_id=1658657383]
+
+[node name="Panel" type="Panel" parent="." unique_id=1263722830]
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 168.0
+offset_bottom = 20.0
+
+[node name="sender" type="Label" parent="." unique_id=624160795]
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 78.0
+offset_bottom = 18.0
+theme_override_font_sizes/font_size = 10
+text = "[Dragongoder]"
+
+[node name="message" type="Label" parent="." unique_id=912044284]
+offset_left = 79.0
+offset_top = 4.0
+offset_right = 149.0
+offset_bottom = 18.0
+theme_override_font_sizes/font_size = 10
+text = "[Dragongoder]"

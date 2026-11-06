@@ -22,7 +22,8 @@ public partial class NetworkManager : Node
     public event Action<string> ConnectionStatusChanged;
     public event Action PlayersChanged;
     public event Action<string, int> ShopPurchaseChanged;
-
+    // Create a list for chat messages
+    private List<ChatMessage> Chatmessages = new();
     public override void _EnterTree()
     {
         Instance = this;

@@ -16,3 +16,8 @@ public class BoughtShopItem
     public ShopItem Shopitem { get; set; }
     public int AmountBought { get; set; }
 }
+public class ChatMessage {
+    public string text { get; set; }
+    public string username { set; get; }
+
+}

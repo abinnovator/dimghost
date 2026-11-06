@@ -33,10 +33,19 @@ public partial class MenuBar : Node2D
 		EquipmentLabel.GuiInput += ToggleShop;
 
 	}
-	public override void _ExitTree(){
-		JoinLabel.GuiInput -= ToggleJoinMenu;
-		EquipmentLabel.GuiInput -= ToggleShop;
+    public override void _ExitTree()
+    {
+        JoinLabel.GuiInput -= ToggleJoinMenu;
+        EquipmentLabel.GuiInput -= ToggleShop;
 
+
+    }
+	// Todo: Add ready/unready toggle feature
+	public void ToggleStatus(InputEvent @event){
+        if (@event is InputEventMouseButton mouse &&
+                  mouse.Pressed &&
+                  mouse.ButtonIndex == MouseButton.Left)
+        { }
 	}
 	// Join Menu Open
 	public void ToggleJoinMenu(InputEvent @event)

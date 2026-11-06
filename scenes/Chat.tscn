@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dchaa3ldxjk0i"]
+
+[node name="Chat" type="Node2D" unique_id=2045484949]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=550685733]
+
+[node name="BG" type="Panel" parent="." unique_id=788674353]
+offset_right = 172.0
+offset_bottom = 148.0
+
+[node name="Label" type="Label" parent="." unique_id=1984239255]
+offset_left = 4.0
+offset_right = 44.0
+offset_bottom = 17.0
+theme_override_colors/font_color = Color(0.35686275, 0.35686275, 0.35686275, 1)
+theme_override_font_sizes/font_size = 12
+text = "Chat"
+
+[node name="Top Border" type="Line2D" parent="." unique_id=20271808]
+position = Vector2(0.011428595, -6)
+scale = Vector2(1.0057143, 1)
+points = PackedVector2Array(0, 23, 11, 23, 105, 23, 126, 23, 171, 23)
+width = 1.0
+default_color = Color(0.35686275, 0.35686275, 0.35686275, 1)
+
+[node name="Bottom Border" type="Line2D" parent="." unique_id=1064454818]
+position = Vector2(0.011428595, 99)
+scale = Vector2(1.0057143, 1)
+points = PackedVector2Array(0, 23, 11, 23, 105, 23, 126, 23, 171, 23)
+width = 1.0
+default_color = Color(0.35719082, 0.35719085, 0.3571908, 1)
+
+[node name="MessagesOuterContainer" type="Control" parent="." unique_id=1615448407]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 18.0
+offset_right = 172.0
+offset_bottom = 121.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MessagesOuterContainer" unique_id=1170232047]
+layout_mode = 0
+offset_right = 172.0
+offset_bottom = 104.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MessagesOuterContainer/ScrollContainer" unique_id=632149349]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Input" type="LineEdit" parent="." unique_id=785659888]
+offset_left = 2.0
+offset_top = 125.0
+offset_right = 148.0
+offset_bottom = 145.0
+theme_override_font_sizes/font_size = 8
+virtual_keyboard_enabled = false
+
+[node name="Button" type="Button" parent="." unique_id=1877056371]
+offset_left = 149.0
+offset_top = 125.0
+offset_right = 171.0
+offset_bottom = 145.0
+theme_override_font_sizes/font_size = 8
+text = "->"

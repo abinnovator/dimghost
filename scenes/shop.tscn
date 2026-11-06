@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cqjqduavimtfe" path="res://scripts/shop/shop.cs" id="1_lx5au"]
 [ext_resource type="PackedScene" uid="uid://bfio0bbxocpka" path="res://scenes/shop_item.tscn" id="2_1l46r"]
 [ext_resource type="Texture2D" uid="uid://dmn5n7nv0m8rn" path="res://assets/shop/search.svg" id="2_xfvoa"]
+[ext_resource type="PackedScene" uid="uid://dvxl37563ogk8" path="res://scenes/shop_cart_item.tscn" id="3_032fp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ej8gx"]
 size = Vector2(58, 20)
@@ -19,7 +20,7 @@ size = Vector2(51, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbh0o"]
 size = Vector2(34, 20)
 
-[node name="Shop" type="ColorRect" unique_id=1666220886 node_paths=PackedStringArray("Ready", "Join", "Equipment", "Location", "Profile", "ShopItemsContainer", "ContinerBox", "EquipmentArea")]
+[node name="Shop" type="ColorRect" unique_id=1666220886 node_paths=PackedStringArray("Ready", "Join", "Equipment", "Location", "Profile", "ShopItemsContainer", "ContinerBox", "cart", "EquipmentArea")]
 script = ExtResource("1_lx5au")
 Ready = NodePath("Buttons/Ready")
 Join = NodePath("Buttons/Join")
@@ -28,8 +29,10 @@ Location = NodePath("Buttons/Location")
 Profile = NodePath("Buttons/Profile")
 ShopItemsContainer = NodePath("Shop Background/Container/ScrollContainer")
 ContinerBox = NodePath("Shop Background/Container/ScrollContainer/HBoxContainer")
+cart = NodePath("Team Inventory/Container/ScrollContainer/VBoxContainer")
 EquipmentArea = NodePath("Buttons/Equipmenjt/Area2D")
 ShopItemScene = ExtResource("2_1l46r")
+CartShopItem = ExtResource("3_032fp")
 
 [node name="bg" type="ColorRect" parent="." unique_id=447944387]
 layout_mode = 0
@@ -63,28 +66,31 @@ layout_mode = 2
 theme_override_constants/separation = 180
 alignment = 1
 
-[node name="Total Amount" type="Panel" parent="." unique_id=885375498]
+[node name="Team Inventory" type="Panel" parent="." unique_id=885375498]
 layout_mode = 0
 offset_left = 847.0
 offset_top = 29.0
 offset_right = 1129.0
 offset_bottom = 519.0
 
-[node name="Container" type="Control" parent="Total Amount" unique_id=333899149]
+[node name="Container" type="Control" parent="Team Inventory" unique_id=333899149]
 anchors_preset = 0
+offset_top = 38.0
 offset_right = 282.0
 offset_bottom = 490.0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Total Amount/Container" unique_id=407914577]
+[node name="ScrollContainer" type="ScrollContainer" parent="Team Inventory/Container" unique_id=407914577]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 281.0
+offset_bottom = 452.0
+horizontal_scroll_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Total Amount/Container/ScrollContainer" unique_id=1646076205]
+[node name="VBoxContainer" type="VBoxContainer" parent="Team Inventory/Container/ScrollContainer" unique_id=1646076205]
 layout_mode = 2
 theme_override_constants/separation = 16
 
 [node name="Buttons" type="Node2D" parent="." unique_id=811770465]
+visible = false
 
 [node name="Ready" type="Label" parent="Buttons" unique_id=1433084405]
 offset_left = 481.0
@@ -167,6 +173,8 @@ right_icon = ExtResource("2_xfvoa")
 
 [node name="Label" type="Label" parent="." unique_id=218002289]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 854.0
+offset_top = 37.0
+offset_right = 976.0
+offset_bottom = 60.0
 text = "Team Euipment"

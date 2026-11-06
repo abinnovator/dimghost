@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dvxl37563ogk8"]
+
+[ext_resource type="Script" uid="uid://bbe07x0dx86w6" path="res://scripts/shop/ShopCartItem.cs" id="1_imlb6"]
+[ext_resource type="Texture2D" uid="uid://b8a1mg6i8ptb7" path="res://assets/shop/EMF.png" id="2_6l6g7"]
+
+[node name="ShopCartItem" type="Node2D" unique_id=1280453229 node_paths=PackedStringArray("Name", "Quantity", "Picture")]
+script = ExtResource("1_imlb6")
+Name = NodePath("Quantity")
+Quantity = NodePath("Label")
+Picture = NodePath("Icon")
+
+[node name="Control" type="Panel" parent="." unique_id=1151285859]
+offset_right = 340.0
+offset_bottom = 44.0
+
+[node name="Quantity" type="Label" parent="." unique_id=704313312]
+offset_left = 32.0
+offset_top = 10.0
+offset_right = 124.0
+offset_bottom = 33.0
+text = "EMF Reader"
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=333278056]
+position = Vector2(16, 22)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("2_6l6g7")
+
+[node name="Label" type="Label" parent="." unique_id=623684064]
+offset_left = 307.0
+offset_top = 10.0
+offset_right = 326.0
+offset_bottom = 33.0
+text = "×9"
