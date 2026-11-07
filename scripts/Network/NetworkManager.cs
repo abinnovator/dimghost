@@ -27,7 +27,7 @@ public partial class NetworkManager : Node
     private List<ChatMessage> Chatmessages = new();
 
     // Create a list for the people who are ready
-    private Dictionary<long, bool> ReadyStats;
+    private Dictionary<long, bool> ReadyStats =  new();
 
     public override void _EnterTree()
     {
@@ -230,10 +230,12 @@ public partial class NetworkManager : Node
     }
     // Function for changing player status
     [Rpc(MultiplayerApi.RpcMode.Authority, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable, CallLocal = true)]
-    public void ChangePlayerStatus(bool Status, long id)
+    public void ChangePlayerStatus(bool status, long id)
     {
-        
+        if (Players.ContainsKey(id))
+            ReadyStats[id] = status;
     }
+
 
 
 }

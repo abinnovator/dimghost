@@ -126,7 +126,7 @@ public partial class Lobby : Node3D
         UiLayer.AddChild(_Chat);
 
 	}
-	private void RefreshPlayerSlots()
+	public void RefreshPlayerSlots()
 	{
 		if (PlayerSlots == null || NetworkManager.Instance == null) return;
 
