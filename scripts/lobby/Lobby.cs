@@ -24,12 +24,12 @@ public partial class Lobby : Node3D
 
 	private const string MenuScenePath = "res://scenes/MenuBar.tscn";
 	private const string ShopScenePath = "res://scenes/shop.tscn";
-    private const string JoinScenePath = "res://scenes/join_menu.tscn";
-    private const string ChatScenePath = "res://scenes/Chat.tscn";
+	private const string JoinScenePath = "res://scenes/join_menu.tscn";
+	private const string ChatScenePath = "res://scenes/Chat.tscn";
 	private Node _Menu;
 	private Node _openShop;
-    private Node _openJoinScene;
-    private Node _Chat;
+	private Node _openJoinScene;
+	private Node _Chat;
 
 
 	public override void _Ready()
@@ -41,6 +41,7 @@ public partial class Lobby : Node3D
 		NetworkManager.Instance.PlayersChanged += RefreshPlayerSlots;
 		RefreshPlayerSlots();
 		LoadMenu();
+		LoadChat();
 
 	}
 
@@ -121,9 +122,9 @@ public partial class Lobby : Node3D
 		isJoinMenuOpen = true;
 	}
 	private void LoadChat(){
-        var ChatScene = GD.Load<PackedScene>(ChatScenePath);
-        _Chat = ChatScene.Instantiate();
-        UiLayer.AddChild(_Chat);
+		var ChatScene = GD.Load<PackedScene>(ChatScenePath);
+		_Chat = ChatScene.Instantiate();
+		UiLayer.AddChild(_Chat);
 
 	}
 	public void RefreshPlayerSlots()

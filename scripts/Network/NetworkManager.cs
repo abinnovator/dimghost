@@ -227,6 +227,7 @@ public partial class NetworkManager : Node
     public void SendMessage(ChatMessage message)
     {
         Chatmessages.Add(message);
+        Chat.Instance.RefreshChatMessages(messages: Chatmessages);
     }
     // Function for changing player status
     [Rpc(MultiplayerApi.RpcMode.Authority, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable, CallLocal = true)]
