@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://dgxynaqxah8ny"]
 
+[ext_resource type="Script" uid="uid://bf6qvy3j6q20y" path="res://scripts/chat/MessageContainer.cs" id="1_f4inq"]
+
 [node name="MessageContainer" type="Node2D" unique_id=1658657383]
+script = ExtResource("1_f4inq")
 
 [node name="Panel" type="Panel" parent="." unique_id=1263722830]
 offset_left = 3.0

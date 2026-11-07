@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using dimghost;
 using Godot;
 
@@ -24,6 +25,10 @@ public partial class NetworkManager : Node
     public event Action<string, int> ShopPurchaseChanged;
     // Create a list for chat messages
     private List<ChatMessage> Chatmessages = new();
+
+    // Create a list for the people who are ready
+    private Dictionary<long, bool> ReadyStats;
+
     public override void _EnterTree()
     {
         Instance = this;
@@ -212,5 +217,23 @@ public partial class NetworkManager : Node
     {
         return BuyersByItem.TryGetValue(item.Name, out var buyers) ? buyers.Count : 0;
     }
+    // Chat functions
+    public List<ChatMessage> GetChatMessages()
+    {
+        return Chatmessages;
+    }
+    [Rpc(MultiplayerApi.RpcMode.Authority, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable, CallLocal = true)]
+    // Function for sending message
+    public void SendMessage(ChatMessage message)
+    {
+        Chatmessages.Add(message);
+    }
+    // Function for changing player status
+    [Rpc(MultiplayerApi.RpcMode.Authority, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable, CallLocal = true)]
+    public void ChangePlayerStatus(bool Status, long id)
+    {
+        
+    }
+
 
 }

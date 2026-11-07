@@ -1,6 +1,15 @@
 [gd_scene format=3 uid="uid://dchaa3ldxjk0i"]
 
-[node name="Chat" type="Node2D" unique_id=2045484949]
+[ext_resource type="Script" uid="uid://44yokvcom1cq" path="res://scripts/chat/Chat.cs" id="1_uca72"]
+[ext_resource type="PackedScene" uid="uid://dgxynaqxah8ny" path="res://scenes/message_container.tscn" id="2_hv8y0"]
+
+[node name="Chat" type="Node2D" unique_id=2045484949 node_paths=PackedStringArray("ChatScrollContainer", "ChatVBOX", "SendButton", "Input")]
+script = ExtResource("1_uca72")
+ChatScrollContainer = NodePath("MessagesOuterContainer/ScrollContainer")
+ChatVBOX = NodePath("MessagesOuterContainer/ScrollContainer/VBoxContainer")
+MessageScene = ExtResource("2_hv8y0")
+SendButton = NodePath("Button")
+Input = NodePath("Input")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=550685733]
 
