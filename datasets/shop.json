@@ -1,20 +1,20 @@
 {
-  "EmfReader": {
+  "Emf Reader": {
     "cost": 10,
-    "maxQuantity": 4,
-    "imageName": "emf_reader.png",
+    "MaxQuantity": 4,
+    "ItemSprite": "emf_reader.png",
     "levelMin": 0
   },
   "Thermometer": {
     "cost": 10,
-    "maxQuantity": 4,
-    "imageName": "thermometer.png",
+    "MaxQuantity": 4,
+    "ItemSprite": "thermometer.png",
     "levelMin": 0
   },
-  "SpiritBox": {
+  "Spiritbox": {
     "cost": 40,
-    "maxQuantity": 3,
-    "imageName": "spiritbox.png",
+    "MaxQuantity": 3,
+    "ItemSprite": "spiritbox.png",
     "levelMin": 0
   }
 }

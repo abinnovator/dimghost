@@ -20,7 +20,7 @@ size = Vector2(51, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbh0o"]
 size = Vector2(34, 20)
 
-[node name="Shop" type="ColorRect" unique_id=1666220886 node_paths=PackedStringArray("Ready", "Join", "Equipment", "Location", "Profile", "ShopItemsContainer", "ContinerBox", "cart", "EquipmentArea")]
+[node name="Shop" type="ColorRect" unique_id=1666220886 node_paths=PackedStringArray("Ready", "Join", "Equipment", "Location", "Profile", "ShopItemsContainer", "ContinerBox", "cart", "EquipmentArea", "moneyLabel")]
 script = ExtResource("1_lx5au")
 Ready = NodePath("Buttons/Ready")
 Join = NodePath("Buttons/Join")
@@ -31,6 +31,7 @@ ShopItemsContainer = NodePath("Shop Background/Container/ScrollContainer")
 ContinerBox = NodePath("Shop Background/Container/ScrollContainer/HBoxContainer")
 cart = NodePath("Team Inventory/Container/ScrollContainer/VBoxContainer")
 EquipmentArea = NodePath("Buttons/Equipmenjt/Area2D")
+moneyLabel = NodePath("Money")
 ShopItemScene = ExtResource("2_1l46r")
 CartShopItem = ExtResource("3_032fp")
 
@@ -49,8 +50,9 @@ offset_bottom = 522.0
 
 [node name="Container" type="Control" parent="Shop Background" unique_id=47144729]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_top = 45.0
+offset_right = 806.0
+offset_bottom = 493.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Shop Background/Container" unique_id=1685130979]
 custom_minimum_size = Vector2(9, 10)
@@ -161,10 +163,10 @@ shape = SubResource("RectangleShape2D_cbh0o")
 [node name="LineEdit" type="LineEdit" parent="." unique_id=1440718115]
 texture_filter = 2
 layout_mode = 0
-offset_left = 26.0
-offset_top = 35.0
-offset_right = 818.0
-offset_bottom = 67.0
+offset_left = 27.0
+offset_top = 58.0
+offset_right = 819.0
+offset_bottom = 90.0
 placeholder_text = "The name of the item"
 emoji_menu_enabled = false
 right_icon = ExtResource("2_xfvoa")
@@ -178,3 +180,20 @@ offset_top = 37.0
 offset_right = 976.0
 offset_bottom = 60.0
 text = "Team Euipment"
+
+[node name="Label2" type="Label" parent="." unique_id=2032049231]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 29.0
+offset_right = 67.0
+offset_bottom = 52.0
+text = "The Shop"
+
+[node name="Money" type="Label" parent="." unique_id=1186665217]
+layout_mode = 0
+offset_left = 726.0
+offset_top = 31.0
+offset_right = 818.0
+offset_bottom = 54.0
+text = "Money Left:"
+horizontal_alignment = 2

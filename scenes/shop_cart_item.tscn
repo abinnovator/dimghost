@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dvxl37563ogk8"]
 
 [ext_resource type="Script" uid="uid://bbe07x0dx86w6" path="res://scripts/shop/ShopCartItem.cs" id="1_imlb6"]
-[ext_resource type="Texture2D" uid="uid://b8a1mg6i8ptb7" path="res://assets/shop/EMF.png" id="2_6l6g7"]
+[ext_resource type="Texture2D" uid="uid://b8a1mg6i8ptb7" path="res://assets/shop/emf_reader.png" id="2_6l6g7"]
 
 [node name="ShopCartItem" type="Node2D" unique_id=1280453229 node_paths=PackedStringArray("Name", "Quantity", "Picture")]
 script = ExtResource("1_imlb6")

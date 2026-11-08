@@ -59,7 +59,7 @@ public partial class MenuBar : Node2D
 				_openJoinScene.QueueFree();
 				_openJoinScene = null;
 				JoinOpen = false;
-				JoinLabel.LabelSettings.FontColor = Colors.White;
+				JoinLabel.AddThemeColorOverride("font_color", Colors.White);
 				return;
 			}
 
@@ -73,7 +73,7 @@ public partial class MenuBar : Node2D
 			_openJoinScene = joinScene.Instantiate();
 			UiLayer.AddChild(_openJoinScene);
 			JoinOpen = true;
-			JoinLabel.LabelSettings.FontColor = Colors.Green;
+			JoinLabel.AddThemeColorOverride("font_color", Colors.Green);
 
 		}
 	}
@@ -87,7 +87,7 @@ public partial class MenuBar : Node2D
 				_openShop.QueueFree();
 				_openShop = null;
 				EquipmentOpen = false;
-				EquipmentLabel.LabelSettings.FontColor = Colors.White;
+				EquipmentLabel.AddThemeColorOverride("font_color", Colors.White);
 				return;
 			}
 
@@ -101,7 +101,7 @@ public partial class MenuBar : Node2D
 			_openShop = shopScene.Instantiate();
 			UiLayer.AddChild(_openShop);
 			EquipmentOpen = true;
-			EquipmentLabel.LabelSettings.FontColor = Colors.Green;
+			EquipmentLabel.AddThemeColorOverride("font_color", Colors.Green);
 
 
 		}

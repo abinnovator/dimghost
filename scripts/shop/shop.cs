@@ -17,6 +17,7 @@ public partial class shop : ColorRect
 	[Export] public HBoxContainer ContinerBox;
 	[Export] public VBoxContainer cart;
 	[Export] public Area2D EquipmentArea;
+	[Export] public Label moneyLabel;
 
 	[Export] public PackedScene ShopItemScene;
 	[Export] public PackedScene CartShopItem;
@@ -25,7 +26,8 @@ public partial class shop : ColorRect
 	{
 		MouseFilter = Control.MouseFilterEnum.Ignore;
 		GetNode<ColorRect>("bg").MouseFilter = Control.MouseFilterEnum.Ignore;
-
+		var user = SaveManager.LoadSave();
+		moneyLabel.Text = $"¥{user.money.ToString()}";
 		// Equipment.MouseFilter = Control.MouseFilterEnum.Stop;
 		// Equipment.GuiInput += OnEquipmentGuiInput;
 
@@ -36,10 +38,15 @@ public partial class shop : ColorRect
 		{
 			var card = ShopItemScene.Instantiate<ShopItem>();
 			ContinerBox.AddChild(card);
+			GD.Print(item.ItemSprite);
 			// Lets get the amoutn bought
 			int AmountBought = NetworkManager.Instance.GetAmountBought(item);
 			card.RefreshValues(name, price: item.cost, maxQuantity: item.MaxQuantity, amountBought: AmountBought, assetName: item.ItemSprite, shopItem: item);
 		}
+		// Debugging for now
+		// Print all items bought when the scene is bought up
+		GD.Print(NetworkManager.Instance.GetAllBoughtItems());
+
 		// Now lets add the cart menu in the side
 		// First we have to get the bought items from the network manager
 		var boughtItems = NetworkManager.Instance.GetAllBoughtItems();
@@ -61,10 +68,14 @@ public partial class shop : ColorRect
 	{
 		// Read all the items i put in the json file
 		using var file = Godot.FileAccess.Open("res://datasets/shop.json", Godot.FileAccess.ModeFlags.Read);
+
 		if (file == null) { GD.PrintErr(Godot.FileAccess.GetOpenError()); return new(); }
 		string currentItems = file.GetAsText();
 		// Turn it into a object/distionary
 		Dictionary<string, ShopItemType> CurrentItemsDictionary = JsonSerializer.Deserialize<Dictionary<string, ShopItemType>>(currentItems);
+		foreach (var(key,item) in CurrentItemsDictionary){
+			item.Name = key;
+		}
 		return CurrentItemsDictionary;
 	}
 

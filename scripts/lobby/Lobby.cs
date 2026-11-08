@@ -20,7 +20,7 @@ public partial class Lobby : Node3D
 	[Export] public CanvasLayer UiLayer;
 	[Export] public bool isShopOpen = false;
 	private bool isJoinMenuOpen = false;
-
+	private bool isChatOpen = false;
 
 	private const string MenuScenePath = "res://scenes/MenuBar.tscn";
 	private const string ShopScenePath = "res://scenes/shop.tscn";
@@ -44,7 +44,12 @@ public partial class Lobby : Node3D
 		LoadChat();
 
 	}
-
+	public override void _UnhandledInput(InputEvent @event){
+		if (@event.IsActionPressed("chat")){
+			LoadChat();
+			GetViewport().SetInputAsHandled();
+		}
+	}
 	public override void _ExitTree()
 	{
 		ShopArea.InputEvent -= OnShopInput;
@@ -122,10 +127,24 @@ public partial class Lobby : Node3D
 		isJoinMenuOpen = true;
 	}
 	private void LoadChat(){
+		if (IsInstanceValid(_Chat))
+		{
+			_Chat.QueueFree();
+			_Chat = null;
+			isChatOpen = false;
+			return;
+		}
+
 		var ChatScene = GD.Load<PackedScene>(ChatScenePath);
+		if (ChatScene == null)
+		{
+			GD.PrintErr($"Could not load chat scene: {ChatScenePath}");
+			return;
+		}
+
 		_Chat = ChatScene.Instantiate();
 		UiLayer.AddChild(_Chat);
-
+		isChatOpen = true;
 	}
 	public void RefreshPlayerSlots()
 	{

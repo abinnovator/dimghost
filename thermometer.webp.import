@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8a1mg6i8ptb7"
-path="res://.godot/imported/EMF.png-65a0749fafb364e3b9c480c69a85fbad.ctex"
+uid="uid://c1nhwcqbninfo"
+path="res://.godot/imported/thermometer.webp-cf1a75e019c44104f178f33bc2571abd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shop/EMF.png"
-dest_files=["res://.godot/imported/EMF.png-65a0749fafb364e3b9c480c69a85fbad.ctex"]
+source_file="res://thermometer.webp"
+dest_files=["res://.godot/imported/thermometer.webp-cf1a75e019c44104f178f33bc2571abd.ctex"]
 
 [params]
 

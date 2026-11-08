@@ -13,6 +13,7 @@ public partial class Chat : Node2D
 	[Export] LineEdit Input;
 	private List<ChatMessage> CurrentMessages;
 	public static Chat Instance { get; private set; }
+	private int messagesShown;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -24,7 +25,10 @@ public partial class Chat : Node2D
 
 
 		foreach (var message in CurrentMessages)
-				AddMessageToChat(message);
+		{
+			AddMessageToChat(message);
+			messagesShown++;
+		}
 
 	}
 
@@ -47,9 +51,19 @@ public partial class Chat : Node2D
 	}
 	public void RefreshChatMessages(List<ChatMessage> messages)
 	{
-		var newMessages = messages.Except(CurrentMessages).ToList();
-		foreach (var message in CurrentMessages)
+		var newMessagesCount = messages.Count - messagesShown;
+		var newMessages = new List<ChatMessage>();
+
+		for (int i = 0; i < newMessagesCount; i++)
+		{
+			newMessages.Add(messages[messagesShown + i]);
+		}
+
+		messagesShown += newMessagesCount;
+
+		foreach (var message in newMessages)
 			AddMessageToChat(message);
+
 		CurrentMessages = messages;
 	}
 

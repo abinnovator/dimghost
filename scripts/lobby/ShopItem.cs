@@ -51,7 +51,7 @@ public partial class ShopItem : Control
 	public void RefreshValues(string name, int price, int maxQuantity, int amountBought, string assetName, ShopItemType shopItem) {
 		Name = name;
 		NameLabel.Text = name;
-		MoneyLabel.Text = price.ToString();
+		MoneyLabel.Text = $"¥{price.ToString()}";
 		MaxQuantity.Text = $"{amountBought}/{maxQuantity}";
 		Texture2D ItemTexture = GD.Load<Texture2D>($"{assetPath}/{assetName}");
 		ItemIcon.Texture = ItemTexture;
