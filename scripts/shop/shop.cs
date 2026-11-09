@@ -21,9 +21,12 @@ public partial class shop : ColorRect
 
 	[Export] public PackedScene ShopItemScene;
 	[Export] public PackedScene CartShopItem;
+	private const float CartRowHeight = 48f;
+	public static shop Instance { get; set; }
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		Instance = this;
 		MouseFilter = Control.MouseFilterEnum.Ignore;
 		GetNode<ColorRect>("bg").MouseFilter = Control.MouseFilterEnum.Ignore;
 		var user = SaveManager.LoadSave();
@@ -48,14 +51,7 @@ public partial class shop : ColorRect
 		GD.Print(NetworkManager.Instance.GetAllBoughtItems());
 
 		// Now lets add the cart menu in the side
-		// First we have to get the bought items from the network manager
-		var boughtItems = NetworkManager.Instance.GetAllBoughtItems();
-		foreach(ShopItemType item in boughtItems){
-			var card = CartShopItem.Instantiate<ShopCartItem>();
-			ContinerBox.AddChild(card);
-			int AmountBought = NetworkManager.Instance.GetAmountBought(item);
-			card.SetValues(name: item.Name, quantity: AmountBought, assetPath: $"res://assets/shop/{item.ItemSprite}");
-		}
+		RefreshCart(shopItems);
 
 	}
 
@@ -79,13 +75,36 @@ public partial class shop : ColorRect
 		return CurrentItemsDictionary;
 	}
 
+	public void RefreshCart(Dictionary<string, ShopItemType> shopItems)
+	{
+		foreach (Node child in cart.GetChildren())
+			child.QueueFree();
+
+		var shown = new HashSet<string>();
+		int row = 0;
+		// First we have to get the bought items from the network manager
+		foreach (ShopItemType item in NetworkManager.Instance.GetAllBoughtItems())
+		{
+			if (!shown.Add(item.Name)) continue;
+			string sprite = shopItems.TryGetValue(item.Name, out var data) ? data.ItemSprite : "";
+
+			var card = CartShopItem.Instantiate<ShopCartItem>();
+			cart.AddChild(card);
+			card.Position = new Vector2(0, row * CartRowHeight);
+			int AmountBought = NetworkManager.Instance.GetAmountBought(item);
+			card.SetValues(name: item.Name, quantity: AmountBought, assetPath: $"res://assets/shop/{sprite}");
+			row++;
+		}
+	}
+
 	private void OnEquipmentGuiInput(InputEvent @event)
 	{
-	if (@event is InputEventMouseButton mouse &&
-		mouse.Pressed &&
-		mouse.ButtonIndex == MouseButton.Left)
-	{
-		QueueFree();
+		if (@event is InputEventMouseButton mouse &&
+			mouse.Pressed &&
+			mouse.ButtonIndex == MouseButton.Left)
+		{
+			QueueFree();
+		}
 	}
-	}
+
 }

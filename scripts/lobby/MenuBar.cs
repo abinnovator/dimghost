@@ -20,6 +20,7 @@ public partial class MenuBar : Node2D
 	[Export] public bool LocationOpen;
 	[Export] public bool ProfileOpen;
 	[Export] public bool JoinOpen;
+	[Export] public bool isReady;
 	private Node _openShop;
 	private Node _openJoinScene;
 	private const string ShopScenePath = "res://scenes/shop.tscn";
@@ -31,6 +32,8 @@ public partial class MenuBar : Node2D
 		JoinLabel.GuiInput += ToggleJoinMenu;
 		EquipmentLabel.MouseFilter = Control.MouseFilterEnum.Stop;
 		EquipmentLabel.GuiInput += ToggleShop;
+		ReadyLabel.MouseFilter = Control.MouseFilterEnum.Stop;
+		ReadyLabel.GuiInput += switchPlayerStatus;
 
 	}
 	public override void _ExitTree()
@@ -106,7 +109,29 @@ public partial class MenuBar : Node2D
 
 		}
 	}
+	public void switchPlayerStatus(InputEvent @event){
+	if (@event is InputEventMouseButton mouse &&
+		   mouse.Pressed &&
+		   mouse.ButtonIndex == MouseButton.Left)
+		{
+					long myId = Multiplayer.GetUniqueId();
+			if (isReady)
+			{
+				ReadyLabel.AddThemeColorOverride("font_color", Colors.White);
+				isReady = false;
+				NetworkManager.Instance.TransmitUserStatus(isReady, myId);
+			}
+			else
+			{
+				ReadyLabel.AddThemeColorOverride("font_color", Colors.Green);
+				isReady = true;
+				NetworkManager.Instance.TransmitUserStatus(isReady, myId);
+			}
+		}
 
+
+
+	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)

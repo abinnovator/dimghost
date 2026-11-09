@@ -21,6 +21,8 @@ public partial class Lobby : Node3D
 	[Export] public bool isShopOpen = false;
 	private bool isJoinMenuOpen = false;
 	private bool isChatOpen = false;
+	public bool isReady = false;
+
 
 	private const string MenuScenePath = "res://scenes/MenuBar.tscn";
 	private const string ShopScenePath = "res://scenes/shop.tscn";
@@ -173,6 +175,7 @@ public partial class Lobby : Node3D
 			slot.UpdateDisplay();
 		}
 	}
+
 	// Function for handling setting the location
 
 }

@@ -25,6 +25,7 @@ public partial class NetworkManager : Node
     public event Action<string, int> ShopPurchaseChanged;
     // Create a list for chat messages
     private List<ChatMessage> Chatmessages = new();
+    private bool _isPurchasingLocally = false;
 
     // Create a list for the people who are ready
     private Dictionary<long, bool> ReadyStats =  new();
@@ -157,9 +158,9 @@ public partial class NetworkManager : Node
     {
         if (isBroadcast)
         {
-            if (Multiplayer.IsServer() && Multiplayer.GetRemoteSenderId() != 0)
-                return;
 
+            bool allowed = Multiplayer.IsServer() ? _isPurchasingLocally : Multiplayer.GetRemoteSenderId() == 1;
+            if (!allowed) return;
             if (!BuyersByItem.TryGetValue(itemName, out var buyers))
             {
                 buyers = new List<long>();
@@ -201,10 +202,11 @@ public partial class NetworkManager : Node
         if (purchasingPeerId == 1)
             SaveManager.Save(buyer);
 
-        // Broadcast and apply the exact same purchase through this function.
         Rpc(MethodName.BuyShopItem, itemName, cost, maxQuantity,
             purchasingPeerId, buyer.username, buyer.money, true);
+        _isPurchasingLocally = true;
         BuyShopItem(itemName, cost, maxQuantity, purchasingPeerId, buyer.username, buyer.money, true);
+        _isPurchasingLocally = false;
     }
 
     // Get all the bought items
@@ -222,15 +224,25 @@ public partial class NetworkManager : Node
     {
         return Chatmessages;
     }
-    [Rpc(MultiplayerApi.RpcMode.Authority, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable, CallLocal = true)]
+    // Function for updqating across ALL clients
+    public void TransmitMessage(ChatMessage message){
+        Rpc(MethodName.SendMessage, message.username, message.text);
+    }
+    [Rpc(MultiplayerApi.RpcMode.AnyPeer, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable, CallLocal = true)]
     // Function for sending message
-    public void SendMessage(ChatMessage message)
+    public void SendMessage(string username, string text)
     {
+        var message = new ChatMessage { username = username, text = text };
         Chatmessages.Add(message);
         Chat.Instance.RefreshChatMessages(messages: Chatmessages);
     }
+
+    // Function for transmitting player status
+    public void TransmitUserStatus(bool status, long id){
+        Rpc(MethodName.ChangePlayerStatus, status, id);
+    }
     // Function for changing player status
-    [Rpc(MultiplayerApi.RpcMode.Authority, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable, CallLocal = true)]
+    [Rpc(MultiplayerApi.RpcMode.AnyPeer, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable, CallLocal = true)]
     public void ChangePlayerStatus(bool status, long id)
     {
         if (Players.ContainsKey(id))

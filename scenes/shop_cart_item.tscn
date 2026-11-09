@@ -10,24 +10,22 @@ Quantity = NodePath("Label")
 Picture = NodePath("Icon")
 
 [node name="Control" type="Panel" parent="." unique_id=1151285859]
-offset_right = 340.0
-offset_bottom = 44.0
+offset_right = 233.0
+offset_bottom = 23.0
 
 [node name="Quantity" type="Label" parent="." unique_id=704313312]
-offset_left = 32.0
-offset_top = 10.0
-offset_right = 124.0
-offset_bottom = 33.0
+offset_left = 24.0
+offset_right = 116.0
+offset_bottom = 23.0
 text = "EMF Reader"
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=333278056]
-position = Vector2(16, 22)
-scale = Vector2(0.06, 0.06)
+position = Vector2(10.999999, 12)
+scale = Vector2(0.04, 0.04)
 texture = ExtResource("2_6l6g7")
 
 [node name="Label" type="Label" parent="." unique_id=623684064]
-offset_left = 307.0
-offset_top = 10.0
-offset_right = 326.0
-offset_bottom = 33.0
+offset_left = 213.0
+offset_right = 232.0
+offset_bottom = 23.0
 text = "×9"

@@ -20,8 +20,9 @@ public partial class ShopCartItem : Node2D
 		Name.Text = name;
 		Quantity.Text = $"×{quantity.ToString()}";
 		Texture2D ItemTexture = GD.Load<Texture2D>(assetPath);
+
 		Picture.Texture = ItemTexture;
-		Picture.Scale = new Vector2(0.6f, 0.6f);
+		Picture.Scale = new Vector2(0.04f, 0.04f);
 
 	}
 }

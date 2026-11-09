@@ -46,7 +46,7 @@ public partial class Chat : Node2D
 		string messagetext = Input.Text;
 		var user = SaveManager.LoadSave();
 		ChatMessage messageobject = new() { text = messagetext, username = user.username };
-		NetworkManager.Instance.SendMessage(message: messageobject);
+		NetworkManager.Instance.TransmitMessage(message: messageobject);
 		Input.Text = "";
 	}
 	public void RefreshChatMessages(List<ChatMessage> messages)

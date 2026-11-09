@@ -39,6 +39,8 @@ public partial class ShopItem : Control
 	public void BuyItem(){
 		if (ShopItemObj != null)
 			NetworkManager.Instance.BuyShopItem(ShopItemObj.Name, ShopItemObj.cost, ShopItemObj.MaxQuantity);
+
+
 	}
 
 	private void OnShopPurchaseChanged(string itemName, int amountBought)
@@ -46,6 +48,8 @@ public partial class ShopItem : Control
 		if (ShopItemObj == null || ShopItemObj.Name != itemName) return;
 		RefreshValues(Name, ShopItemObj.cost, ShopItemObj.MaxQuantity, amountBought,
 			ShopItemObj.ItemSprite, ShopItemObj);
+		var shopItems = shop.Instance.getShopItems();
+		shop.Instance.RefreshCart(shopItems);
 	}
 	//  Add a functionm to refresh the values
 	public void RefreshValues(string name, int price, int maxQuantity, int amountBought, string assetName, ShopItemType shopItem) {
