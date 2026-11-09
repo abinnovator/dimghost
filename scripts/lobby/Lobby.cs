@@ -22,6 +22,7 @@ public partial class Lobby : Node3D
 	private bool isJoinMenuOpen = false;
 	private bool isChatOpen = false;
 	public bool isReady = false;
+	public static Lobby Instance;
 
 
 	private const string MenuScenePath = "res://scenes/MenuBar.tscn";
@@ -36,6 +37,7 @@ public partial class Lobby : Node3D
 
 	public override void _Ready()
 	{
+		Instance = this;
 		GetViewport().PhysicsObjectPicking = true;
 		ShopArea.InputEvent += OnShopInput;
 		JoinArea.InputEvent += OnJoinInput;
@@ -164,12 +166,14 @@ public partial class Lobby : Node3D
 				slot.IsHost = player.Key == 1;
 				slot.PlayerUsername = player.Value.username;
 				slot.PlayerLevel = player.Value.Xp / 1000 + 1;
+				slot.IsReady = NetworkManager.Instance.ReadyStats.GetValueOrDefault(player.Key);
+
 			}
 			else
 			{
 				slot.EmptySlot = true;
 				slot.IsHost = false;
-				slot.PlayerUsername = "";
+				slot.PlayerUsername = "None";
 				slot.PlayerLevel = 0;
 			}
 			slot.UpdateDisplay();

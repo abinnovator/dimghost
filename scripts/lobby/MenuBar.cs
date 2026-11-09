@@ -21,10 +21,13 @@ public partial class MenuBar : Node2D
 	[Export] public bool ProfileOpen;
 	[Export] public bool JoinOpen;
 	[Export] public bool isReady;
+
 	private Node _openShop;
 	private Node _openJoinScene;
+	private Node _openProfileScene;
 	private const string ShopScenePath = "res://scenes/shop.tscn";
 	private const string JoinScenePath = "res://scenes/join_menu.tscn";
+	private const string ProfileScenePath = "res://scenes/profile.tscn";
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -34,6 +37,9 @@ public partial class MenuBar : Node2D
 		EquipmentLabel.GuiInput += ToggleShop;
 		ReadyLabel.MouseFilter = Control.MouseFilterEnum.Stop;
 		ReadyLabel.GuiInput += switchPlayerStatus;
+		ProfileLabel.MouseFilter = Control.MouseFilterEnum.Stop;
+		ProfileLabel.GuiInput += LoadProfile;
+
 
 	}
 	public override void _ExitTree()
@@ -132,7 +138,34 @@ public partial class MenuBar : Node2D
 
 
 	}
+	// Function for loading profile
+	public void LoadProfile(InputEvent @event){
+		if (@event is InputEventMouseButton mouse &&
+						   mouse.Pressed &&
+						   mouse.ButtonIndex == MouseButton.Left)
+		{
+			if (IsInstanceValid(_openProfileScene))
+			{
+				_openProfileScene.QueueFree();
+				_openProfileScene = null;
+				ProfileOpen = false;
+				ProfileLabel.AddThemeColorOverride("font_color", Colors.White);
+				return;
+			}
 
+			var profileScene = GD.Load<PackedScene>(ProfileScenePath);
+			if (profileScene == null)
+			{
+				GD.PrintErr($"Could not load join menu: {JoinScenePath}");
+				return;
+			}
+
+			_openProfileScene = profileScene.Instantiate();
+			UiLayer.AddChild(_openProfileScene);
+			ProfileOpen = true;
+			ProfileLabel.AddThemeColorOverride("font_color", Colors.Green);
+		}
+	}
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{

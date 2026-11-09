@@ -28,7 +28,7 @@ public partial class NetworkManager : Node
     private bool _isPurchasingLocally = false;
 
     // Create a list for the people who are ready
-    private Dictionary<long, bool> ReadyStats =  new();
+    public Dictionary<long, bool> ReadyStats =  new();
 
     public override void _EnterTree()
     {
@@ -247,6 +247,7 @@ public partial class NetworkManager : Node
     {
         if (Players.ContainsKey(id))
             ReadyStats[id] = status;
+            Lobby.Instance.RefreshPlayerSlots();
     }
 
 

@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://c5sk4do6pvqip"]
+
+[ext_resource type="Script" uid="uid://co7bwouxeomd6" path="res://scripts/profile/Profile.cs" id="1_m7564"]
+
+[node name="Profile" type="Node2D" unique_id=786218108 node_paths=PackedStringArray("Username", "Level", "Position")]
+script = ExtResource("1_m7564")
+Username = NodePath("Label")
+Level = NodePath("Label2")
+Position = NodePath("Label4")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2131345921]
+offset_left = 348.0
+offset_top = 186.0
+offset_right = 887.0
+offset_bottom = 324.0
+
+[node name="Line2D" type="Line2D" parent="." unique_id=764043242]
+position = Vector2(555.5, 214.80646)
+scale = Vector2(1.5, 0.516129)
+points = PackedVector2Array(0, -49, 0, 12, 0, 51.990562, 0, 197)
+width = 1.0
+default_color = Color(0.3665946, 0.3665946, 0.36659458, 1)
+
+[node name="Label" type="Label" parent="." unique_id=311454014]
+offset_left = 564.0
+offset_top = 203.0
+offset_right = 675.0
+offset_bottom = 226.0
+text = "Dragongoder1"
+
+[node name="Label3" type="Label" parent="." unique_id=1275752126]
+offset_left = 371.0
+offset_top = 202.0
+offset_right = 509.0
+offset_bottom = 225.0
+text = "Ghost Encounters"
+
+[node name="Label2" type="Label" parent="." unique_id=1622561094]
+offset_left = 565.0
+offset_top = 231.0
+offset_right = 601.0
+offset_bottom = 244.0
+theme_override_font_sizes/font_size = 9
+text = "Level 20"
+
+[node name="Label4" type="Label" parent="." unique_id=1351789773]
+offset_left = 617.0
+offset_top = 231.0
+offset_right = 653.0
+offset_bottom = 244.0
+theme_override_font_sizes/font_size = 9
+text = "Position: Manger"
