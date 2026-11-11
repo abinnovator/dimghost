@@ -25,9 +25,11 @@ public partial class MenuBar : Node2D
 	private Node _openShop;
 	private Node _openJoinScene;
 	private Node _openProfileScene;
+	private Node _openLocationMenuScene;
 	private const string ShopScenePath = "res://scenes/shop.tscn";
 	private const string JoinScenePath = "res://scenes/join_menu.tscn";
 	private const string ProfileScenePath = "res://scenes/profile.tscn";
+	private const string LocationScenePath = "res://scenes/location_menu.tscn";
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -39,6 +41,8 @@ public partial class MenuBar : Node2D
 		ReadyLabel.GuiInput += switchPlayerStatus;
 		ProfileLabel.MouseFilter = Control.MouseFilterEnum.Stop;
 		ProfileLabel.GuiInput += LoadProfile;
+		LocationLabel.MouseFilter = Control.MouseFilterEnum.Stop;
+		LocationLabel.GuiInput += LoadLocation;
 
 
 	}
@@ -139,7 +143,8 @@ public partial class MenuBar : Node2D
 
 	}
 	// Function for loading profile
-	public void LoadProfile(InputEvent @event){
+	public void LoadProfile(InputEvent @event)
+	{
 		if (@event is InputEventMouseButton mouse &&
 						   mouse.Pressed &&
 						   mouse.ButtonIndex == MouseButton.Left)
@@ -164,6 +169,25 @@ public partial class MenuBar : Node2D
 			UiLayer.AddChild(_openProfileScene);
 			ProfileOpen = true;
 			ProfileLabel.AddThemeColorOverride("font_color", Colors.Green);
+		}
+	}
+	public void LoadLocation(InputEvent @event){
+		if (@event is InputEventMouseButton mouse &&
+						   mouse.Pressed &&
+						   mouse.ButtonIndex == MouseButton.Left)
+		{
+			if (IsInstanceValid(_openLocationMenuScene))
+			{
+				_openLocationMenuScene.QueueFree();
+				_openLocationMenuScene = null;
+				LocationOpen = false;
+				LocationLabel.AddThemeColorOverride("font_color", Colors.White);
+			}
+			var LocationMenuScene = GD.Load<PackedScene>(LocationScenePath);
+			_openLocationMenuScene = LocationMenuScene.Instantiate();
+			UiLayer.AddChild(_openLocationMenuScene);
+			LocationOpen = true;
+			LocationLabel.AddThemeColorOverride("font_color", Colors.Green);
 		}
 	}
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

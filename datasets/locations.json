@@ -1,0 +1,14 @@
+{
+  "School": {
+    "display_name": "Teiko Middle School",
+    "scenePath": "res://scenes/locations/school.tscn",
+    "image": "res://assets//locations/school.png",
+    "size": "Small"
+  },
+  "Small_house": {
+    "display_name": "Small House",
+    "scenePath": "res://scenes/locations/small_house.tscn",
+    "image": "res://assets//locations/small_house.png",
+    "size": "Small"
+  }
+}

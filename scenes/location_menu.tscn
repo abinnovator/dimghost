@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cb3qfdjqh37qd"]
+
+[ext_resource type="Script" uid="uid://cmmrucly2rw37" path="res://scripts/location/LocationMenu.cs" id="1_gj5jv"]
+[ext_resource type="PackedScene" uid="uid://csv7cioti3a8i" path="res://scenes/location_card.tscn" id="2_2h4gk"]
+
+[node name="LocationMenu" type="Node2D" unique_id=1077478026 node_paths=PackedStringArray("containerBox", "HBox")]
+script = ExtResource("1_gj5jv")
+containerBox = NodePath("PanelContainer/Control/ScrollContainer")
+HBox = NodePath("PanelContainer/Control/ScrollContainer/HBoxContainer")
+LocationCard = ExtResource("2_2h4gk")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1788327373]
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2147166728]
+offset_left = 167.0
+offset_top = 70.0
+offset_right = 844.0
+offset_bottom = 415.0
+
+[node name="Control" type="Control" parent="PanelContainer" unique_id=706510371]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/Control" unique_id=135634381]
+layout_mode = 0
+offset_top = 41.0
+offset_right = 677.0
+offset_bottom = 322.0
+vertical_scroll_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/Control/ScrollContainer" unique_id=1603952808]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="." unique_id=1592998758]
+offset_left = 185.0
+offset_top = 85.0
+offset_right = 331.0
+offset_bottom = 108.0
+text = "Select your job site"
+
+[node name="Difficulty" type="Node2D" parent="." unique_id=854497988]
+
+[node name="Easy" type="Label" parent="Difficulty" unique_id=1769725874]
+offset_left = 400.0
+offset_top = 389.0
+offset_right = 435.0
+offset_bottom = 412.0
+text = "Easy"
+
+[node name="Normal" type="Label" parent="Difficulty" unique_id=1628812005]
+offset_left = 447.0
+offset_top = 389.0
+offset_right = 506.0
+offset_bottom = 412.0
+text = "Normal"
+
+[node name="Hard" type="Label" parent="Difficulty" unique_id=175218472]
+offset_left = 511.0
+offset_top = 389.0
+offset_right = 552.0
+offset_bottom = 412.0
+text = "Hard"
+
+[node name="Nightmare" type="Label" parent="Difficulty" unique_id=1364102021]
+offset_left = 555.0
+offset_top = 389.0
+offset_right = 639.0
+offset_bottom = 412.0
+text = "Nightmare"

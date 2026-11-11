@@ -28,7 +28,9 @@ public partial class NetworkManager : Node
     private bool _isPurchasingLocally = false;
 
     // Create a list for the people who are ready
-    public Dictionary<long, bool> ReadyStats =  new();
+    public Dictionary<long, bool> ReadyStats = new();
+    public string Location;
+    public string LocationPath;
 
     public override void _EnterTree()
     {
@@ -247,9 +249,17 @@ public partial class NetworkManager : Node
     {
         if (Players.ContainsKey(id))
             ReadyStats[id] = status;
-            Lobby.Instance.RefreshPlayerSlots();
+        Lobby.Instance.RefreshPlayerSlots();
     }
-
+    // Set the location
+    public void TransmitSetLocation(string location, string Path){
+        Rpc(MethodName.SetLocation, location, Path);
+    }
+    [Rpc(MultiplayerApi.RpcMode.AnyPeer, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable, CallLocal = true)]
+    public void SetLocation (string location, string path){
+        Location = location;
+        LocationPath = path;
+    }
 
 
 }

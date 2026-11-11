@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://csv7cioti3a8i"]
+
+[ext_resource type="Script" uid="uid://cbmwykcancfc0" path="res://scripts/location/LocationCard.cs" id="1_2evnp"]
+[ext_resource type="Texture2D" uid="uid://bomxp8m84l4si" path="res://assets/Screenshot 2026-11-10 at 2.47.34 PM.png" id="1_udfq3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ej8gx"]
+size = Vector2(302, 438)
+
+[node name="Location Card" type="Node2D" unique_id=116028235 node_paths=PackedStringArray("LocationName", "LocationSize", "LocationImage", "ClickableArea")]
+script = ExtResource("1_2evnp")
+LocationName = NodePath("Label")
+LocationSize = NodePath("Label2")
+LocationImage = NodePath("PanelContainer/Sprite2D")
+ClickableArea = NodePath("Area2D/CollisionShape2D")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1354600941]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1498558792]
+position = Vector2(530, 302)
+shape = SubResource("RectangleShape2D_ej8gx")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1967497173]
+offset_left = 379.0
+offset_top = 83.0
+offset_right = 681.0
+offset_bottom = 521.0
+
+[node name="Sprite2D" type="Sprite2D" parent="PanelContainer" unique_id=1813466734]
+position = Vector2(151.5, 163.50002)
+scale = Vector2(0.08456723, 0.17904657)
+texture = ExtResource("1_udfq3")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=442773061]
+position = Vector2(0, -79)
+points = PackedVector2Array(379, 488, 681, 488)
+width = 2.0
+default_color = Color(0.30323282, 0.30323282, 0.30323282, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1203359481]
+offset_left = 493.0
+offset_top = 427.0
+offset_right = 549.0
+offset_bottom = 463.0
+theme_override_font_sizes/font_size = 26
+text = "Cafe"
+
+[node name="Label2" type="Label" parent="." unique_id=2071188736]
+offset_left = 475.0
+offset_top = 466.0
+offset_right = 579.0
+offset_bottom = 502.0
+theme_override_font_sizes/font_size = 26
+text = "Medium"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1133505014]
