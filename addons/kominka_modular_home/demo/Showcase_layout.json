@@ -1,0 +1,271 @@
+{
+  "scene": "Showcase",
+  "instances": [
+    {
+      "id": "beam",
+      "position": [
+        -5.25,
+        0,
+        -3.1500000000000004
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 0.8055555555555555,
+      "group": "Furnishings"
+    },
+    {
+      "id": "ceiling",
+      "position": [
+        -3.1500000000000004,
+        0,
+        -3.1500000000000004
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 0.8055555555555555,
+      "group": "Furnishings"
+    },
+    {
+      "id": "corner_post",
+      "position": [
+        -1.05,
+        0,
+        -3.1500000000000004
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 0.6041666666666666,
+      "group": "Furnishings"
+    },
+    {
+      "id": "door_wood",
+      "position": [
+        1.05,
+        0,
+        -3.1500000000000004
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 0.7073170731707318,
+      "group": "Furnishings"
+    },
+    {
+      "id": "doorway",
+      "position": [
+        3.1500000000000004,
+        0,
+        -3.1500000000000004
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 0.6041666666666666,
+      "group": "Furnishings"
+    },
+    {
+      "id": "engawa",
+      "position": [
+        5.25,
+        0,
+        -3.1500000000000004
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 0.8055555555555555,
+      "group": "Furnishings"
+    },
+    {
+      "id": "fence",
+      "position": [
+        -5.25,
+        0,
+        -1.05
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 0.8055555555555555,
+      "group": "Furnishings"
+    },
+    {
+      "id": "floor_wood",
+      "position": [
+        -3.1500000000000004,
+        0,
+        -1.05
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 0.8055555555555555,
+      "group": "Furnishings"
+    },
+    {
+      "id": "foundation",
+      "position": [
+        -1.05,
+        0,
+        -1.05
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 0.8055555555555555,
+      "group": "Furnishings"
+    },
+    {
+      "id": "fusuma",
+      "position": [
+        1.05,
+        0,
+        -1.05
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 0.7073170731707318,
+      "group": "Furnishings"
+    },
+    {
+      "id": "gable",
+      "position": [
+        3.1500000000000004,
+        0,
+        -1.05
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 0.26669555561972597,
+      "group": "Furnishings"
+    },
+    {
+      "id": "lattice_window",
+      "position": [
+        5.25,
+        0,
+        -1.05
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 0.6041666666666666,
+      "group": "Furnishings"
+    },
+    {
+      "id": "low_table",
+      "position": [
+        -5.25,
+        0,
+        1.05
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 1.380952380952381,
+      "group": "Furnishings"
+    },
+    {
+      "id": "plaster_wall",
+      "position": [
+        -3.1500000000000004,
+        0,
+        1.05
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 0.6041666666666666,
+      "group": "Furnishings"
+    },
+    {
+      "id": "post",
+      "position": [
+        -1.05,
+        0,
+        1.05
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 0.6041666666666666,
+      "group": "Furnishings"
+    },
+    {
+      "id": "roof_eave",
+      "position": [
+        1.05,
+        0,
+        1.05
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 0.8055555555555555,
+      "group": "Furnishings"
+    },
+    {
+      "id": "roof_ridge",
+      "position": [
+        3.1500000000000004,
+        0,
+        1.05
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 0.8028792912513842,
+      "group": "Furnishings"
+    },
+    {
+      "id": "roof_slope",
+      "position": [
+        5.25,
+        0,
+        1.05
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 0.4654895666131621,
+      "group": "Furnishings"
+    },
+    {
+      "id": "shoji",
+      "position": [
+        -5.25,
+        0,
+        3.1500000000000004
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 0.7073170731707318,
+      "group": "Furnishings"
+    },
+    {
+      "id": "sill",
+      "position": [
+        -3.1500000000000004,
+        0,
+        3.1500000000000004
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 0.8055555555555555,
+      "group": "Furnishings"
+    },
+    {
+      "id": "step",
+      "position": [
+        -1.05,
+        0,
+        3.1500000000000004
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 1.2083333333333333,
+      "group": "Furnishings"
+    },
+    {
+      "id": "stone_path",
+      "position": [
+        1.05,
+        0,
+        3.1500000000000004
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 2.265625,
+      "group": "Furnishings"
+    },
+    {
+      "id": "tatami",
+      "position": [
+        3.1500000000000004,
+        0,
+        3.1500000000000004
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 0.8055555555555555,
+      "group": "Furnishings"
+    },
+    {
+      "id": "zabuton",
+      "position": [
+        5.25,
+        0,
+        3.1500000000000004
+      ],
+      "rotation_y_degrees": 0,
+      "scale": 2.7884615384615383,
+      "group": "Furnishings"
+    }
+  ],
+  "units": "meters",
+  "note": "All house geometry comes from included asset scenes. Ground, camera, lights and UI are presentation only."
+}

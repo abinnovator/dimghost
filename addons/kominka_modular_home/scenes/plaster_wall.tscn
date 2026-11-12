@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/models/walls/plaster_wall.glb" id="1_model"]
+
+[sub_resource type="BoxShape3D" id="Shape_0"]
+size = Vector3(1.6600000, 2.2500000, 0.1000000)
+
+[sub_resource type="BoxShape3D" id="Shape_1"]
+size = Vector3(0.0700000, 2.4000000, 0.1400000)
+
+[sub_resource type="BoxShape3D" id="Shape_2"]
+size = Vector3(0.0700000, 2.4000000, 0.1400000)
+
+[sub_resource type="BoxShape3D" id="Shape_3"]
+size = Vector3(1.6600000, 0.1000000, 0.1400000)
+
+[sub_resource type="BoxShape3D" id="Shape_4"]
+size = Vector3(1.6600000, 0.1000000, 0.1400000)
+
+[node name="plaster_wall" type="Node3D"]
+metadata/asset_id = "plaster_wall"
+metadata/license = "MIT"
+
+[node name="Visual" parent="." instance=ExtResource("1_model")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Collision_0" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.0000000, 1.2000000, 0.0000000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_0")
+
+[node name="Collision_1" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(-0.8650000, 1.2000000, 0.0000000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_1")
+
+[node name="Collision_2" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.8650000, 1.2000000, 0.0000000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_2")
+
+[node name="Collision_3" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.0000000, 0.0500000, 0.0000000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_3")
+
+[node name="Collision_4" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.0000000, 2.3500000, 0.0000000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_4")

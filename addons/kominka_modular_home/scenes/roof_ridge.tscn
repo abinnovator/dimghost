@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/models/roof/roof_ridge.glb" id="1_model"]
+
+[sub_resource type="BoxShape3D" id="Shape_0"]
+size = Vector3(1.8000000, 0.1300000, 0.3000000)
+
+[node name="roof_ridge" type="Node3D"]
+metadata/asset_id = "roof_ridge"
+metadata/license = "MIT"
+
+[node name="Visual" parent="." instance=ExtResource("1_model")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Collision_0" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.0000000, 0.0650000, 0.0000000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_0")

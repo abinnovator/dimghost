@@ -1,0 +1,157 @@
+[gd_scene load_steps=20 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/models/structure/engawa.glb" id="1_model"]
+
+[sub_resource type="BoxShape3D" id="Shape_0"]
+size = Vector3(0.1200000, 0.4000000, 0.1200000)
+
+[sub_resource type="BoxShape3D" id="Shape_1"]
+size = Vector3(0.1200000, 0.4000000, 0.1200000)
+
+[sub_resource type="BoxShape3D" id="Shape_2"]
+size = Vector3(0.1200000, 0.4000000, 0.1200000)
+
+[sub_resource type="BoxShape3D" id="Shape_3"]
+size = Vector3(0.1200000, 0.4000000, 0.1200000)
+
+[sub_resource type="BoxShape3D" id="Shape_4"]
+size = Vector3(1.8000000, 0.1300000, 0.1000000)
+
+[sub_resource type="BoxShape3D" id="Shape_5"]
+size = Vector3(1.8000000, 0.1300000, 0.1000000)
+
+[sub_resource type="BoxShape3D" id="Shape_6"]
+size = Vector3(0.1470000, 0.0500000, 0.9000000)
+
+[sub_resource type="BoxShape3D" id="Shape_7"]
+size = Vector3(0.1470000, 0.0500000, 0.9000000)
+
+[sub_resource type="BoxShape3D" id="Shape_8"]
+size = Vector3(0.1470000, 0.0500000, 0.9000000)
+
+[sub_resource type="BoxShape3D" id="Shape_9"]
+size = Vector3(0.1470000, 0.0500000, 0.9000000)
+
+[sub_resource type="BoxShape3D" id="Shape_10"]
+size = Vector3(0.1470000, 0.0500000, 0.9000000)
+
+[sub_resource type="BoxShape3D" id="Shape_11"]
+size = Vector3(0.1470000, 0.0500000, 0.9000000)
+
+[sub_resource type="BoxShape3D" id="Shape_12"]
+size = Vector3(0.1470000, 0.0500000, 0.9000000)
+
+[sub_resource type="BoxShape3D" id="Shape_13"]
+size = Vector3(0.1470000, 0.0500000, 0.9000000)
+
+[sub_resource type="BoxShape3D" id="Shape_14"]
+size = Vector3(0.1470000, 0.0500000, 0.9000000)
+
+[sub_resource type="BoxShape3D" id="Shape_15"]
+size = Vector3(0.1470000, 0.0500000, 0.9000000)
+
+[sub_resource type="BoxShape3D" id="Shape_16"]
+size = Vector3(0.1470000, 0.0500000, 0.9000000)
+
+[sub_resource type="BoxShape3D" id="Shape_17"]
+size = Vector3(0.1470000, 0.0500000, 0.9000000)
+
+[node name="engawa" type="Node3D"]
+metadata/asset_id = "engawa"
+metadata/license = "MIT"
+
+[node name="Visual" parent="." instance=ExtResource("1_model")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Collision_0" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(-0.7200000, 0.2000000, 0.3200000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_0")
+
+[node name="Collision_1" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(-0.7200000, 0.2000000, -0.3200000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_1")
+
+[node name="Collision_2" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.7200000, 0.2000000, 0.3200000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_2")
+
+[node name="Collision_3" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.7200000, 0.2000000, -0.3200000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_3")
+
+[node name="Collision_4" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.0000000, 0.3850000, 0.3300000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_4")
+
+[node name="Collision_5" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.0000000, 0.3850000, -0.3300000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_5")
+
+[node name="Collision_6" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(-0.8250000, 0.4650000, 0.0000000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_6")
+
+[node name="Collision_7" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(-0.6750000, 0.4650000, 0.0000000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_7")
+
+[node name="Collision_8" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(-0.5250000, 0.4650000, 0.0000000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_8")
+
+[node name="Collision_9" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(-0.3750000, 0.4650000, 0.0000000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_9")
+
+[node name="Collision_10" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(-0.2250000, 0.4650000, 0.0000000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_10")
+
+[node name="Collision_11" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(-0.0750000, 0.4650000, 0.0000000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_11")
+
+[node name="Collision_12" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.0750000, 0.4650000, 0.0000000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_12")
+
+[node name="Collision_13" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.2250000, 0.4650000, 0.0000000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_13")
+
+[node name="Collision_14" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.3750000, 0.4650000, 0.0000000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_14")
+
+[node name="Collision_15" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.5250000, 0.4650000, 0.0000000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_15")
+
+[node name="Collision_16" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.6750000, 0.4650000, 0.0000000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_16")
+
+[node name="Collision_17" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.8250000, 0.4650000, 0.0000000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_17")

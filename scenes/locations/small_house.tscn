@@ -1,0 +1,297 @@
+[gd_scene format=3 uid="uid://bshlfu2maqnve"]
+
+[ext_resource type="PackedScene" uid="uid://djmatemu7n2pp" path="res://addons/kominka_modular_home/demo/Exterior.tscn" id="1_ijp31"]
+[ext_resource type="Texture2D" uid="uid://bklbigo7yinhb" path="res://Textures/Road/asphalt_02_diff_2k.jpg" id="1_okjvc"]
+[ext_resource type="Texture2D" uid="uid://cgjnvx8bd056t" path="res://Textures/Road/asphalt_02_ao_2k.jpg" id="2_7s68x"]
+[ext_resource type="Texture2D" uid="uid://qmilb2g3j33m" path="res://Textures/Road/asphalt_02_nor_gl_2k.jpg" id="3_nvbvb"]
+[ext_resource type="Texture2D" uid="uid://b0hvkhufavay6" path="res://Textures/Road/asphalt_02_rough_2k.jpg" id="4_aujou"]
+[ext_resource type="PackedScene" uid="uid://cxgfwfq0xddc8" path="res://models/truck/scene.gltf" id="6_7s68x"]
+[ext_resource type="PackedScene" uid="uid://cuapwtcjgisd0" path="res://models/desktoppc/scene.gltf" id="7_nvbvb"]
+[ext_resource type="PackedScene" uid="uid://b7ekeahs2fd0" path="res://models/wooden-table/source/TablLP.fbx" id="8_aujou"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1ratw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dqdjq"]
+albedo_texture = ExtResource("1_okjvc")
+roughness_texture = ExtResource("4_aujou")
+normal_enabled = true
+normal_texture = ExtResource("3_nvbvb")
+ao_enabled = true
+ao_texture = ExtResource("2_7s68x")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5r1h1"]
+albedo_texture = ExtResource("1_okjvc")
+roughness = 0.45
+roughness_texture = ExtResource("4_aujou")
+normal_enabled = true
+normal_texture = ExtResource("3_nvbvb")
+ao_enabled = true
+ao_texture = ExtResource("2_7s68x")
+uv1_scale = Vector3(20, 4, 1)
+uv1_world_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_okjvc"]
+material = SubResource("StandardMaterial3D_5r1h1")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ej8gx"]
+size = Vector3(1.5019531, 6.6151733, 29.987617)
+
+[sub_resource type="Environment" id="Environment_aujou"]
+background_mode = 1
+background_color = Color(0.019607844, 0.02745098, 0.047058824, 1)
+ambient_light_source = 2
+ambient_light_energy = 0.08
+tonemap_mode = 4
+ssr_enabled = true
+ssao_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 1.0
+fog_sky_affect = 0.0
+volumetric_fog_density = 0.0913
+
+[node name="Node3D" type="Node3D" unique_id=915627298]
+
+[node name="Concrete Path" type="Node3D" parent="." unique_id=1572658912]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.12978339)
+
+[node name="Concrete platform2" type="MeshInstance3D" parent="Concrete Path" unique_id=555446425]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 0.5976515, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform3" type="MeshInstance3D" parent="Concrete Path" unique_id=184126524]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 4.533397, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform6" type="MeshInstance3D" parent="Concrete Path" unique_id=86278440]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 8.513376, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform4" type="MeshInstance3D" parent="Concrete Path" unique_id=558548571]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -3.464344, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform5" type="MeshInstance3D" parent="Concrete Path" unique_id=1833557197]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -7.489404, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform7" type="MeshInstance3D" parent="Concrete Path" unique_id=875042749]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 20.558676, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform8" type="MeshInstance3D" parent="Concrete Path" unique_id=723980]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 24.494421, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform9" type="MeshInstance3D" parent="Concrete Path" unique_id=2127630178]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 28.4744, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform10" type="MeshInstance3D" parent="Concrete Path" unique_id=962224350]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 16.496681, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform11" type="MeshInstance3D" parent="Concrete Path" unique_id=12359577]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 12.471621, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform12" type="MeshInstance3D" parent="Concrete Path" unique_id=516183828]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -18.236914, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform13" type="MeshInstance3D" parent="Concrete Path" unique_id=1937842818]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -14.301168, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform14" type="MeshInstance3D" parent="Concrete Path" unique_id=408622238]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -10.32119, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform15" type="MeshInstance3D" parent="Concrete Path" unique_id=1762643638]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -22.298908, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform16" type="MeshInstance3D" parent="Concrete Path" unique_id=30400039]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -26.323969, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform17" type="MeshInstance3D" parent="Concrete Path" unique_id=759246376]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -35.40169, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform18" type="MeshInstance3D" parent="Concrete Path" unique_id=1297578399]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -31.465946, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform19" type="MeshInstance3D" parent="Concrete Path" unique_id=1403908162]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -27.485968, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform20" type="MeshInstance3D" parent="Concrete Path" unique_id=116522342]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -39.463684, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform21" type="MeshInstance3D" parent="Concrete Path" unique_id=33676456]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, -43.488747, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform22" type="MeshInstance3D" parent="Concrete Path" unique_id=1001216169]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 33.472134, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform23" type="MeshInstance3D" parent="Concrete Path" unique_id=742553952]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 37.40788, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform24" type="MeshInstance3D" parent="Concrete Path" unique_id=1330575344]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 41.387856, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform25" type="MeshInstance3D" parent="Concrete Path" unique_id=501135407]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 29.410141, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="Concrete platform26" type="MeshInstance3D" parent="Concrete Path" unique_id=66778175]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 25.385078, 0, 5.6618967)
+mesh = SubResource("PlaneMesh_1ratw")
+surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
+
+[node name="ActualHouse" parent="." unique_id=473804727 instance=ExtResource("1_ijp31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7403145, -1.9073486e-06, -1.9243526)
+
+[node name="Non used Houses" type="Node3D" parent="." unique_id=1210384444]
+
+[node name="Exterior2" parent="Non used Houses" unique_id=651667205 instance=ExtResource("1_ijp31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.521501, -1.9073486e-06, -1.9243526)
+
+[node name="Exterior4" parent="Non used Houses" unique_id=1409082583 instance=ExtResource("1_ijp31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.668339, -1.9073486e-06, -1.9243526)
+
+[node name="Exterior5" parent="Non used Houses" unique_id=159446454 instance=ExtResource("1_ijp31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.714733, -1.9073486e-06, -1.9243526)
+
+[node name="Exterior6" parent="Non used Houses" unique_id=1357279363 instance=ExtResource("1_ijp31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.95428, -1.9073486e-06, -1.9243526)
+
+[node name="Exterior7" parent="Non used Houses" unique_id=426071832 instance=ExtResource("1_ijp31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.475101, -1.9073486e-06, -1.9243526)
+
+[node name="Exterior3" parent="Non used Houses" unique_id=386819787 instance=ExtResource("1_ijp31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.373446, -1.9073486e-06, -1.9243526)
+
+[node name="Spawn Point" type="Marker3D" parent="." unique_id=251710756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.9262056)
+
+[node name="Road" type="Node3D" parent="." unique_id=1344472994]
+
+[node name="Road" type="MeshInstance3D" parent="Road" unique_id=1716164595]
+transform = Transform3D(15, 0, 0, 0, 0.5, 0, 0, 0, 3, -1.3120699, -9.536743e-07, 10.563811)
+mesh = SubResource("PlaneMesh_okjvc")
+
+[node name="Road2" type="MeshInstance3D" parent="Road" unique_id=1015897626]
+transform = Transform3D(15, 0, 0, 0, 0.5, 0, 0, 0, 3, 24.68378, -9.536743e-07, 10.563811)
+mesh = SubResource("PlaneMesh_okjvc")
+
+[node name="Road3" type="MeshInstance3D" parent="Road" unique_id=1387071845]
+transform = Transform3D(15, 0, 0, 0, 0.5, 0, 0, 0, 3, -20.909416, -9.536743e-07, 10.563811)
+mesh = SubResource("PlaneMesh_okjvc")
+
+[node name="Road4" type="MeshInstance3D" parent="Road" unique_id=1543797431]
+transform = Transform3D(15, 0, 0, 0, 0.5, 0, 0, 0, 3, -49.84092, -9.536743e-07, 10.563811)
+mesh = SubResource("PlaneMesh_okjvc")
+
+[node name="Road5" type="MeshInstance3D" parent="Road" unique_id=277757718]
+transform = Transform3D(15, 0, 0, 0, 0.5, 0, 0, 0, 3, 44.546227, -9.536743e-07, 10.563811)
+mesh = SubResource("PlaneMesh_okjvc")
+
+[node name="Road2" type="Node3D" parent="." unique_id=1380061703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.011261)
+
+[node name="Road" type="MeshInstance3D" parent="Road2" unique_id=268797215]
+transform = Transform3D(15, 0, 0, 0, 0.5, 0, 0, 0, 3, -1.3120699, -9.536743e-07, 10.563811)
+mesh = SubResource("PlaneMesh_okjvc")
+
+[node name="Road2" type="MeshInstance3D" parent="Road2" unique_id=2110266802]
+transform = Transform3D(15, 0, 0, 0, 0.5, 0, 0, 0, 3, 24.68378, -9.536743e-07, 10.563811)
+mesh = SubResource("PlaneMesh_okjvc")
+
+[node name="Road3" type="MeshInstance3D" parent="Road2" unique_id=132951729]
+transform = Transform3D(15, 0, 0, 0, 0.5, 0, 0, 0, 3, -20.909416, -9.536743e-07, 10.563811)
+mesh = SubResource("PlaneMesh_okjvc")
+
+[node name="Road4" type="MeshInstance3D" parent="Road2" unique_id=490683599]
+transform = Transform3D(15, 0, 0, 0, 0.5, 0, 0, 0, 3, -49.84092, -9.536743e-07, 10.563811)
+mesh = SubResource("PlaneMesh_okjvc")
+
+[node name="Road5" type="MeshInstance3D" parent="Road2" unique_id=1545829879]
+transform = Transform3D(15, 0, 0, 0, 0.5, 0, 0, 0, 3, 44.546227, -9.536743e-07, 10.563811)
+mesh = SubResource("PlaneMesh_okjvc")
+
+[node name="Boundaries" type="Node3D" parent="." unique_id=1199124775]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Boundaries" unique_id=1428601237]
+
+[node name="Right" type="CollisionShape3D" parent="Boundaries/StaticBody3D" unique_id=476779026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.051216, 2.8075867, 2.0681877)
+shape = SubResource("BoxShape3D_ej8gx")
+
+[node name="Back" type="CollisionShape3D" parent="Boundaries/StaticBody3D" unique_id=1238839284]
+transform = Transform3D(-0.07466114, 0, 0.99720895, 0, 1, 0, -0.99720895, 0, -0.07466114, -1.1725502, 2.8075867, -6.7257786)
+shape = SubResource("BoxShape3D_ej8gx")
+
+[node name="Front" type="CollisionShape3D" parent="Boundaries/StaticBody3D" unique_id=372959033]
+transform = Transform3D(-0.07466114, 0, 0.99720895, 0, 1, 0, -0.99720895, 0, -0.07466114, -1.1725502, 2.8075867, 16.481863)
+shape = SubResource("BoxShape3D_ej8gx")
+
+[node name="Left" type="CollisionShape3D" parent="Boundaries/StaticBody3D" unique_id=116452317]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.26112, 2.8075867, 3.7330704)
+shape = SubResource("BoxShape3D_ej8gx")
+
+[node name="Background Deco" type="Node3D" parent="." unique_id=1741195933]
+
+[node name="Sketchfab_Scene" parent="." unique_id=1148177883 instance=ExtResource("6_7s68x")]
+transform = Transform3D(0.0010739766, 0, 0.02998077, 0, 0.03, 0, -0.02998077, 0, 0.0010739766, -1, 0, 13.502158)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=304772751]
+environment = SubResource("Environment_aujou")
+
+[node name="Sketchfab_Scene2" parent="." unique_id=1263620460 instance=ExtResource("7_nvbvb")]
+transform = Transform3D(0.063089386, 0, 0.07758689, 0, 0.09999999, 0, -0.07758689, 0, 0.063089386, -6.459706, -4.7683716e-07, 9.674989)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=130176608]
+transform = Transform3D(1, 0, 0, 0, 0.24015808, 0.9707339, 0, -0.9707339, 0.24015808, -1.3959494, 5.280587, 4.382268)
+light_color = Color(0.3372549, 0.34509805, 0.34901962, 1)
+sky_mode = 1
+
+[node name="Equipment spawner" parent="." unique_id=80773882 instance=ExtResource("8_aujou")]
+transform = Transform3D(0.38652557, 0, 0.9222787, 0, 1, 0, -0.9222787, 0, 0.38652557, 2.4671738, 0, 10.704256)
+
+[node name="Player 1 Spotlight" type="SpotLight3D" parent="." unique_id=1183821917]
+transform = Transform3D(1, 0, 0, 0, -0.5754734, 0.8178205, 0, -0.8178205, -0.5754734, -1.7184999, 4.456154, 8.873454)
+light_energy = 2.98
+shadow_enabled = true
+spot_range = 10.0

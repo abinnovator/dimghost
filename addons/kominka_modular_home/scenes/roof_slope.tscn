@@ -1,0 +1,109 @@
+[gd_scene load_steps=14 format=3]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/models/roof/roof_slope.glb" id="1_model"]
+
+[sub_resource type="BoxShape3D" id="Shape_0"]
+size = Vector3(1.8000000, 0.2000000, 0.2583333)
+
+[sub_resource type="BoxShape3D" id="Shape_1"]
+size = Vector3(1.8000000, 0.2000000, 0.2583333)
+
+[sub_resource type="BoxShape3D" id="Shape_2"]
+size = Vector3(1.8000000, 0.2000000, 0.2583333)
+
+[sub_resource type="BoxShape3D" id="Shape_3"]
+size = Vector3(1.8000000, 0.2000000, 0.2583333)
+
+[sub_resource type="BoxShape3D" id="Shape_4"]
+size = Vector3(1.8000000, 0.2000000, 0.2583333)
+
+[sub_resource type="BoxShape3D" id="Shape_5"]
+size = Vector3(1.8000000, 0.2000000, 0.2583333)
+
+[sub_resource type="BoxShape3D" id="Shape_6"]
+size = Vector3(1.8000000, 0.2000000, 0.2583333)
+
+[sub_resource type="BoxShape3D" id="Shape_7"]
+size = Vector3(1.8000000, 0.2000000, 0.2583333)
+
+[sub_resource type="BoxShape3D" id="Shape_8"]
+size = Vector3(1.8000000, 0.2000000, 0.2583333)
+
+[sub_resource type="BoxShape3D" id="Shape_9"]
+size = Vector3(1.8000000, 0.2000000, 0.2583333)
+
+[sub_resource type="BoxShape3D" id="Shape_10"]
+size = Vector3(1.8000000, 0.2000000, 0.2583333)
+
+[sub_resource type="BoxShape3D" id="Shape_11"]
+size = Vector3(1.8000000, 0.2000000, 0.2583333)
+
+[node name="roof_slope" type="Node3D"]
+metadata/asset_id = "roof_slope"
+metadata/license = "MIT"
+
+[node name="Visual" parent="." instance=ExtResource("1_model")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 1
+
+[node name="Collision_0" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.0000000, 0.0962500, 1.4208333)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_0")
+
+[node name="Collision_1" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.0000000, 0.2087500, 1.1625000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_1")
+
+[node name="Collision_2" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.0000000, 0.3212500, 0.9041667)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_2")
+
+[node name="Collision_3" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.0000000, 0.4337500, 0.6458333)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_3")
+
+[node name="Collision_4" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.0000000, 0.5462500, 0.3875000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_4")
+
+[node name="Collision_5" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.0000000, 0.6587500, 0.1291667)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_5")
+
+[node name="Collision_6" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.0000000, 0.7712500, -0.1291667)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_6")
+
+[node name="Collision_7" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.0000000, 0.8837500, -0.3875000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_7")
+
+[node name="Collision_8" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.0000000, 0.9962500, -0.6458333)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_8")
+
+[node name="Collision_9" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.0000000, 1.1087500, -0.9041667)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_9")
+
+[node name="Collision_10" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.0000000, 1.2212500, -1.1625000)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_10")
+
+[node name="Collision_11" type="CollisionShape3D" parent="StaticBody3D"]
+position = Vector3(0.0000000, 1.3337500, -1.4208333)
+rotation_degrees = Vector3(0.0000000, 0.0000000, 0.0000000)
+shape = SubResource("Shape_11")

@@ -1,0 +1,431 @@
+[gd_scene load_steps=29 format=3]
+
+[ext_resource type="Script" path="res://addons/kominka_modular_home/demo/orbit.gd" id="orbit"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/beam.tscn" id="beam"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/ceiling.tscn" id="ceiling"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/corner_post.tscn" id="corner_post"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/door_wood.tscn" id="door_wood"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/doorway.tscn" id="doorway"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/engawa.tscn" id="engawa"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/fence.tscn" id="fence"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/floor_wood.tscn" id="floor_wood"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/foundation.tscn" id="foundation"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/fusuma.tscn" id="fusuma"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/gable.tscn" id="gable"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/lattice_window.tscn" id="lattice_window"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/low_table.tscn" id="low_table"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/plaster_wall.tscn" id="plaster_wall"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/post.tscn" id="post"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/roof_eave.tscn" id="roof_eave"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/roof_ridge.tscn" id="roof_ridge"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/roof_slope.tscn" id="roof_slope"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/shoji.tscn" id="shoji"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/sill.tscn" id="sill"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/step.tscn" id="step"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/stone_path.tscn" id="stone_path"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/tatami.tscn" id="tatami"]
+
+[ext_resource type="PackedScene" path="res://addons/kominka_modular_home/scenes/zabuton.tscn" id="zabuton"]
+
+[sub_resource type="Environment" id="env"]
+background_mode = 1
+background_color = Color(0.12, 0.17, 0.18, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.72, 0.79, 0.84, 1)
+ambient_light_energy = 0.38
+reflected_light_source = 2
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="ground_mat"]
+albedo_color = Color(0.27, 0.30, 0.24, 1)
+roughness = 1.0
+
+[sub_resource type="BoxMesh" id="ground"]
+size = Vector3(18.000000, 0.100000, 18.000000)
+material = SubResource("ground_mat")
+
+[node name="Showcase" type="Node3D"]
+script = ExtResource("orbit")
+metadata/yaw = 0
+metadata/pitch = 1.05
+metadata/distance = 18
+metadata/focus = Vector3(0.000000, 0.800000, 0.000000)
+
+[node name="Architecture" type="Node3D" parent="."]
+[node name="Furnishings" type="Node3D" parent="."]
+[node name="Garden" type="Node3D" parent="."]
+[node name="Roof" type="Node3D" parent="."]
+visible = true
+
+[node name="GroundPresentationOnly" type="MeshInstance3D" parent="."]
+position = Vector3(0, -0.055, 0)
+mesh = SubResource("ground")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("env")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-42, -40, 0)
+light_color = Color(1, 0.88, 0.71, 1)
+light_energy = 0.72
+shadow_enabled = true
+directional_shadow_max_distance = 40.0
+shadow_bias = 0.035
+
+[node name="Fill" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-35, 140, 0)
+light_color = Color(0.72, 0.84, 1, 1)
+light_energy = 0.16
+
+[node name="Camera3D" type="Camera3D" parent="."]
+projection = 1
+current = true
+near = 0.05
+far = 100.0
+
+[node name="TitleLayer" type="CanvasLayer" parent="."]
+[node name="Title" type="Label" parent="TitleLayer"]
+offset_left = 24.0
+offset_top = 20.0
+theme_override_font_sizes/font_size = 24
+text = "KOMINKA / LITE / Showcase"
+[node name="Help" type="Label" parent="TitleLayer"]
+offset_left = 24.0
+offset_top = 55.0
+theme_override_font_sizes/font_size = 15
+text = "Drag: orbit   Wheel: zoom   H: roof   R: reset   Tab: next example"
+
+[node name="beam_000" parent="Furnishings" instance=ExtResource("beam")]
+position = Vector3(-5.250000, 0.000000, -3.150000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(0.805556, 0.805556, 0.805556)
+
+[node name="Label_0" type="Label3D" parent="."]
+position = Vector3(-5.250000, 0.020000, -2.210000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "beam / x0.81"
+outline_size = 0
+
+[node name="ceiling_001" parent="Furnishings" instance=ExtResource("ceiling")]
+position = Vector3(-3.150000, 0.000000, -3.150000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(0.805556, 0.805556, 0.805556)
+
+[node name="Label_1" type="Label3D" parent="."]
+position = Vector3(-3.150000, 0.020000, -2.210000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "ceiling / x0.81"
+outline_size = 0
+
+[node name="corner_post_002" parent="Furnishings" instance=ExtResource("corner_post")]
+position = Vector3(-1.050000, 0.000000, -3.150000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(0.604167, 0.604167, 0.604167)
+
+[node name="Label_2" type="Label3D" parent="."]
+position = Vector3(-1.050000, 0.020000, -2.210000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "corner_post / x0.60"
+outline_size = 0
+
+[node name="door_wood_003" parent="Furnishings" instance=ExtResource("door_wood")]
+position = Vector3(1.050000, 0.000000, -3.150000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(0.707317, 0.707317, 0.707317)
+
+[node name="Label_3" type="Label3D" parent="."]
+position = Vector3(1.050000, 0.020000, -2.210000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "door_wood / x0.71"
+outline_size = 0
+
+[node name="doorway_004" parent="Furnishings" instance=ExtResource("doorway")]
+position = Vector3(3.150000, 0.000000, -3.150000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(0.604167, 0.604167, 0.604167)
+
+[node name="Label_4" type="Label3D" parent="."]
+position = Vector3(3.150000, 0.020000, -2.210000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "doorway / x0.60"
+outline_size = 0
+
+[node name="engawa_005" parent="Furnishings" instance=ExtResource("engawa")]
+position = Vector3(5.250000, 0.000000, -3.150000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(0.805556, 0.805556, 0.805556)
+
+[node name="Label_5" type="Label3D" parent="."]
+position = Vector3(5.250000, 0.020000, -2.210000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "engawa / x0.81"
+outline_size = 0
+
+[node name="fence_006" parent="Furnishings" instance=ExtResource("fence")]
+position = Vector3(-5.250000, 0.000000, -1.050000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(0.805556, 0.805556, 0.805556)
+
+[node name="Label_6" type="Label3D" parent="."]
+position = Vector3(-5.250000, 0.020000, -0.110000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "fence / x0.81"
+outline_size = 0
+
+[node name="floor_wood_007" parent="Furnishings" instance=ExtResource("floor_wood")]
+position = Vector3(-3.150000, 0.000000, -1.050000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(0.805556, 0.805556, 0.805556)
+
+[node name="Label_7" type="Label3D" parent="."]
+position = Vector3(-3.150000, 0.020000, -0.110000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "floor_wood / x0.81"
+outline_size = 0
+
+[node name="foundation_008" parent="Furnishings" instance=ExtResource("foundation")]
+position = Vector3(-1.050000, 0.000000, -1.050000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(0.805556, 0.805556, 0.805556)
+
+[node name="Label_8" type="Label3D" parent="."]
+position = Vector3(-1.050000, 0.020000, -0.110000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "foundation / x0.81"
+outline_size = 0
+
+[node name="fusuma_009" parent="Furnishings" instance=ExtResource("fusuma")]
+position = Vector3(1.050000, 0.000000, -1.050000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(0.707317, 0.707317, 0.707317)
+
+[node name="Label_9" type="Label3D" parent="."]
+position = Vector3(1.050000, 0.020000, -0.110000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "fusuma / x0.71"
+outline_size = 0
+
+[node name="gable_010" parent="Furnishings" instance=ExtResource("gable")]
+position = Vector3(3.150000, 0.000000, -1.050000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(0.266696, 0.266696, 0.266696)
+
+[node name="Label_10" type="Label3D" parent="."]
+position = Vector3(3.150000, 0.020000, -0.110000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "gable / x0.27"
+outline_size = 0
+
+[node name="lattice_window_011" parent="Furnishings" instance=ExtResource("lattice_window")]
+position = Vector3(5.250000, 0.000000, -1.050000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(0.604167, 0.604167, 0.604167)
+
+[node name="Label_11" type="Label3D" parent="."]
+position = Vector3(5.250000, 0.020000, -0.110000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "lattice_window / x0.60"
+outline_size = 0
+
+[node name="low_table_012" parent="Furnishings" instance=ExtResource("low_table")]
+position = Vector3(-5.250000, 0.000000, 1.050000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(1.380952, 1.380952, 1.380952)
+
+[node name="Label_12" type="Label3D" parent="."]
+position = Vector3(-5.250000, 0.020000, 1.990000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "low_table / x1.38"
+outline_size = 0
+
+[node name="plaster_wall_013" parent="Furnishings" instance=ExtResource("plaster_wall")]
+position = Vector3(-3.150000, 0.000000, 1.050000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(0.604167, 0.604167, 0.604167)
+
+[node name="Label_13" type="Label3D" parent="."]
+position = Vector3(-3.150000, 0.020000, 1.990000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "plaster_wall / x0.60"
+outline_size = 0
+
+[node name="post_014" parent="Furnishings" instance=ExtResource("post")]
+position = Vector3(-1.050000, 0.000000, 1.050000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(0.604167, 0.604167, 0.604167)
+
+[node name="Label_14" type="Label3D" parent="."]
+position = Vector3(-1.050000, 0.020000, 1.990000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "post / x0.60"
+outline_size = 0
+
+[node name="roof_eave_015" parent="Furnishings" instance=ExtResource("roof_eave")]
+position = Vector3(1.050000, 0.000000, 1.050000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(0.805556, 0.805556, 0.805556)
+
+[node name="Label_15" type="Label3D" parent="."]
+position = Vector3(1.050000, 0.020000, 1.990000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "roof_eave / x0.81"
+outline_size = 0
+
+[node name="roof_ridge_016" parent="Furnishings" instance=ExtResource("roof_ridge")]
+position = Vector3(3.150000, 0.000000, 1.050000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(0.802879, 0.802879, 0.802879)
+
+[node name="Label_16" type="Label3D" parent="."]
+position = Vector3(3.150000, 0.020000, 1.990000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "roof_ridge / x0.80"
+outline_size = 0
+
+[node name="roof_slope_017" parent="Furnishings" instance=ExtResource("roof_slope")]
+position = Vector3(5.250000, 0.000000, 1.050000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(0.465490, 0.465490, 0.465490)
+
+[node name="Label_17" type="Label3D" parent="."]
+position = Vector3(5.250000, 0.020000, 1.990000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "roof_slope / x0.47"
+outline_size = 0
+
+[node name="shoji_018" parent="Furnishings" instance=ExtResource("shoji")]
+position = Vector3(-5.250000, 0.000000, 3.150000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(0.707317, 0.707317, 0.707317)
+
+[node name="Label_18" type="Label3D" parent="."]
+position = Vector3(-5.250000, 0.020000, 4.090000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "shoji / x0.71"
+outline_size = 0
+
+[node name="sill_019" parent="Furnishings" instance=ExtResource("sill")]
+position = Vector3(-3.150000, 0.000000, 3.150000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(0.805556, 0.805556, 0.805556)
+
+[node name="Label_19" type="Label3D" parent="."]
+position = Vector3(-3.150000, 0.020000, 4.090000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "sill / x0.81"
+outline_size = 0
+
+[node name="step_020" parent="Furnishings" instance=ExtResource("step")]
+position = Vector3(-1.050000, 0.000000, 3.150000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(1.208333, 1.208333, 1.208333)
+
+[node name="Label_20" type="Label3D" parent="."]
+position = Vector3(-1.050000, 0.020000, 4.090000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "step / x1.21"
+outline_size = 0
+
+[node name="stone_path_021" parent="Furnishings" instance=ExtResource("stone_path")]
+position = Vector3(1.050000, 0.000000, 3.150000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(2.265625, 2.265625, 2.265625)
+
+[node name="Label_21" type="Label3D" parent="."]
+position = Vector3(1.050000, 0.020000, 4.090000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "stone_path / x2.27"
+outline_size = 0
+
+[node name="tatami_022" parent="Furnishings" instance=ExtResource("tatami")]
+position = Vector3(3.150000, 0.000000, 3.150000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(0.805556, 0.805556, 0.805556)
+
+[node name="Label_22" type="Label3D" parent="."]
+position = Vector3(3.150000, 0.020000, 4.090000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "tatami / x0.81"
+outline_size = 0
+
+[node name="zabuton_023" parent="Furnishings" instance=ExtResource("zabuton")]
+position = Vector3(5.250000, 0.000000, 3.150000)
+rotation_degrees = Vector3(0,0,0)
+scale = Vector3(2.788462, 2.788462, 2.788462)
+
+[node name="Label_23" type="Label3D" parent="."]
+position = Vector3(5.250000, 0.020000, 4.090000)
+rotation_degrees = Vector3(-90,0,0)
+font_size = 32
+pixel_size = 0.0015
+text = "zabuton / x2.79"
+outline_size = 0

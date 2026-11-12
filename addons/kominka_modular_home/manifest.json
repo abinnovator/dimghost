@@ -1,0 +1,2461 @@
+[
+  {
+    "id": "beam",
+    "name": "Timber beam · 1.8m",
+    "category": "structure",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 188,
+      "vertices": 96,
+      "mesh_count": 1,
+      "material_count": 1,
+      "materials": [
+        "timber"
+      ],
+      "dimensions_m": [
+        1.8,
+        0.18,
+        0.22
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            1.8,
+            0.22,
+            0.18
+          ],
+          "center": [
+            0,
+            0.11,
+            0
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  },
+  {
+    "id": "ceiling",
+    "name": "Ceiling panel · 1.8m",
+    "category": "structure",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 752,
+      "vertices": 384,
+      "mesh_count": 1,
+      "material_count": 2,
+      "materials": [
+        "cedar",
+        "timber"
+      ],
+      "dimensions_m": [
+        1.8,
+        1.8,
+        0.08
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            1.8,
+            0.045,
+            1.8
+          ],
+          "center": [
+            0,
+            0.0225,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.04,
+            0.035,
+            1.8
+          ],
+          "center": [
+            -0.88,
+            0.0625,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.04,
+            0.035,
+            1.8
+          ],
+          "center": [
+            0,
+            0.0625,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.04,
+            0.035,
+            1.8
+          ],
+          "center": [
+            0.88,
+            0.0625,
+            0
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  },
+  {
+    "id": "corner_post",
+    "name": "Corner post with braces",
+    "category": "structure",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 564,
+      "vertices": 288,
+      "mesh_count": 1,
+      "material_count": 1,
+      "materials": [
+        "timber"
+      ],
+      "dimensions_m": [
+        0.500035,
+        0.500035,
+        2.4
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            0.14,
+            2.4,
+            0.14
+          ],
+          "center": [
+            0,
+            1.2,
+            0
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  },
+  {
+    "id": "door_wood",
+    "name": "Wood entrance door",
+    "category": "joinery",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 3016,
+      "vertices": 1536,
+      "mesh_count": 1,
+      "material_count": 3,
+      "materials": [
+        "cedar",
+        "iron",
+        "timber"
+      ],
+      "dimensions_m": [
+        0.9,
+        0.09,
+        2.05
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            0.11,
+            2.05,
+            0.06
+          ],
+          "center": [
+            -0.395,
+            1.025,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.11,
+            2.05,
+            0.06
+          ],
+          "center": [
+            0.395,
+            1.025,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.68,
+            0.08,
+            0.06
+          ],
+          "center": [
+            0,
+            0.04,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.68,
+            0.13,
+            0.06
+          ],
+          "center": [
+            0,
+            1.9849999999999999,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.7,
+            1.8499999999999999,
+            0.032
+          ],
+          "center": [
+            0,
+            1.025,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.9,
+            2.05,
+            0.035
+          ],
+          "center": [
+            0,
+            1.025,
+            0
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  },
+  {
+    "id": "doorway",
+    "name": "Open doorway · 1.8m",
+    "category": "joinery",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 940,
+      "vertices": 480,
+      "mesh_count": 1,
+      "material_count": 2,
+      "materials": [
+        "plaster",
+        "timber"
+      ],
+      "dimensions_m": [
+        1.8,
+        0.14,
+        2.4
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            0.11,
+            2.4,
+            0.14
+          ],
+          "center": [
+            -0.845,
+            1.2,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.11,
+            2.4,
+            0.14
+          ],
+          "center": [
+            0.845,
+            1.2,
+            0
+          ]
+        },
+        {
+          "size": [
+            1.58,
+            0.08,
+            0.14
+          ],
+          "center": [
+            0,
+            0.04,
+            0
+          ]
+        },
+        {
+          "size": [
+            1.58,
+            0.13,
+            0.14
+          ],
+          "center": [
+            0,
+            2.335,
+            0
+          ]
+        },
+        {
+          "size": [
+            1.58,
+            0.22,
+            0.065
+          ],
+          "center": [
+            0,
+            2.16,
+            0
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  },
+  {
+    "id": "engawa",
+    "name": "Engawa deck · 1.8m",
+    "category": "structure",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 3384,
+      "vertices": 1728,
+      "mesh_count": 1,
+      "material_count": 2,
+      "materials": [
+        "cedar",
+        "timber"
+      ],
+      "dimensions_m": [
+        1.8,
+        0.9,
+        0.49
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            0.12,
+            0.4,
+            0.12
+          ],
+          "center": [
+            -0.72,
+            0.2,
+            0.32
+          ]
+        },
+        {
+          "size": [
+            0.12,
+            0.4,
+            0.12
+          ],
+          "center": [
+            -0.72,
+            0.2,
+            -0.32
+          ]
+        },
+        {
+          "size": [
+            0.12,
+            0.4,
+            0.12
+          ],
+          "center": [
+            0.72,
+            0.2,
+            0.32
+          ]
+        },
+        {
+          "size": [
+            0.12,
+            0.4,
+            0.12
+          ],
+          "center": [
+            0.72,
+            0.2,
+            -0.32
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.13,
+            0.1
+          ],
+          "center": [
+            0,
+            0.385,
+            0.33
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.13,
+            0.1
+          ],
+          "center": [
+            0,
+            0.385,
+            -0.33
+          ]
+        },
+        {
+          "size": [
+            0.147,
+            0.05,
+            0.9
+          ],
+          "center": [
+            -0.825,
+            0.465,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.147,
+            0.05,
+            0.9
+          ],
+          "center": [
+            -0.6749999999999999,
+            0.465,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.147,
+            0.05,
+            0.9
+          ],
+          "center": [
+            -0.5249999999999999,
+            0.465,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.147,
+            0.05,
+            0.9
+          ],
+          "center": [
+            -0.375,
+            0.465,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.147,
+            0.05,
+            0.9
+          ],
+          "center": [
+            -0.22499999999999998,
+            0.465,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.147,
+            0.05,
+            0.9
+          ],
+          "center": [
+            -0.07499999999999996,
+            0.465,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.147,
+            0.05,
+            0.9
+          ],
+          "center": [
+            0.07499999999999996,
+            0.465,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.147,
+            0.05,
+            0.9
+          ],
+          "center": [
+            0.2250000000000001,
+            0.465,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.147,
+            0.05,
+            0.9
+          ],
+          "center": [
+            0.375,
+            0.465,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.147,
+            0.05,
+            0.9
+          ],
+          "center": [
+            0.5249999999999999,
+            0.465,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.147,
+            0.05,
+            0.9
+          ],
+          "center": [
+            0.675,
+            0.465,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.147,
+            0.05,
+            0.9
+          ],
+          "center": [
+            0.825,
+            0.465,
+            0
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  },
+  {
+    "id": "fence",
+    "name": "Bamboo fence · 1.8m",
+    "category": "exterior",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 9428,
+      "vertices": 4800,
+      "mesh_count": 1,
+      "material_count": 2,
+      "materials": [
+        "bamboo",
+        "iron"
+      ],
+      "dimensions_m": [
+        1.8,
+        0.096,
+        1.0
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            1.7999999523162842,
+            1.0,
+            0.09600000083446503
+          ],
+          "center": [
+            2.9802322387695312e-08,
+            0.5,
+            -0.0
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  },
+  {
+    "id": "floor_wood",
+    "name": "Wood floor · 1.8m",
+    "category": "structure",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 2068,
+      "vertices": 1056,
+      "mesh_count": 1,
+      "material_count": 2,
+      "materials": [
+        "cedar",
+        "timber"
+      ],
+      "dimensions_m": [
+        1.8,
+        1.8,
+        0.12
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            1.8,
+            0.07,
+            1.8
+          ],
+          "center": [
+            0,
+            0.035,
+            0
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  },
+  {
+    "id": "foundation",
+    "name": "Raised foundation · 1.8m",
+    "category": "structure",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 1316,
+      "vertices": 672,
+      "mesh_count": 1,
+      "material_count": 3,
+      "materials": [
+        "earth",
+        "stone",
+        "timber"
+      ],
+      "dimensions_m": [
+        1.8,
+        1.8,
+        0.45
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            1.8,
+            0.36,
+            1.8
+          ],
+          "center": [
+            0,
+            0.23,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.36,
+            0.18,
+            0.36
+          ],
+          "center": [
+            -0.7,
+            0.09,
+            0.7
+          ]
+        },
+        {
+          "size": [
+            0.36,
+            0.18,
+            0.36
+          ],
+          "center": [
+            -0.7,
+            0.09,
+            -0.7
+          ]
+        },
+        {
+          "size": [
+            0.36,
+            0.18,
+            0.36
+          ],
+          "center": [
+            0.7,
+            0.09,
+            0.7
+          ]
+        },
+        {
+          "size": [
+            0.36,
+            0.18,
+            0.36
+          ],
+          "center": [
+            0.7,
+            0.09,
+            -0.7
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.13,
+            0.06
+          ],
+          "center": [
+            0,
+            0.385,
+            0.87
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.13,
+            0.06
+          ],
+          "center": [
+            0,
+            0.385,
+            -0.87
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  },
+  {
+    "id": "fusuma",
+    "name": "Fusuma panel · 0.9m",
+    "category": "joinery",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 1700,
+      "vertices": 864,
+      "mesh_count": 1,
+      "material_count": 3,
+      "materials": [
+        "iron",
+        "paper",
+        "timber"
+      ],
+      "dimensions_m": [
+        0.9,
+        0.082,
+        2.05
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            0.11,
+            2.05,
+            0.06
+          ],
+          "center": [
+            -0.395,
+            1.025,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.11,
+            2.05,
+            0.06
+          ],
+          "center": [
+            0.395,
+            1.025,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.68,
+            0.08,
+            0.06
+          ],
+          "center": [
+            0,
+            0.04,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.68,
+            0.13,
+            0.06
+          ],
+          "center": [
+            0,
+            1.9849999999999999,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.7,
+            1.8499999999999999,
+            0.032
+          ],
+          "center": [
+            0,
+            1.025,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.9,
+            2.05,
+            0.035
+          ],
+          "center": [
+            0,
+            1.025,
+            0
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  },
+  {
+    "id": "gable",
+    "name": "Gable infill · 5.4m",
+    "category": "roof",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 1324,
+      "vertices": 678,
+      "mesh_count": 1,
+      "material_count": 2,
+      "materials": [
+        "plaster",
+        "timber"
+      ],
+      "dimensions_m": [
+        5.436911,
+        0.22,
+        1.249316
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            0.065,
+            0.3916666666666667,
+            0.22
+          ],
+          "center": [
+            -1.8,
+            0.22549141248067223,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.065,
+            0.7833333333333334,
+            0.22
+          ],
+          "center": [
+            -0.9,
+            0.4213247458140056,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.065,
+            1.175,
+            0.22
+          ],
+          "center": [
+            0,
+            0.6171580791473389,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.065,
+            0.7833333333333334,
+            0.22
+          ],
+          "center": [
+            0.9,
+            0.4213247458140056,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.065,
+            0.3916666666666667,
+            0.22
+          ],
+          "center": [
+            1.8,
+            0.22549141248067223,
+            0
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  },
+  {
+    "id": "lattice_window",
+    "name": "Lattice window wall",
+    "category": "walls",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 3760,
+      "vertices": 1920,
+      "mesh_count": 1,
+      "material_count": 4,
+      "materials": [
+        "cedar",
+        "paper",
+        "plaster",
+        "timber"
+      ],
+      "dimensions_m": [
+        1.8,
+        0.2,
+        2.4
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            0.11,
+            2.4,
+            0.14
+          ],
+          "center": [
+            -0.845,
+            1.2,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.11,
+            2.4,
+            0.14
+          ],
+          "center": [
+            0.845,
+            1.2,
+            0
+          ]
+        },
+        {
+          "size": [
+            1.58,
+            0.08,
+            0.14
+          ],
+          "center": [
+            0,
+            0.04,
+            0
+          ]
+        },
+        {
+          "size": [
+            1.58,
+            0.13,
+            0.14
+          ],
+          "center": [
+            0,
+            2.335,
+            0
+          ]
+        },
+        {
+          "size": [
+            1.58,
+            0.7,
+            0.1
+          ],
+          "center": [
+            0,
+            0.43,
+            0
+          ]
+        },
+        {
+          "size": [
+            1.58,
+            0.38,
+            0.1
+          ],
+          "center": [
+            0,
+            2.12,
+            0
+          ]
+        },
+        {
+          "size": [
+            1.62,
+            0.07,
+            0.2
+          ],
+          "center": [
+            0,
+            0.82,
+            0
+          ]
+        },
+        {
+          "size": [
+            1.62,
+            0.07,
+            0.2
+          ],
+          "center": [
+            0,
+            1.9,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.032,
+            1.02,
+            0.12
+          ],
+          "center": [
+            -0.7,
+            1.36,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.032,
+            1.02,
+            0.12
+          ],
+          "center": [
+            -0.5599999999999999,
+            1.36,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.032,
+            1.02,
+            0.12
+          ],
+          "center": [
+            -0.41999999999999993,
+            1.36,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.032,
+            1.02,
+            0.12
+          ],
+          "center": [
+            -0.2799999999999999,
+            1.36,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.032,
+            1.02,
+            0.12
+          ],
+          "center": [
+            -0.1399999999999999,
+            1.36,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.032,
+            1.02,
+            0.12
+          ],
+          "center": [
+            1.1102230246251565e-16,
+            1.36,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.032,
+            1.02,
+            0.12
+          ],
+          "center": [
+            0.14000000000000012,
+            1.36,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.032,
+            1.02,
+            0.12
+          ],
+          "center": [
+            0.28000000000000014,
+            1.36,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.032,
+            1.02,
+            0.12
+          ],
+          "center": [
+            0.42000000000000015,
+            1.36,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.032,
+            1.02,
+            0.12
+          ],
+          "center": [
+            0.5600000000000003,
+            1.36,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.032,
+            1.02,
+            0.12
+          ],
+          "center": [
+            0.7000000000000002,
+            1.36,
+            0
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  },
+  {
+    "id": "low_table",
+    "name": "Low dining table",
+    "category": "furniture",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 1316,
+      "vertices": 672,
+      "mesh_count": 1,
+      "material_count": 2,
+      "materials": [
+        "cedar",
+        "timber"
+      ],
+      "dimensions_m": [
+        1.05,
+        0.7,
+        0.3525
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            1.05,
+            0.055,
+            0.7
+          ],
+          "center": [
+            0,
+            0.325,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.065,
+            0.3,
+            0.065
+          ],
+          "center": [
+            -0.43,
+            0.15,
+            0.25
+          ]
+        },
+        {
+          "size": [
+            0.065,
+            0.3,
+            0.065
+          ],
+          "center": [
+            -0.43,
+            0.15,
+            -0.25
+          ]
+        },
+        {
+          "size": [
+            0.065,
+            0.3,
+            0.065
+          ],
+          "center": [
+            0.43,
+            0.15,
+            0.25
+          ]
+        },
+        {
+          "size": [
+            0.065,
+            0.3,
+            0.065
+          ],
+          "center": [
+            0.43,
+            0.15,
+            -0.25
+          ]
+        },
+        {
+          "size": [
+            0.87,
+            0.1,
+            0.05
+          ],
+          "center": [
+            0,
+            0.265,
+            0.25
+          ]
+        },
+        {
+          "size": [
+            0.87,
+            0.1,
+            0.05
+          ],
+          "center": [
+            0,
+            0.265,
+            -0.25
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  },
+  {
+    "id": "plaster_wall",
+    "name": "Plaster wall · 1.8m",
+    "category": "walls",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 940,
+      "vertices": 480,
+      "mesh_count": 1,
+      "material_count": 2,
+      "materials": [
+        "plaster",
+        "timber"
+      ],
+      "dimensions_m": [
+        1.8,
+        0.14,
+        2.4
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            1.66,
+            2.25,
+            0.1
+          ],
+          "center": [
+            0,
+            1.2,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.07,
+            2.4,
+            0.14
+          ],
+          "center": [
+            -0.865,
+            1.2,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.07,
+            2.4,
+            0.14
+          ],
+          "center": [
+            0.865,
+            1.2,
+            0
+          ]
+        },
+        {
+          "size": [
+            1.66,
+            0.1,
+            0.14
+          ],
+          "center": [
+            0,
+            0.05,
+            0
+          ]
+        },
+        {
+          "size": [
+            1.66,
+            0.1,
+            0.14
+          ],
+          "center": [
+            0,
+            2.35,
+            0
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  },
+  {
+    "id": "post",
+    "name": "Timber post · 2.4m",
+    "category": "structure",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 188,
+      "vertices": 96,
+      "mesh_count": 1,
+      "material_count": 1,
+      "materials": [
+        "timber"
+      ],
+      "dimensions_m": [
+        0.14,
+        0.14,
+        2.4
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            0.14,
+            2.4,
+            0.14
+          ],
+          "center": [
+            0,
+            1.2,
+            0
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  },
+  {
+    "id": "roof_eave",
+    "name": "Porch tiled canopy",
+    "category": "roof",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 1644,
+      "vertices": 872,
+      "mesh_count": 1,
+      "material_count": 2,
+      "materials": [
+        "tile",
+        "timber"
+      ],
+      "dimensions_m": [
+        1.8,
+        0.915,
+        0.395667
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.075
+          ],
+          "center": [
+            0,
+            0.051666666666666666,
+            0.41250000000000003
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.075
+          ],
+          "center": [
+            0,
+            0.075,
+            0.3375
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.075
+          ],
+          "center": [
+            0,
+            0.09833333333333333,
+            0.2625
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.075
+          ],
+          "center": [
+            0,
+            0.12166666666666667,
+            0.1875
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.075
+          ],
+          "center": [
+            0,
+            0.145,
+            0.11250000000000004
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.075
+          ],
+          "center": [
+            0,
+            0.16833333333333336,
+            0.03749999999999998
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.075
+          ],
+          "center": [
+            0,
+            0.1916666666666667,
+            -0.03750000000000003
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.075
+          ],
+          "center": [
+            0,
+            0.21500000000000002,
+            -0.11249999999999999
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.075
+          ],
+          "center": [
+            0,
+            0.2383333333333334,
+            -0.18750000000000006
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.075
+          ],
+          "center": [
+            0,
+            0.2616666666666667,
+            -0.2625
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.075
+          ],
+          "center": [
+            0,
+            0.28500000000000003,
+            -0.3375000000000001
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.075
+          ],
+          "center": [
+            0,
+            0.3083333333333333,
+            -0.4124999999999999
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  },
+  {
+    "id": "roof_ridge",
+    "name": "Ridge tiles · 1.8m",
+    "category": "roof",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 3228,
+      "vertices": 1632,
+      "mesh_count": 1,
+      "material_count": 1,
+      "materials": [
+        "tile"
+      ],
+      "dimensions_m": [
+        1.806,
+        0.3,
+        0.29
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            1.8,
+            0.13,
+            0.3
+          ],
+          "center": [
+            0,
+            0.065,
+            0
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  },
+  {
+    "id": "roof_slope",
+    "name": "Tiled roof slope · 1.8m",
+    "category": "roof",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 4364,
+      "vertices": 2312,
+      "mesh_count": 1,
+      "material_count": 2,
+      "materials": [
+        "tile",
+        "timber"
+      ],
+      "dimensions_m": [
+        1.8,
+        3.115,
+        1.467532
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.25833333333333336
+          ],
+          "center": [
+            0,
+            0.09625,
+            1.4208333333333334
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.25833333333333336
+          ],
+          "center": [
+            0,
+            0.20875,
+            1.1625
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.25833333333333336
+          ],
+          "center": [
+            0,
+            0.32125,
+            0.9041666666666667
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.25833333333333336
+          ],
+          "center": [
+            0,
+            0.43374999999999997,
+            0.6458333333333334
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.25833333333333336
+          ],
+          "center": [
+            0,
+            0.5462500000000001,
+            0.38749999999999996
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.25833333333333336
+          ],
+          "center": [
+            0,
+            0.6587500000000002,
+            0.12916666666666665
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.25833333333333336
+          ],
+          "center": [
+            0,
+            0.7712500000000002,
+            -0.12916666666666687
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.25833333333333336
+          ],
+          "center": [
+            0,
+            0.88375,
+            -0.38749999999999996
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.25833333333333336
+          ],
+          "center": [
+            0,
+            0.99625,
+            -0.6458333333333333
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.25833333333333336
+          ],
+          "center": [
+            0,
+            1.1087500000000001,
+            -0.9041666666666666
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.25833333333333336
+          ],
+          "center": [
+            0,
+            1.2212500000000002,
+            -1.1625000000000003
+          ]
+        },
+        {
+          "size": [
+            1.8,
+            0.2,
+            0.25833333333333336
+          ],
+          "center": [
+            0,
+            1.33375,
+            -1.4208333333333332
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  },
+  {
+    "id": "shoji",
+    "name": "Shoji panel · 0.9m",
+    "category": "joinery",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 2444,
+      "vertices": 1248,
+      "mesh_count": 1,
+      "material_count": 3,
+      "materials": [
+        "cedar",
+        "paper",
+        "timber"
+      ],
+      "dimensions_m": [
+        0.9,
+        0.066,
+        2.05
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            0.11,
+            2.05,
+            0.06
+          ],
+          "center": [
+            -0.395,
+            1.025,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.11,
+            2.05,
+            0.06
+          ],
+          "center": [
+            0.395,
+            1.025,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.68,
+            0.08,
+            0.06
+          ],
+          "center": [
+            0,
+            0.04,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.68,
+            0.13,
+            0.06
+          ],
+          "center": [
+            0,
+            1.9849999999999999,
+            0
+          ]
+        },
+        {
+          "size": [
+            0.9,
+            2.05,
+            0.035
+          ],
+          "center": [
+            0,
+            1.025,
+            0
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  },
+  {
+    "id": "sill",
+    "name": "Timber sill · 1.8m",
+    "category": "structure",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 188,
+      "vertices": 96,
+      "mesh_count": 1,
+      "material_count": 1,
+      "materials": [
+        "timber"
+      ],
+      "dimensions_m": [
+        1.8,
+        0.16,
+        0.12
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            1.8,
+            0.12,
+            0.16
+          ],
+          "center": [
+            0,
+            0.06,
+            0
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  },
+  {
+    "id": "step",
+    "name": "Two-step entrance",
+    "category": "exterior",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 376,
+      "vertices": 192,
+      "mesh_count": 1,
+      "material_count": 1,
+      "materials": [
+        "stone"
+      ],
+      "dimensions_m": [
+        1.2,
+        0.75,
+        0.36
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            1.2,
+            0.18,
+            0.75
+          ],
+          "center": [
+            0,
+            0.09,
+            0
+          ]
+        },
+        {
+          "size": [
+            1.2,
+            0.18,
+            0.36
+          ],
+          "center": [
+            0,
+            0.27,
+            -0.19
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  },
+  {
+    "id": "stone_path",
+    "name": "Stepping stone",
+    "category": "exterior",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 188,
+      "vertices": 96,
+      "mesh_count": 1,
+      "material_count": 1,
+      "materials": [
+        "stone"
+      ],
+      "dimensions_m": [
+        0.64,
+        0.46,
+        0.1
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            0.64,
+            0.1,
+            0.46
+          ],
+          "center": [
+            0,
+            0.05,
+            0
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  },
+  {
+    "id": "tatami",
+    "name": "Tatami · 0.9 × 1.8m",
+    "category": "structure",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 564,
+      "vertices": 288,
+      "mesh_count": 1,
+      "material_count": 2,
+      "materials": [
+        "indigo",
+        "tatami"
+      ],
+      "dimensions_m": [
+        0.9,
+        1.8,
+        0.059
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            0.9,
+            0.055,
+            1.8
+          ],
+          "center": [
+            0,
+            0.0275,
+            0
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  },
+  {
+    "id": "zabuton",
+    "name": "Indigo floor cushion",
+    "category": "furniture",
+    "itch": true,
+    "godot_store_lite": true,
+    "render_2d": true,
+    "version": "1.0.0",
+    "collection": "kominka",
+    "units": "meters",
+    "origin": "bottom_center",
+    "style": "Stylized Realistic",
+    "design": "original_generic",
+    "triangle_budget": 30000,
+    "max_dimension_m": 8,
+    "grid_m": 0.9,
+    "construction_note": "Game kit dimensions; not a measured historic building or construction specification.",
+    "lod": "Godot automatic import LOD; no authored LOD variants",
+    "effective_license": "MIT",
+    "geometry": {
+      "errors": [],
+      "warnings": [],
+      "triangles": 1192,
+      "vertices": 608,
+      "mesh_count": 1,
+      "material_count": 2,
+      "materials": [
+        "bamboo",
+        "indigo"
+      ],
+      "dimensions_m": [
+        0.52,
+        0.52,
+        0.086
+      ],
+      "collision_boxes": [
+        {
+          "size": [
+            0.52,
+            0.085,
+            0.52
+          ],
+          "center": [
+            0,
+            0.0425,
+            0
+          ]
+        }
+      ],
+      "normals_check": "finite unit normals, consistent adjacent winding, outward signed volume of closed components",
+      "internal_faces_check": "closed manufactured components with intentional contact overlap; not a global boolean union"
+    }
+  }
+]

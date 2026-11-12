@@ -50,6 +50,10 @@ public partial class MenuBar : Node2D
 	{
 		JoinLabel.GuiInput -= ToggleJoinMenu;
 		EquipmentLabel.GuiInput -= ToggleShop;
+		ReadyLabel.GuiInput -= switchPlayerStatus;
+		ProfileLabel.GuiInput -= LoadProfile;
+		LocationLabel.GuiInput -= LoadLocation;
+
 
 
 	}
@@ -182,6 +186,7 @@ public partial class MenuBar : Node2D
 				_openLocationMenuScene = null;
 				LocationOpen = false;
 				LocationLabel.AddThemeColorOverride("font_color", Colors.White);
+				return;
 			}
 			var LocationMenuScene = GD.Load<PackedScene>(LocationScenePath);
 			_openLocationMenuScene = LocationMenuScene.Instantiate();
