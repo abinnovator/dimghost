@@ -200,6 +200,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.95428, -1.9073486e-06, -1.
 [node name="Exterior7" parent="Non used Houses" unique_id=426071832 instance=ExtResource("1_ijp31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.475101, -1.9073486e-06, -1.9243526)
 
+[node name="Exterior8" parent="Non used Houses" unique_id=392542268 instance=ExtResource("1_ijp31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.41794, -1.9073486e-06, -1.9243526)
+
+[node name="Exterior9" parent="Non used Houses" unique_id=200085867 instance=ExtResource("1_ijp31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.41794, -1.9073486e-06, -12.936509)
+
+[node name="Exterior10" parent="Non used Houses" unique_id=1589508978 instance=ExtResource("1_ijp31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.671337, -1.9073486e-06, -13.796519)
+
+[node name="Exterior11" parent="Non used Houses" unique_id=93673530 instance=ExtResource("1_ijp31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.051138, -1.9073486e-06, -13.796519)
+
+[node name="Exterior12" parent="Non used Houses" unique_id=1620243508 instance=ExtResource("1_ijp31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.40102, -1.9073486e-06, -13.796519)
+
+[node name="Exterior13" parent="Non used Houses" unique_id=1837676021 instance=ExtResource("1_ijp31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.270165, -1.9073486e-06, -13.796519)
+
 [node name="Exterior3" parent="Non used Houses" unique_id=386819787 instance=ExtResource("1_ijp31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.373446, -1.9073486e-06, -1.9243526)
 
@@ -260,7 +278,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.051216, 2.8075867, 2.068187
 shape = SubResource("BoxShape3D_ej8gx")
 
 [node name="Back" type="CollisionShape3D" parent="Boundaries/StaticBody3D" unique_id=1238839284]
-transform = Transform3D(-0.07466114, 0, 0.99720895, 0, 1, 0, -0.99720895, 0, -0.07466114, -1.1725502, 2.8075867, -6.7257786)
+transform = Transform3D(-0.07466114, 0, 0.99720895, 0, 1, 0, -0.99720895, 0, -0.07466114, -1.1725502, 2.8075867, -5.6838217)
 shape = SubResource("BoxShape3D_ej8gx")
 
 [node name="Front" type="CollisionShape3D" parent="Boundaries/StaticBody3D" unique_id=372959033]

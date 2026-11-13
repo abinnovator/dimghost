@@ -9,6 +9,10 @@ public partial class Lobby : Node3D
 	[Export] public PlayerSlot PlayerSlot2;
 	[Export] public PlayerSlot PlayerSlot3;
 	[Export] public PlayerSlot PlayerSlot4;
+	[Export] public LobbyPlayer Player1Character;
+	[Export] public LobbyPlayer Player2Character;
+	[Export] public LobbyPlayer Player3Character;
+	[Export] public LobbyPlayer Player4Character;
 	[ExportCategory("MenuButtons")]
 	[Export] public Label3D Shop;
 	[Export] public Label3D Equipment;
@@ -167,6 +171,20 @@ public partial class Lobby : Node3D
 				slot.PlayerUsername = player.Value.username;
 				slot.PlayerLevel = player.Value.Xp / 1000 + 1;
 				slot.IsReady = NetworkManager.Instance.ReadyStats.GetValueOrDefault(player.Key);
+				switch (i){
+					case 0:
+						Player1Character.Visible = true;
+						break;
+					case 1:
+						Player2Character.Visible = true;
+						break;
+					case 2:
+						Player3Character.Visible = true;
+						break;
+					case 3:
+						Player4Character.Visible = true;
+						break;
+				}
 
 			}
 			else
@@ -175,6 +193,20 @@ public partial class Lobby : Node3D
 				slot.IsHost = false;
 				slot.PlayerUsername = "None";
 				slot.PlayerLevel = 0;
+				switch (i){
+					case 0:
+						Player1Character.Visible = false;
+						break;
+					case 1:
+						Player2Character.Visible = false;
+						break;
+					case 2:
+						Player3Character.Visible = false;
+						break;
+					case 3:
+						Player4Character.Visible = false;
+						break;
+				}
 			}
 			slot.UpdateDisplay();
 		}

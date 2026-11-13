@@ -15,3 +15,4 @@ Truck model by Renafox — https://sketchfab.com/kryik1023 — [licence, e.g. CC
 https://polyhaven.com/a/large_square_pattern_01 - Concrete tiles
 https://polyhaven.com/a/asphalt_02 - Road
 https://polyhaven.com/a/brown_mud_leaves_01 - Grass
+https://sketchfab.com/3d-models/office-chair-6c00ba40776b41529d3075f950558822#download - Chair
