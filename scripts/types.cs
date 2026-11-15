@@ -31,3 +31,13 @@ public class LocationType
     public int levelMin { get; set; }
     public string size { get; set; }
 }
+
+public enum Ghosts
+{
+    Phantom,
+    Spirit,
+    Demon,
+    Leviathan,
+    Mania,
+    Revenant
+}

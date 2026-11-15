@@ -250,16 +250,45 @@ public partial class NetworkManager : Node
         if (Players.ContainsKey(id))
             ReadyStats[id] = status;
         Lobby.Instance.RefreshPlayerSlots();
+        if (AllReady()){
+            TransmitStartGame();
+        }
+
     }
     // Set the location
     public void TransmitSetLocation(string location, string Path){
         Rpc(MethodName.SetLocation, location, Path);
+
     }
     [Rpc(MultiplayerApi.RpcMode.AnyPeer, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable, CallLocal = true)]
-    public void SetLocation (string location, string path){
+    public void SetLocation(string location, string path)
+    {
         Location = location;
         LocationPath = path;
+        GD.Print(Location.ToString());
+        GD.Print(LocationPath.ToString());
     }
 
+    // Transmit the start to all of the players
+    public void TransmitStartGame()
+    {
+        StartGame();
+    }
+    [Rpc(MultiplayerApi.RpcMode.AnyPeer, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable, CallLocal = true)]
+    public void StartGame(){
+        // Add Logic for starting the game
+    }
+
+    public bool AllReady()
+    {
+        if (Players.Count == 0) return false;
+
+        foreach (long id in Players.Keys)
+        {
+            if (!ReadyStats.GetValueOrDefault(id))
+                return false;
+        }
+        return true;
+    }
 
 }

@@ -10,11 +10,18 @@ public partial class LocationCard : Node2D
 	[Export] public Label LocationSize;
 	[Export] public Sprite2D LocationImage;
 	[Export] public Area2D ClickableArea;
+	[Export] public PanelContainer Card;
 	[Export] public string LocationScenePath;
+	[Export] public bool isSelected;
+
 
    	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+			if (ClickableArea != null)
+			{
+				ClickableArea.InputEvent += OnClickableAreaInputEvent;
+			}
 
 
 	}
@@ -22,6 +29,9 @@ public partial class LocationCard : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+	}
+	public override void _ExitTree(){
+		ClickableArea.InputEvent -= OnClickableAreaInputEvent;
 	}
 
 
@@ -33,7 +43,42 @@ public partial class LocationCard : Node2D
 		LocationImage.Texture = picture;
 		LocationScenePath = ScenePath;
 	}
+	private void OnClickableAreaInputEvent(Node viewport, InputEvent @event, long shapeIdx)
+	{
+		if (@event is InputEventMouseButton mouseEvent)
+		{
+			if (mouseEvent.ButtonIndex == MouseButton.Left && mouseEvent.Pressed)
+			{
+				CardOnClick();
+			}
+		}
+	}
 	public void CardOnClick(){
-		NetworkManager.Instance.TransmitSetLocation(LocationName.Text, LocationScenePath);
+		isSelected = !isSelected;
+		if (isSelected)
+		{
+			NetworkManager.Instance.TransmitSetLocation(LocationName.Text, LocationScenePath);
+			var styleBox = Card.GetThemeStylebox("panel").Duplicate() as StyleBoxFlat;
+
+			if (styleBox != null)
+			{
+				styleBox.BorderColor = Colors.Green;
+				styleBox.SetBorderWidthAll(2);
+				Card.AddThemeStyleboxOverride("panel", styleBox);
+			}
+
+		}
+		else
+		{
+			NetworkManager.Instance.TransmitSetLocation("", "");
+			var styleBox = Card.GetThemeStylebox("panel").Duplicate() as StyleBoxFlat;
+
+			if (styleBox != null)
+			{
+						 styleBox.BorderColor = Colors.Green;
+						 styleBox.SetBorderWidthAll(0);
+						 Card.AddThemeStyleboxOverride("panel", styleBox);
+			}
+		}
 	}
 }
