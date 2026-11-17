@@ -31,6 +31,7 @@ public partial class NetworkManager : Node
     public Dictionary<long, bool> ReadyStats = new();
     public string Location;
     public string LocationPath;
+    public Level level;
 
     public override void _EnterTree()
     {
@@ -269,14 +270,37 @@ public partial class NetworkManager : Node
         GD.Print(LocationPath.ToString());
     }
 
-    // Transmit the start to all of the players
+    // Function to transmit the selected level
+    public void TransmitSetDifficulty(string newDifficulty)
+    {
+        Rpc(MethodName.SetDifficulty, newDifficulty);
+    }
+
+    // Function to set the level
+    [Rpc(MultiplayerApi.RpcMode.AnyPeer, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable, CallLocal = true)]
+    public void SetDifficulty(string newDifficulty)
+    {
+        if (!Enum.TryParse(newDifficulty, true, out Level selectedLevel))
+        {
+            GD.PrintErr($"Invalid difficulty: {newDifficulty}");
+            return;
+        }
+
+        level = selectedLevel;
+    }
+    // Transmit the start to all of the players -
     public void TransmitStartGame()
     {
-        StartGame();
+        Ghost[] values = Enum.GetValues<Ghost>();
+        Ghost randomGhost = values[Random.Shared.Next(values.Length)];
+
+        Rpc(MethodName.StartGame, randomGhost.ToString(), level.ToString());
     }
     [Rpc(MultiplayerApi.RpcMode.AnyPeer, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable, CallLocal = true)]
-    public void StartGame(){
+    public void StartGame(string ghost, string level){
         // Add Logic for starting the game
+
+        SceneManager.Instance.ChangeScene(LocationPath);
     }
 
     public bool AllReady()

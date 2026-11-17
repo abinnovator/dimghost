@@ -4,9 +4,10 @@ using System;
 
 public partial class Location : Node3D
 {
-    [Export] public Ghosts ghost;
-    [Export] public string difficulty;
-    [Export] public bool hunting;
+	[Export] public Ghost ghost;
+	[Export] public string difficulty;
+	[Export] public bool hunting;
+	[Export] public NavigationRegion3D NavigationArea;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{

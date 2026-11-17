@@ -5,11 +5,15 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2h4gk"]
 
-[node name="LocationMenu" type="Node2D" unique_id=1077478026 node_paths=PackedStringArray("containerBox", "HBox")]
+[node name="LocationMenu" type="Node2D" unique_id=1077478026 node_paths=PackedStringArray("containerBox", "HBox", "Easy", "Normal", "Hard", "Nightmare")]
 script = ExtResource("1_gj5jv")
 containerBox = NodePath("PanelContainer/Control/ScrollContainer")
 HBox = NodePath("PanelContainer/Control/ScrollContainer/HBoxContainer")
 LocationCard = ExtResource("2_2h4gk")
+Easy = NodePath("Difficulty/Easy")
+Normal = NodePath("Difficulty/Normal")
+Hard = NodePath("Difficulty/Hard")
+Nightmare = NodePath("Difficulty/Nightmare")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1788327373]
 visible = false

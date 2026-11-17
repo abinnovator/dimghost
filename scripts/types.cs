@@ -32,7 +32,7 @@ public class LocationType
     public string size { get; set; }
 }
 
-public enum Ghosts
+public enum Ghost
 {
     Phantom,
     Spirit,
@@ -40,4 +40,12 @@ public enum Ghosts
     Leviathan,
     Mania,
     Revenant
+}
+// Types
+public enum Level
+{
+    easy,
+    normal,
+    hard,
+    nightmare
 }

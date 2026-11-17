@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bshlfu2maqnve"]
 
+[ext_resource type="Script" uid="uid://3n8m8jrg3a3m" path="res://scripts/location/Location.cs" id="1_1ratw"]
 [ext_resource type="PackedScene" uid="uid://djmatemu7n2pp" path="res://addons/kominka_modular_home/demo/Exterior.tscn" id="1_ijp31"]
 [ext_resource type="Texture2D" uid="uid://bklbigo7yinhb" path="res://Textures/Road/asphalt_02_diff_2k.jpg" id="1_okjvc"]
 [ext_resource type="Texture2D" uid="uid://cgjnvx8bd056t" path="res://Textures/Road/asphalt_02_ao_2k.jpg" id="2_7s68x"]
@@ -18,6 +19,12 @@ normal_enabled = true
 normal_texture = ExtResource("3_nvbvb")
 ao_enabled = true
 ao_texture = ExtResource("2_7s68x")
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_ej8gx"]
+vertices = PackedVector3Array(-6.7403145, -0.4995166, -8.064255, -6.2403145, -0.4995166, -8.064255, -5.9903145, -0.4995166, -10.314255, -6.7403145, -0.4995166, -11.814255, 4.5096855, -0.4995166, -10.314255, 5.2596855, -0.4995166, -11.814255, 4.7596855, -0.4995166, -8.064255, 5.2596855, -0.4995166, -8.064255, -3.9903145, 3.0004835, -9.564255, -3.9903145, 2.7504835, -3.5642548, 2.5096855, 2.7504835, -3.5642548, 2.5096855, 3.0004835, -9.564255, -3.9903145, 4.0004835, -7.1642547, 2.5096855, 4.0004835, -7.1642547, -0.7403145, 0.2504834, -4.8142548, -0.7403145, 0.2504834, -5.3142548, -1.4903145, 0.2504834, -5.5642548, -3.7403145, 0.2504834, -4.8142548, -1.4903145, 0.2504834, -6.3142548, -0.7403145, 0.2504834, -6.5642548, -0.7403145, 0.2504834, -7.0642548, -1.4903145, 0.2504834, -7.3142548, -3.7403145, 0.2504834, -8.814255, -1.4903145, 0.2504834, -8.814255, 0.009685516, 0.00048339367, -6.3142548, 0.009685516, 0.00048339367, -7.3142548, 2.2596855, 0.00048339367, -4.8142548, 2.2596855, 0.00048339367, -8.814255, 0.009685516, 0.00048339367, -5.5642548, 0.009685516, 0.00048339367, -8.814255, 2.5096855, -0.2495166, -2.5642548, 2.2596855, 0.00048339367, -3.5642548, 1.5096855, 0.00048339367, -3.5642548, 1.5096855, -0.2495166, -2.5642548, 1.7596855, -0.4995166, -1.5642548, -4.7403145, -0.4995166, -2.5642548, -6.7403145, -0.4995166, -1.8142548, 4.7596855, -0.4995166, -5.8142548, 5.2596855, -0.4995166, -1.8142548, -6.2403145, -0.4995166, -5.8142548, 3.5096855, -0.4995166, -5.8142548, 3.2596855, -0.4995166, -2.5642548, -4.9903145, -0.4995166, -5.8142548)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(2, 3, 4), PackedInt32Array(4, 3, 5), PackedInt32Array(6, 4, 7), PackedInt32Array(7, 4, 5), PackedInt32Array(11, 13, 8), PackedInt32Array(8, 13, 12), PackedInt32Array(12, 13, 10), PackedInt32Array(12, 10, 9), PackedInt32Array(15, 14, 16), PackedInt32Array(16, 14, 17), PackedInt32Array(19, 18, 20), PackedInt32Array(20, 18, 21), PackedInt32Array(18, 16, 17), PackedInt32Array(18, 17, 21), PackedInt32Array(21, 17, 22), PackedInt32Array(22, 23, 21), PackedInt32Array(20, 25, 19), PackedInt32Array(19, 25, 24), PackedInt32Array(25, 27, 24), PackedInt32Array(24, 27, 26), PackedInt32Array(15, 28, 14), PackedInt32Array(14, 28, 26), PackedInt32Array(25, 29, 27), PackedInt32Array(26, 28, 24), PackedInt32Array(32, 31, 33), PackedInt32Array(33, 31, 30), PackedInt32Array(33, 30, 34), PackedInt32Array(33, 34, 35), PackedInt32Array(35, 34, 36), PackedInt32Array(6, 7, 37), PackedInt32Array(37, 7, 38), PackedInt32Array(1, 39, 0), PackedInt32Array(0, 39, 36), PackedInt32Array(40, 37, 41), PackedInt32Array(41, 37, 38), PackedInt32Array(42, 35, 39), PackedInt32Array(39, 35, 36), PackedInt32Array(30, 41, 34), PackedInt32Array(34, 41, 38)]
+filter_baking_aabb = AABB(2.369, 0.975, 0.186, 6.599, 1.615, 0)
+filter_baking_aabb_offset = Vector3(0, 0, -4.736)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5r1h1"]
 albedo_texture = ExtResource("1_okjvc")
@@ -50,7 +57,9 @@ fog_density = 1.0
 fog_sky_affect = 0.0
 volumetric_fog_density = 0.0913
 
-[node name="Node3D" type="Node3D" unique_id=915627298]
+[node name="Node3D" type="Node3D" unique_id=915627298 node_paths=PackedStringArray("NavigationArea")]
+script = ExtResource("1_1ratw")
+NavigationArea = NodePath("NavigationRegion3D")
 
 [node name="Concrete Path" type="Node3D" parent="." unique_id=1572658912]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.12978339)
@@ -180,8 +189,12 @@ transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 25.3
 mesh = SubResource("PlaneMesh_1ratw")
 surface_material_override/0 = SubResource("StandardMaterial3D_dqdjq")
 
-[node name="ActualHouse" parent="." unique_id=473804727 instance=ExtResource("1_ijp31")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7403145, -1.9073486e-06, -1.9243526)
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1949752309]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8723881, 4.889902)
+navigation_mesh = SubResource("NavigationMesh_ej8gx")
+
+[node name="ActualHouse" parent="NavigationRegion3D" unique_id=473804727 instance=ExtResource("1_ijp31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7403145, -0.87239003, -6.8142548)
 
 [node name="Non used Houses" type="Node3D" parent="." unique_id=1210384444]
 
@@ -316,3 +329,9 @@ spot_range = 10.0
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1001568542]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 8.77734)
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=800150328]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.239133, 2.5904253, -4.552644)
+
+[node name="Marker3D2" type="Marker3D" parent="." unique_id=1593814299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3688836, 0.97468483, 0.18634522)
