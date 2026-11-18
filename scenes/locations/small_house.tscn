@@ -57,9 +57,13 @@ fog_density = 1.0
 fog_sky_affect = 0.0
 volumetric_fog_density = 0.0913
 
-[node name="Node3D" type="Node3D" unique_id=915627298 node_paths=PackedStringArray("NavigationArea")]
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_1ratw"]
+
+[node name="Node3D" type="Node3D" unique_id=915627298 node_paths=PackedStringArray("NavigationArea", "PlayerSpawner", "Synchronizer")]
 script = ExtResource("1_1ratw")
 NavigationArea = NodePath("NavigationRegion3D")
+PlayerSpawner = NodePath("MultiplayerSpawner")
+Synchronizer = NodePath("MultiplayerSynchronizer")
 
 [node name="Concrete Path" type="Node3D" parent="." unique_id=1572658912]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.12978339)
@@ -195,6 +199,7 @@ navigation_mesh = SubResource("NavigationMesh_ej8gx")
 
 [node name="ActualHouse" parent="NavigationRegion3D" unique_id=473804727 instance=ExtResource("1_ijp31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7403145, -0.87239003, -6.8142548)
+script = null
 
 [node name="Non used Houses" type="Node3D" parent="." unique_id=1210384444]
 
@@ -335,3 +340,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.239133, 2.5904253, -4.5526
 
 [node name="Marker3D2" type="Marker3D" parent="." unique_id=1593814299]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3688836, 0.97468483, 0.18634522)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=276362450]
+replication_config = SubResource("SceneReplicationConfig_1ratw")
+
+[node name="Players" type="Node3D" parent="." unique_id=686540619]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.535931)
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=2036053626]
+_spawnable_scenes = PackedStringArray("uid://dmmetkni6ygid")
+spawn_path = NodePath("../Players")
+spawn_limit = 4

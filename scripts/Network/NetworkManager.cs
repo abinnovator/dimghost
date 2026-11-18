@@ -32,6 +32,7 @@ public partial class NetworkManager : Node
     public string Location;
     public string LocationPath;
     public Level level;
+    public Ghost ghost;
 
     public override void _EnterTree()
     {
@@ -293,7 +294,7 @@ public partial class NetworkManager : Node
     {
         Ghost[] values = Enum.GetValues<Ghost>();
         Ghost randomGhost = values[Random.Shared.Next(values.Length)];
-
+        ghost = randomGhost;
         Rpc(MethodName.StartGame, randomGhost.ToString(), level.ToString());
     }
     [Rpc(MultiplayerApi.RpcMode.AnyPeer, TransferMode = MultiplayerPeer.TransferModeEnum.Reliable, CallLocal = true)]
