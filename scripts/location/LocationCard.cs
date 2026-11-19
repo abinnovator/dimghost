@@ -9,29 +9,21 @@ public partial class LocationCard : Node2D
 	[Export] public Label LocationName;
 	[Export] public Label LocationSize;
 	[Export] public Sprite2D LocationImage;
-	[Export] public Area2D ClickableArea;
 	[Export] public PanelContainer Card;
 	[Export] public string LocationScenePath;
 	[Export] public bool isSelected;
 
 
-   	// Called when the node enters the scene tree for the first time.
+	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-			if (ClickableArea != null)
-			{
-				ClickableArea.InputEvent += OnClickableAreaInputEvent;
-			}
-
-
+		Card.MouseFilter = Control.MouseFilterEnum.Stop;
+		Card.GuiInput += OnCardGuiInput;
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
 	public override void _ExitTree(){
-		ClickableArea.InputEvent -= OnClickableAreaInputEvent;
+		if (Card != null)
+			Card.GuiInput -= OnCardGuiInput;
 	}
 
 
@@ -43,17 +35,20 @@ public partial class LocationCard : Node2D
 		LocationImage.Texture = picture;
 		LocationScenePath = ScenePath;
 	}
-	private void OnClickableAreaInputEvent(Node viewport, InputEvent @event, long shapeIdx)
+
+	private void OnCardGuiInput(InputEvent @event)
 	{
-		if (@event is InputEventMouseButton mouseEvent)
+		if (@event is InputEventMouseButton mouseEvent &&
+			mouseEvent.ButtonIndex == MouseButton.Left &&
+			mouseEvent.Pressed)
 		{
-			if (mouseEvent.ButtonIndex == MouseButton.Left && mouseEvent.Pressed)
-			{
-				CardOnClick();
-			}
+			CardOnClick();
 		}
 	}
+
 	public void CardOnClick(){
+		if (!Multiplayer.IsServer()) return;
+
 		isSelected = !isSelected;
 		if (isSelected)
 		{
@@ -75,9 +70,9 @@ public partial class LocationCard : Node2D
 
 			if (styleBox != null)
 			{
-						 styleBox.BorderColor = Colors.Green;
-						 styleBox.SetBorderWidthAll(0);
-						 Card.AddThemeStyleboxOverride("panel", styleBox);
+				styleBox.BorderColor = Colors.Green;
+				styleBox.SetBorderWidthAll(0);
+				Card.AddThemeStyleboxOverride("panel", styleBox);
 			}
 		}
 	}

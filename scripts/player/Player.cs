@@ -16,7 +16,11 @@ public partial class Player : CharacterBody3D
 	public override void _Ready()
 	{
 		Input.MouseMode = Input.MouseModeEnum.Captured;
-		AnimationPlayer.Play("breathing_idle");
+        AnimationPlayer.Play("breathing_idle");
+		if (IsMultiplayerAuthority()){
+            Camera.Current = true;
+            Input.MouseMode = Input.MouseModeEnum.Captured;
+		}
 	}
 
 	public override void _UnhandledInput(InputEvent @event)

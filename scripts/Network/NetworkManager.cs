@@ -268,6 +268,7 @@ public partial class NetworkManager : Node
         Location = location;
         LocationPath = path;
         GD.Print(Location.ToString());
+        GD.Print(Location.ToString());
         GD.Print(LocationPath.ToString());
     }
 

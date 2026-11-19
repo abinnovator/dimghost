@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://djmatemu7n2pp" path="res://addons/kominka_modular_home/demo/Exterior.tscn" id="1_ijp31"]
 [ext_resource type="Texture2D" uid="uid://bklbigo7yinhb" path="res://Textures/Road/asphalt_02_diff_2k.jpg" id="1_okjvc"]
 [ext_resource type="Texture2D" uid="uid://cgjnvx8bd056t" path="res://Textures/Road/asphalt_02_ao_2k.jpg" id="2_7s68x"]
+[ext_resource type="PackedScene" uid="uid://dmmetkni6ygid" path="res://scenes/player/player.tscn" id="2_dqdjq"]
 [ext_resource type="Texture2D" uid="uid://qmilb2g3j33m" path="res://Textures/Road/asphalt_02_nor_gl_2k.jpg" id="3_nvbvb"]
 [ext_resource type="Texture2D" uid="uid://b0hvkhufavay6" path="res://Textures/Road/asphalt_02_rough_2k.jpg" id="4_aujou"]
 [ext_resource type="PackedScene" uid="uid://cxgfwfq0xddc8" path="res://models/truck/scene.gltf" id="6_7s68x"]
@@ -59,11 +60,17 @@ volumetric_fog_density = 0.0913
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_1ratw"]
 
-[node name="Node3D" type="Node3D" unique_id=915627298 node_paths=PackedStringArray("NavigationArea", "PlayerSpawner", "Synchronizer")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_7dug0"]
+size = Vector3(19.741455, 0.4937744, 33.688965)
+
+[node name="Node3D" type="Node3D" unique_id=915627298 node_paths=PackedStringArray("NavigationArea", "PlayerSpawner", "Synchronizer", "PlayersNode", "SpawnPoints")]
 script = ExtResource("1_1ratw")
 NavigationArea = NodePath("NavigationRegion3D")
 PlayerSpawner = NodePath("MultiplayerSpawner")
 Synchronizer = NodePath("MultiplayerSynchronizer")
+PlayersNode = NodePath("Players")
+SpawnPoints = [NodePath("SpawnPoints/Player 1"), NodePath("SpawnPoints/Player 2"), NodePath("SpawnPoints/Player 3"), NodePath("SpawnPoints/Player 4")]
+Player = ExtResource("2_dqdjq")
 
 [node name="Concrete Path" type="Node3D" parent="." unique_id=1572658912]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.12978339)
@@ -203,41 +210,53 @@ script = null
 
 [node name="Non used Houses" type="Node3D" parent="." unique_id=1210384444]
 
-[node name="Exterior2" parent="Non used Houses" unique_id=651667205 instance=ExtResource("1_ijp31")]
+[node name="Exterior2" parent="Non used Houses" unique_id=651667205 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("1_ijp31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.521501, -1.9073486e-06, -1.9243526)
+SpawnPoints = []
 
-[node name="Exterior4" parent="Non used Houses" unique_id=1409082583 instance=ExtResource("1_ijp31")]
+[node name="Exterior4" parent="Non used Houses" unique_id=1409082583 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("1_ijp31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.668339, -1.9073486e-06, -1.9243526)
+SpawnPoints = []
 
-[node name="Exterior5" parent="Non used Houses" unique_id=159446454 instance=ExtResource("1_ijp31")]
+[node name="Exterior5" parent="Non used Houses" unique_id=159446454 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("1_ijp31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.714733, -1.9073486e-06, -1.9243526)
+SpawnPoints = []
 
-[node name="Exterior6" parent="Non used Houses" unique_id=1357279363 instance=ExtResource("1_ijp31")]
+[node name="Exterior6" parent="Non used Houses" unique_id=1357279363 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("1_ijp31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.95428, -1.9073486e-06, -1.9243526)
+SpawnPoints = []
 
-[node name="Exterior7" parent="Non used Houses" unique_id=426071832 instance=ExtResource("1_ijp31")]
+[node name="Exterior7" parent="Non used Houses" unique_id=426071832 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("1_ijp31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.475101, -1.9073486e-06, -1.9243526)
+SpawnPoints = []
 
-[node name="Exterior8" parent="Non used Houses" unique_id=392542268 instance=ExtResource("1_ijp31")]
+[node name="Exterior8" parent="Non used Houses" unique_id=392542268 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("1_ijp31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.41794, -1.9073486e-06, -1.9243526)
+SpawnPoints = []
 
-[node name="Exterior9" parent="Non used Houses" unique_id=200085867 instance=ExtResource("1_ijp31")]
+[node name="Exterior9" parent="Non used Houses" unique_id=200085867 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("1_ijp31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.41794, -1.9073486e-06, -12.936509)
+SpawnPoints = []
 
-[node name="Exterior10" parent="Non used Houses" unique_id=1589508978 instance=ExtResource("1_ijp31")]
+[node name="Exterior10" parent="Non used Houses" unique_id=1589508978 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("1_ijp31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.671337, -1.9073486e-06, -13.796519)
+SpawnPoints = []
 
-[node name="Exterior11" parent="Non used Houses" unique_id=93673530 instance=ExtResource("1_ijp31")]
+[node name="Exterior11" parent="Non used Houses" unique_id=93673530 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("1_ijp31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.051138, -1.9073486e-06, -13.796519)
+SpawnPoints = []
 
-[node name="Exterior12" parent="Non used Houses" unique_id=1620243508 instance=ExtResource("1_ijp31")]
+[node name="Exterior12" parent="Non used Houses" unique_id=1620243508 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("1_ijp31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.40102, -1.9073486e-06, -13.796519)
+SpawnPoints = []
 
-[node name="Exterior13" parent="Non used Houses" unique_id=1837676021 instance=ExtResource("1_ijp31")]
+[node name="Exterior13" parent="Non used Houses" unique_id=1837676021 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("1_ijp31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.270165, -1.9073486e-06, -13.796519)
+SpawnPoints = []
 
-[node name="Exterior3" parent="Non used Houses" unique_id=386819787 instance=ExtResource("1_ijp31")]
+[node name="Exterior3" parent="Non used Houses" unique_id=386819787 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("1_ijp31")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.373446, -1.9073486e-06, -1.9243526)
+SpawnPoints = []
 
 [node name="Spawn Point" type="Marker3D" parent="." unique_id=251710756]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.9262056)
@@ -332,9 +351,6 @@ light_energy = 2.98
 shadow_enabled = true
 spot_range = 10.0
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1001568542]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 8.77734)
-
 [node name="Marker3D" type="Marker3D" parent="." unique_id=800150328]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.239133, 2.5904253, -4.552644)
 
@@ -351,3 +367,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.535931)
 _spawnable_scenes = PackedStringArray("uid://dmmetkni6ygid")
 spawn_path = NodePath("../Players")
 spawn_limit = 4
+
+[node name="SpawnPoints" type="Node3D" parent="." unique_id=1342574552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.7665615)
+
+[node name="Player 1" type="Marker3D" parent="SpawnPoints" unique_id=1826519815]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0879831, 0.6770413, 3.4709988)
+
+[node name="Player 2" type="Marker3D" parent="SpawnPoints" unique_id=1018250158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1941729, 0.6770413, 4.3724537)
+
+[node name="Player 3" type="Marker3D" parent="SpawnPoints" unique_id=1271282768]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22605729, 0.6770413, 4.3724537)
+
+[node name="Player 4" type="Marker3D" parent="SpawnPoints" unique_id=1663048184]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.328973, 0.6770413, 4.0228662)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1006810781]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6915283, -0.2531128, 3.9855957)
+shape = SubResource("BoxShape3D_7dug0")

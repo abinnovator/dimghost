@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bxi34hj0o60lu" path="res://scripts/player/Player.cs" id="2_player"]
 [ext_resource type="Animation" uid="uid://ow27uch3m06h" path="res://models/player/lobby/breathing_idle.res" id="3_idle"]
 [ext_resource type="Animation" uid="uid://ctdbc0qsip3mp" path="res://scenes/player/mixamo_com.res" id="4_walk"]
-[ext_resource type="Animation" uid="uid://chggb4mv3qphe" path="res://models/player/lobby/Take 001.res" id="5_sprint"]
+[ext_resource type="Animation" uid="uid://bi36y33o0j500" path="res://models/player/lobby/Take 001.res" id="5_sprint"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_player"]
 radius = 0.35
