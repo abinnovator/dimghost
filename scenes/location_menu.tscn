@@ -25,7 +25,7 @@ color = Color(0, 0, 0, 1)
 offset_left = 167.0
 offset_top = 70.0
 offset_right = 844.0
-offset_bottom = 449.0
+offset_bottom = 490.0
 
 [node name="Control" type="Control" parent="PanelContainer" unique_id=706510371]
 layout_mode = 2
@@ -34,7 +34,7 @@ layout_mode = 2
 layout_mode = 0
 offset_top = 47.0
 offset_right = 677.0
-offset_bottom = 346.0
+offset_bottom = 403.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_2h4gk")
 vertical_scroll_mode = 0
 
@@ -51,29 +51,29 @@ text = "Select your job site"
 [node name="Difficulty" type="Node2D" parent="." unique_id=854497988]
 
 [node name="Easy" type="Label" parent="Difficulty" unique_id=1769725874]
-offset_left = 400.0
-offset_top = 421.0
-offset_right = 435.0
-offset_bottom = 444.0
+offset_left = 401.0
+offset_top = 460.0
+offset_right = 436.0
+offset_bottom = 483.0
 text = "Easy"
 
 [node name="Normal" type="Label" parent="Difficulty" unique_id=1628812005]
-offset_left = 447.0
-offset_top = 421.0
-offset_right = 506.0
-offset_bottom = 444.0
+offset_left = 448.0
+offset_top = 460.0
+offset_right = 507.0
+offset_bottom = 483.0
 text = "Normal"
 
 [node name="Hard" type="Label" parent="Difficulty" unique_id=175218472]
-offset_left = 511.0
-offset_top = 421.0
-offset_right = 552.0
-offset_bottom = 444.0
+offset_left = 512.0
+offset_top = 460.0
+offset_right = 553.0
+offset_bottom = 483.0
 text = "Hard"
 
 [node name="Nightmare" type="Label" parent="Difficulty" unique_id=1364102021]
-offset_left = 555.0
-offset_top = 421.0
-offset_right = 639.0
-offset_bottom = 444.0
+offset_left = 556.0
+offset_top = 460.0
+offset_right = 640.0
+offset_bottom = 483.0
 text = "Nightmare"

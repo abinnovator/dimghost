@@ -14,7 +14,7 @@ SendUsernameButton = NodePath("Button2")
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1329355504]
 texture_filter = 1
 texture_repeat = 1
-offset_right = 1152.0
+offset_right = 1195.0
 offset_bottom = 648.0
 texture = ExtResource("2_55pw5")
 

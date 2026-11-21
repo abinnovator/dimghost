@@ -10,11 +10,22 @@
 radius = 0.35
 height = 1.8
 
+[sub_resource type="Animation" id="Animation_p47bc"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton3D:mixamorig9_LeftLeg")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_player"]
 _data = {
-&"Sprint": ExtResource("5_sprint"),
+&"RESET": SubResource("Animation_p47bc"),
 &"breathing_idle": ExtResource("3_idle"),
-&"move_front": ExtResource("4_walk")
+&"move_front": ExtResource("5_sprint"),
+&"sprint": ExtResource("4_walk")
 }
 
 [node name="Player" type="CharacterBody3D" unique_id=1001 node_paths=PackedStringArray("AnimationPlayer", "Head", "Camera")]
@@ -31,10 +42,10 @@ shape = SubResource("CapsuleShape3D_player")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1847878848]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.043561578, 0.15916586)
 current = true
 
 [node name="Character" parent="." unique_id=1328020528 instance=ExtResource("1_character")]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Character" unique_id=1451143092]
 libraries/ = SubResource("AnimationLibrary_player")

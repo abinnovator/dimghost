@@ -44,7 +44,9 @@ material = SubResource("StandardMaterial3D_5r1h1")
 [sub_resource type="BoxShape3D" id="BoxShape3D_ej8gx"]
 size = Vector3(1.5019531, 6.6151733, 29.987617)
 
-[sub_resource type="Environment" id="Environment_aujou"]
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_1ratw"]
+
+[sub_resource type="Environment" id="Environment_dqdjq"]
 background_mode = 1
 background_color = Color(0.019607844, 0.02745098, 0.047058824, 1)
 ambient_light_source = 2
@@ -52,16 +54,19 @@ ambient_light_energy = 0.08
 tonemap_mode = 4
 ssr_enabled = true
 ssao_enabled = true
+fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0, 0, 0, 1)
 fog_density = 1.0
 fog_sky_affect = 0.0
-volumetric_fog_density = 0.0913
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.1996
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_1ratw"]
+[sub_resource type="BoxMesh" id="BoxMesh_ej8gx"]
+size = Vector3(16.243591, 1, 29.84729)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7dug0"]
-size = Vector3(19.741455, 0.4937744, 33.688965)
+[sub_resource type="BoxShape3D" id="BoxShape3D_sdpmw"]
+size = Vector3(14.674377, 0.49865723, 27.978104)
 
 [node name="Node3D" type="Node3D" unique_id=915627298 node_paths=PackedStringArray("NavigationArea", "PlayerSpawner", "Synchronizer", "PlayersNode", "SpawnPoints")]
 script = ExtResource("1_1ratw")
@@ -239,19 +244,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.41794, -1.9073486e-06, -1
 SpawnPoints = []
 
 [node name="Exterior10" parent="Non used Houses" unique_id=1589508978 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("1_ijp31")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.671337, -1.9073486e-06, -13.796519)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.553804, -1.9073486e-06, -12.935548)
 SpawnPoints = []
 
 [node name="Exterior11" parent="Non used Houses" unique_id=93673530 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("1_ijp31")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.051138, -1.9073486e-06, -13.796519)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.899925, -1.9073486e-06, -12.689973)
 SpawnPoints = []
 
 [node name="Exterior12" parent="Non used Houses" unique_id=1620243508 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("1_ijp31")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.40102, -1.9073486e-06, -13.796519)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.40102, -1.9073486e-06, -12.679676)
 SpawnPoints = []
 
 [node name="Exterior13" parent="Non used Houses" unique_id=1837676021 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("1_ijp31")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.270165, -1.9073486e-06, -13.796519)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.270165, -1.9073486e-06, -12.749203)
 SpawnPoints = []
 
 [node name="Exterior3" parent="Non used Houses" unique_id=386819787 node_paths=PackedStringArray("SpawnPoints") instance=ExtResource("1_ijp31")]
@@ -279,6 +284,18 @@ mesh = SubResource("PlaneMesh_okjvc")
 transform = Transform3D(15, 0, 0, 0, 0.5, 0, 0, 0, 3, -49.84092, -9.536743e-07, 10.563811)
 mesh = SubResource("PlaneMesh_okjvc")
 
+[node name="Road6" type="MeshInstance3D" parent="Road" unique_id=2109445106]
+transform = Transform3D(15, 0, 0, 0, 0.5, 0, 0, 0, 3, -49.84092, -9.536743e-07, 4.585326)
+mesh = SubResource("PlaneMesh_okjvc")
+
+[node name="Road7" type="MeshInstance3D" parent="Road" unique_id=1944556177]
+transform = Transform3D(15, 0, 0, 0, 0.5, 0, 0, 0, 3, -75.67862, -9.536743e-07, 10.563811)
+mesh = SubResource("PlaneMesh_okjvc")
+
+[node name="Road8" type="MeshInstance3D" parent="Road" unique_id=1855006930]
+transform = Transform3D(15, 0, 0, 0, 0.5, 0, 0, 0, 3, -75.67862, -9.536743e-07, 4.585326)
+mesh = SubResource("PlaneMesh_okjvc")
+
 [node name="Road5" type="MeshInstance3D" parent="Road" unique_id=277757718]
 transform = Transform3D(15, 0, 0, 0, 0.5, 0, 0, 0, 3, 44.546227, -9.536743e-07, 10.563811)
 mesh = SubResource("PlaneMesh_okjvc")
@@ -300,6 +317,10 @@ mesh = SubResource("PlaneMesh_okjvc")
 
 [node name="Road4" type="MeshInstance3D" parent="Road2" unique_id=490683599]
 transform = Transform3D(15, 0, 0, 0, 0.5, 0, 0, 0, 3, -49.84092, -9.536743e-07, 10.563811)
+mesh = SubResource("PlaneMesh_okjvc")
+
+[node name="Road6" type="MeshInstance3D" parent="Road2" unique_id=1819260945]
+transform = Transform3D(15, 0, 0, 0, 0.5, 0, 0, 0, 3, -75.67862, -9.536743e-07, 10.563812)
 mesh = SubResource("PlaneMesh_okjvc")
 
 [node name="Road5" type="MeshInstance3D" parent="Road2" unique_id=1545829879]
@@ -330,9 +351,6 @@ shape = SubResource("BoxShape3D_ej8gx")
 
 [node name="Sketchfab_Scene" parent="." unique_id=1148177883 instance=ExtResource("6_7s68x")]
 transform = Transform3D(0.0010739766, 0, 0.02998077, 0, 0.03, 0, -0.02998077, 0, 0.0010739766, -1, 0, 13.502158)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=304772751]
-environment = SubResource("Environment_aujou")
 
 [node name="Sketchfab_Scene2" parent="." unique_id=1263620460 instance=ExtResource("7_nvbvb")]
 transform = Transform3D(0.063089386, 0, 0.07758689, 0, 0.09999999, 0, -0.07758689, 0, 0.063089386, -6.459706, -4.7683716e-07, 9.674989)
@@ -383,6 +401,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22605729, 0.6770413, 4.372
 [node name="Player 4" type="Marker3D" parent="SpawnPoints" unique_id=1663048184]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.328973, 0.6770413, 4.0228662)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1006810781]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6915283, -0.2531128, 3.9855957)
-shape = SubResource("BoxShape3D_7dug0")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=478530266]
+environment = SubResource("Environment_dqdjq")
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=161549182]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=130134535]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0553432, -0.5139477, -4.1817627)
+mesh = SubResource("BoxMesh_ej8gx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1503456779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3819885, -0.2506714, 1.6110401)
+shape = SubResource("BoxShape3D_sdpmw")
