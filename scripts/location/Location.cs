@@ -15,6 +15,7 @@ public partial class Location : Node3D
 	[Export] public Node3D PlayersNode;
 	[Export] public Marker3D[] SpawnPoints;
 	[Export] public PackedScene Player;
+	[Export] public Node3D doors;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
